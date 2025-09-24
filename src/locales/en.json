@@ -1,8 +1,143 @@
 {
   "app": {
-    "title": "My Multilingual App"
+    "title": "Melenium - Minecraft Server Hosting"
   },
   "language": {
     "label": "Language:"
+  },
+  "theme": {
+    "dark": "Dark",
+    "light": "Light"
+  },
+  "navigation": {
+    "home": "Home",
+    "pricing": "Pricing",
+    "features": "Features",
+    "support": "Support"
+  },
+  "hero": {
+    "title": "Create your own Minecraft servers",
+    "subtitle": "and earn from it!",
+    "cta": "Start Free",
+    "demo": "Try Demo"
+  },
+  "features": {
+    "easy_setup": {
+      "title": "Easy Setup",
+      "description": "Server and plugin setup in just a few clicks, even beginners can handle it"
+    },
+    "plugins": {
+      "title": "Ready Plugins",
+      "description": "Popular mods and plugins available instantly, no complex installations"
+    },
+    "monetization": {
+      "title": "Monetization",
+      "description": "Connect donations, earn directly from your server"
+    },
+    "withdraw": {
+      "title": "Money Withdrawal",
+      "description": "Funds are withdrawn conveniently and quickly, you really earn from gaming"
+    },
+    "performance": {
+      "title": "Performance",
+      "description": "We have the most modern hardware: SSD drives, dedicated resources and optimization for any number of players"
+    },
+    "ddos_protection": {
+      "title": "DDoS Protection",
+      "description": "Multi-level infrastructure protection from network attacks. Real-time traffic filtering, automatic attack absorption up to 500+ Gbps"
+    }
+  },
+  "unique_feature": {
+    "title": "Unique Plugin Configuration",
+    "subtitle": "Configure plugins and donation system through convenient web interface",
+    "plugin_manager": "Plugin Manager",
+    "plugin_manager_desc": "Install, configure and update plugins with one click",
+    "donation_system": "Donation System",
+    "donation_system_desc": "Create donation packages, set prices and privileges",
+    "real_time_config": "Real-time Configuration",
+    "real_time_config_desc": "Changes apply instantly without server restart"
+  },
+  "pricing": {
+    "title": "Choose the right plan",
+    "subtitle": "Transparent pricing with no hidden fees",
+    "configure": "Configurator",
+    "monthly": "mo",
+    "starter": {
+      "name": "Starter",
+      "price": "350",
+      "players": "Up to 10 players",
+      "ram": "2 GB RAM",
+      "storage": "10 GB SSD",
+      "plugins": "Basic plugins",
+      "support": "24/7 Support"
+    },
+    "pro": {
+      "name": "Pro", 
+      "price": "600",
+      "players": "Up to 25 players",
+      "ram": "4 GB RAM",
+      "storage": "25 GB SSD", 
+      "plugins": "All plugins",
+      "support": "Priority support"
+    },
+    "business": {
+      "name": "Business",
+      "price": "1200",
+      "players": "Up to 50 players",
+      "ram": "8 GB RAM",
+      "storage": "50 GB SSD",
+      "plugins": "All plugins + custom",
+      "support": "Personal manager"
+    },
+    "choose_plan": "Choose Plan"
+  },
+  "configurator": {
+    "title": "Server Configurator",
+    "subtitle": "Configure server for your needs",
+    "players": "Number of players",
+    "ram": "RAM Memory",
+    "storage": "Disk Space",
+    "plugins": "Plugins",
+    "estimated_price": "Estimated Price",
+    "per_month": "per month"
+  },
+  "testimonials": {
+    "title": "What our clients say",
+    "alex": {
+      "name": "Alexander",
+      "text": "Launched my server in 5 minutes! Donations were set up automatically, already earned first money."
+    },
+    "maria": {
+      "name": "Maria", 
+      "text": "Great support and performance. Server runs stable even with 40+ players online."
+    },
+    "dmitry": {
+      "name": "Dmitry",
+      "text": "Plugin configurator is just awesome! Set up RP server without a single line of code."
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "How quickly is the server activated?",
+    "a1": "Server activates instantly after payment. You can start playing in 2-3 minutes.",
+    "q2": "Can I change the plan?",
+    "a2": "Yes, you can change the plan anytime in your personal account. Additional payment is proportional.",
+    "q3": "Which Minecraft versions are supported?",
+    "a3": "We support all popular versions from 1.16 to the latest version, including modded builds.",
+    "q4": "How does the payout system work?",
+    "a4": "Payouts happen weekly to bank card or electronic wallet. Minimum amount is 500₽."
+  },
+  "footer": {
+    "company": "Company",
+    "about": "About Us",
+    "careers": "Careers", 
+    "contact": "Contact",
+    "support_title": "Support",
+    "docs": "Documentation",
+    "status": "Service Status",
+    "legal": "Legal Information",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "© 2024 Melenium. All rights reserved."
   }
 }
