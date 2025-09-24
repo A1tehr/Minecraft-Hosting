@@ -1,0 +1,8 @@
+{
+  "app": {
+    "title": "My Multilingual App"
+  },
+  "language": {
+    "label": "Language:"
+  }
+}

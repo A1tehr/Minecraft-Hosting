@@ -1,0 +1,212 @@
+/* Nunito - Regular */
+@font-face {
+    font-family: 'Nunito';
+    src: url('/assets/fonts/Nunito-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Nunito - Italic */
+@font-face {
+    font-family: 'Nunito';
+    src: url('/assets/fonts/Nunito-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Nunito - Light */
+@font-face {
+    font-family: 'Nunito';
+    src: url('/assets/fonts/Nunito-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Nunito - Bold */
+@font-face {
+    font-family: 'Nunito';
+    src: url('/assets/fonts/Nunito-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Nunito - Bold Italic */
+@font-face {
+    font-family: 'Nunito';
+    src: url('/assets/fonts/Nunito-Bold-Italic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Nunito - Black (Extra Bold) */
+@font-face {
+    font-family: 'Nunito';
+    src: url('/assets/fonts/Nunito-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ==================== */
+/*        ONEST         */
+/* ==================== */
+
+/* Onest - Thin */
+@font-face {
+    font-family: 'Onest';
+    src: url('/assets/fonts/Onest-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Onest - ExtraLight */
+@font-face {
+    font-family: 'Onest';
+    src: url('/assets/fonts/Onest-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Onest - Light */
+@font-face {
+    font-family: 'Onest';
+    src: url('/assets/fonts/Onest-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Onest - Regular */
+@font-face {
+    font-family: 'Onest';
+    src: url('/assets/fonts/Onest-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Onest - Medium */
+@font-face {
+    font-family: 'Onest';
+    src: url('/assets/fonts/Onest-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Onest - SemiBold */
+@font-face {
+    font-family: 'Onest';
+    src: url('/assets/fonts/Onest-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Onest - Bold */
+@font-face {
+    font-family: 'Onest';
+    src: url('/assets/fonts/Onest-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Onest - ExtraBold */
+@font-face {
+    font-family: 'Onest';
+    src: url('/assets/fonts/Onest-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Onest - Black */
+@font-face {
+    font-family: 'Onest';
+    src: url('/assets/fonts/Onest-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ============================= */
+/*        PP NEUE MACHINA        */
+/* ============================= */
+
+/* PP Neue Machina - Light */
+@font-face {
+    font-family: 'PP Neue Machina';
+    src: url('/assets/fonts/PPNeueMachina-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* PP Neue Machina - Regular */
+@font-face {
+    font-family: 'PP Neue Machina';
+    src: url('/assets/fonts/PPNeueMachina-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* PP Neue Machina - Ultrabold */
+@font-face {
+    font-family: 'PP Neue Machina';
+    src: url('/assets/fonts/PPNeueMachina-Ultrabold.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+.hero-title {
+    font-family: 'PP Neue Machina', sans-serif;
+    font-weight: 900; /* Ultrabold */
+    letter-spacing: -0.5px;
+}
+
+.body-text {
+    font-family: 'Onest', sans-serif;
+    font-weight: 400; /* Regular */
+    line-height: 1.6;
+}
+
+.subtitle {
+    font-family: 'Onest', sans-serif;
+    font-weight: 300; /* Light */
+}
+
+.cta-button {
+    font-family: 'PP Neue Machina', sans-serif;
+    font-weight: 400;
+}
+
+/* ================ */
+/*   Готовые классы  */
+/* ================ */
+
+/* Onest */
+.onest-thin { font-family: 'Onest', sans-serif; font-weight: 100; }
+.onest-extralight { font-family: 'Onest', sans-serif; font-weight: 200; }
+.onest-light { font-family: 'Onest', sans-serif; font-weight: 300; }
+.onest-regular { font-family: 'Onest', sans-serif; font-weight: 400; }
+.onest-medium { font-family: 'Onest', sans-serif; font-weight: 500; }
+.onest-semibold { font-family: 'Onest', sans-serif; font-weight: 600; }
+.onest-bold { font-family: 'Onest', sans-serif; font-weight: 700; }
+.onest-extrabold { font-family: 'Onest', sans-serif; font-weight: 800; }
+.onest-black { font-family: 'Onest', sans-serif; font-weight: 900; }
+
+/* PP Neue Machina */
+.pp-light { font-family: 'PP Neue Machina', sans-serif; font-weight: 300; }
+.pp-regular { font-family: 'PP Neue Machina', sans-serif; font-weight: 400; }
+.pp-ultrabold { font-family: 'PP Neue Machina', sans-serif; font-weight: 900; }
