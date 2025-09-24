@@ -13,37 +13,29 @@
         <p class="mb-0 nav-item" @click="scrollToSection('support')">{{ t('navigation.support') }}</p>
       </div>
       <div class="controls-section d-flex align-items-center gap-3">
-        <!-- Theme Toggle -->
-        <div class="theme-toggle" @click="toggleTheme" :title="isDark ? t('theme.light') : t('theme.dark')">
-          <div class="toggle-switch" :class="{ 'dark': isDark }">
-            <div class="toggle-circle">
-              <svg v-if="isDark" class="icon" viewBox="0 0 24 24">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-              </svg>
-              <svg v-else class="icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="5"/>
-                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        <!-- Modern Language Switcher with Flags -->
+        <div class="language-switcher">
+          <div class="language-dropdown" :class="{ 'active': showLanguageMenu }" @click="toggleLanguageMenu">
+            <div class="current-language">
+              <img :src="getCurrentFlag()" :alt="getCurrentLanguageName()" class="flag-icon">
+              <span class="language-text">{{ getCurrentLanguageCode() }}</span>
+              <svg class="dropdown-arrow" :class="{ 'rotated': showLanguageMenu }" viewBox="0 0 24 24">
+                <path d="M7 10L12 15L17 10H7Z"/>
               </svg>
             </div>
+            <div class="language-menu" v-if="showLanguageMenu">
+              <div 
+                v-for="lang in languages" 
+                :key="lang.code" 
+                class="language-option"
+                :class="{ 'active': currentLocale === lang.code }"
+                @click.stop="selectLanguage(lang.code)"
+              >
+                <img :src="lang.flag" :alt="lang.name" class="flag-icon">
+                <span>{{ lang.name }}</span>
+              </div>
+            </div>
           </div>
-        </div>
-        
-        <!-- Language Switcher -->
-        <div class="language-switcher">
-          <label for="lang-select" class="form-label text-white me-2 mb-0">
-            {{ t('language.label') }}
-          </label>
-          <select
-              id="lang-select"
-              v-model="currentLocale"
-              class="form-select form-select-sm d-inline-block w-auto"
-              @change="switchLanguage"
-              aria-label="Выберите язык"
-          >
-            <option v-for="lang in languages" :key="lang.code" :value="lang.code">
-              {{ lang.name }}
-            </option>
-          </select>
         </div>
       </div>
     </div>
@@ -51,29 +43,63 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, onUnmounted} from 'vue'
+import { ref, watch, onMounted, onUnmounted, onBeforeUnmount} from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useTheme } from '../composables/useTheme'
 
 const { t, locale } = useI18n()
-const { isDark, toggleTheme } = useTheme()
 
-// Список языков
+// Список языков с флагами
 const languages = [
-  { code: 'en', name: 'English' },
-  { code: 'ru', name: 'Русский' }
+  { 
+    code: 'ru', 
+    name: 'Русский', 
+    flag: 'https://flagcdn.com/w40/ru.png'
+  },
+  { 
+    code: 'en', 
+    name: 'English', 
+    flag: 'https://flagcdn.com/w40/gb.png'
+  }
 ]
 
-// Реактивная переменная для v-model
+// Состояние меню языков
+const showLanguageMenu = ref(false)
 const currentLocale = ref(locale.value)
 
-// При изменении языка через select
-const switchLanguage = () => {
-  locale.value = currentLocale.value
-  localStorage.setItem('locale', currentLocale.value)
+// Функции для работы с языком
+const getCurrentFlag = () => {
+  const lang = languages.find(l => l.code === currentLocale.value)
+  return lang ? lang.flag : languages[0].flag
 }
 
-// Если язык изменён извне (например, в другом компоненте) — обновляем select
+const getCurrentLanguageName = () => {
+  const lang = languages.find(l => l.code === currentLocale.value)
+  return lang ? lang.name : languages[0].name
+}
+
+const getCurrentLanguageCode = () => {
+  return currentLocale.value.toUpperCase()
+}
+
+const toggleLanguageMenu = () => {
+  showLanguageMenu.value = !showLanguageMenu.value
+}
+
+const selectLanguage = (langCode) => {
+  currentLocale.value = langCode
+  locale.value = langCode
+  localStorage.setItem('locale', langCode)
+  showLanguageMenu.value = false
+}
+
+// Закрытие меню при клике вне его
+const closeLanguageMenu = (event) => {
+  if (!event.target.closest('.language-dropdown')) {
+    showLanguageMenu.value = false
+  }
+}
+
+// При изменении языка извне
 watch(locale, (newLocale) => {
   currentLocale.value = newLocale
 })
@@ -93,12 +119,13 @@ const scrollToSection = (sectionId) => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
-  // Инициализируем состояние при монтировании
+  document.addEventListener('click', closeLanguageMenu)
   handleScroll()
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  document.removeEventListener('click', closeLanguageMenu)
 })
 
 </script>
@@ -127,67 +154,115 @@ onUnmounted(() => {
   gap: 1rem;
 }
 
-.theme-toggle {
+/* Modern Language Switcher */
+.language-switcher {
+  position: relative;
+}
+
+.language-dropdown {
+  position: relative;
   cursor: pointer;
   user-select: none;
-}
-
-.toggle-switch {
-  width: 50px;
-  height: 24px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
-  position: relative;
-  transition: background 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  min-width: 120px;
 }
 
-.toggle-switch.dark {
-  background: rgba(0, 255, 136, 0.3);
+.language-dropdown:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(0, 255, 136, 0.5);
+  transform: translateY(-1px);
 }
 
-.toggle-circle {
-  width: 20px;
-  height: 20px;
-  background: white;
-  border-radius: 50%;
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  transition: transform 0.3s ease;
+.language-dropdown.active {
+  background: rgba(0, 255, 136, 0.2);
+  border-color: #00ff88;
+}
+
+.current-language {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 8px;
+  justify-content: space-between;
 }
 
-.toggle-switch.dark .toggle-circle {
-  transform: translateX(26px);
-  background: #00ff88;
+.flag-icon {
+  width: 20px;
+  height: 15px;
+  object-fit: cover;
+  border-radius: 2px;
+  flex-shrink: 0;
 }
 
-.toggle-circle .icon {
-  width: 12px;
-  height: 12px;
-  fill: #333;
-  stroke: #333;
-  stroke-width: 1;
+.language-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  flex-grow: 1;
 }
 
-.toggle-switch.dark .toggle-circle .icon {
+.dropdown-arrow {
+  width: 16px;
+  height: 16px;
   fill: white;
-  stroke: white;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
-.language-switcher .form-select {
-  min-width: 120px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.dropdown-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.language-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(26, 26, 46, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  margin-top: 8px;
+  overflow: hidden;
+  animation: slideDown 0.3s ease;
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
   color: white;
 }
 
-.language-switcher .form-select option {
-  background: #2a2a2a;
-  color: white;
+.language-option:hover {
+  background: rgba(0, 255, 136, 0.1);
+}
+
+.language-option.active {
+  background: rgba(0, 255, 136, 0.2);
+  color: #00ff88;
+}
+
+.language-option:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .topbar {
@@ -239,50 +314,5 @@ onUnmounted(() => {
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.1);
-}
-
-/* Light theme styles */
-:global(.light) .header {
-  color: #333;
-}
-
-:global(.light) .brand-name {
-  background: linear-gradient(45deg, #0066cc, #0099ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-:global(.light) .topbar {
-  background: rgba(255, 255, 255, 0.9);
-  color: #333;
-}
-
-:global(.light) .nav-item {
-  color: #333;
-}
-
-:global(.light) .nav-item:hover {
-  color: #0066cc;
-}
-
-:global(.light) .nav-item::after {
-  background: #0066cc;
-}
-
-:global(.light) .toggle-switch {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(0, 0, 0, 0.3);
-}
-
-:global(.light) .language-switcher .form-select {
-  background: rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  color: #333;
-}
-
-:global(.light) .language-switcher .form-select option {
-  background: white;
-  color: #333;
 }
 </style>

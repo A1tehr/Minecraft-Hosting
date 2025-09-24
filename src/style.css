@@ -6,9 +6,9 @@ body {
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: dark light;
+  color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #0d1122;
+  background-color: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,26 +24,45 @@ body {
   font-variation-settings: normal;
 }
 
-/* Dark theme (default) */
+/* Dark theme (fixed) */
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0d1122 0%, #191f37 100%);
+  background: linear-gradient(135deg, #000000 0%, #0d0d1a 25%, #1a1a2e 50%, #16213e 75%, #0f3460 100%);
   color: white;
   transition: all 0.3s ease;
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* Light theme */
-.light body {
-  background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%);
-  color: #333;
+/* Добавляем звездный фон как на Dora.run */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(0, 255, 136, 0.4), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(0, 204, 255, 0.3), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(139, 95, 255, 0.3), transparent);
+  background-repeat: repeat;
+  background-size: 200px 150px;
+  z-index: -1;
+  animation: twinkle 8s ease-in-out infinite alternate;
 }
 
-.light {
-  color-scheme: light;
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #ffffff;
+@keyframes twinkle {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.8;
+  }
 }
 
 a {
@@ -55,14 +74,6 @@ a {
 
 a:hover {
   color: #00ccff;
-}
-
-.light a {
-  color: #0066cc;
-}
-
-.light a:hover {
-  color: #0099ff;
 }
 
 h1 {
@@ -77,45 +88,47 @@ h2, h3, h4, h5, h6 {
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.8em 1.5em;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 600;
   font-family: inherit;
-  background-color: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 204, 255, 0.2));
   color: white;
   cursor: pointer;
-  transition: all 0.25s ease;
-  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+button:hover::before {
+  left: 100%;
 }
 
 button:hover {
-  background-color: rgba(0, 255, 136, 0.2);
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.3), rgba(0, 204, 255, 0.3));
   border-color: #00ff88;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 255, 136, 0.3);
 }
 
 button:focus,
 button:focus-visible {
   outline: 2px solid #00ff88;
   outline-offset: 2px;
-}
-
-.light button {
-  background-color: rgba(0, 0, 0, 0.05);
-  color: #333;
-  border-color: rgba(0, 0, 0, 0.1);
-}
-
-.light button:hover {
-  background-color: rgba(0, 102, 204, 0.1);
-  border-color: #0066cc;
-}
-
-.light button:focus,
-.light button:focus-visible {
-  outline-color: #0066cc;
 }
 
 .card {
@@ -205,17 +218,6 @@ button:focus-visible {
   font-size: 0.875rem;
 }
 
-.light .form-select {
-  background: rgba(0, 0, 0, 0.05);
-  border-color: rgba(0, 0, 0, 0.15);
-  color: #333;
-}
-
-.light .form-select option {
-  background: white;
-  color: #333;
-}
-
 /* Responsive utilities */
 @media (max-width: 768px) {
   h1 {
@@ -256,5 +258,33 @@ button:focus-visible {
   
   .header, .footer {
     display: none;
+  }
+}
+
+/* Smooth section transitions */
+.section-transition {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-transition::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.03), transparent);
+  animation: sectionGlow 10s ease-in-out infinite;
+}
+
+@keyframes sectionGlow {
+  0%, 100% {
+    transform: rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: rotate(180deg);
+    opacity: 0.7;
   }
 }
