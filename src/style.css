@@ -6,9 +6,9 @@ body {
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: liht dark;
+  color-scheme: dark light;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #0d1122;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,26 +24,56 @@ body {
   font-variation-settings: normal;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Dark theme (default) */
 body {
   margin: 0;
   min-width: 320px;
-  min-height: 200vh;
-  background: black;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d1122 0%, #191f37 100%);
   color: white;
+  transition: all 0.3s ease;
+}
+
+/* Light theme */
+.light body {
+  background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%);
+  color: #333;
+}
+
+.light {
+  color-scheme: light;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #ffffff;
+}
+
+a {
+  font-weight: 500;
+  color: #00ff88;
+  text-decoration: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #00ccff;
+}
+
+.light a {
+  color: #0066cc;
+}
+
+.light a:hover {
+  color: #0099ff;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin: 0;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 button {
@@ -53,16 +83,39 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(10px);
 }
+
 button:hover {
-  border-color: #646cff;
+  background-color: rgba(0, 255, 136, 0.2);
+  border-color: #00ff88;
+  transform: translateY(-1px);
 }
+
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 2px solid #00ff88;
+  outline-offset: 2px;
+}
+
+.light button {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #333;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.light button:hover {
+  background-color: rgba(0, 102, 204, 0.1);
+  border-color: #0066cc;
+}
+
+.light button:focus,
+.light button:focus-visible {
+  outline-color: #0066cc;
 }
 
 .card {
@@ -74,15 +127,134 @@ button:focus-visible {
   text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #fff;
-    background-color: #000000;
+/* Bootstrap Integration */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -12px;
+}
+
+.col-12 { flex: 0 0 100%; max-width: 100%; padding: 0 12px; }
+.col-md-6 { flex: 0 0 100%; max-width: 100%; }
+.col-lg-3 { flex: 0 0 100%; max-width: 100%; }
+.col-lg-4 { flex: 0 0 100%; max-width: 100%; }
+
+@media (min-width: 768px) {
+  .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+}
+
+@media (min-width: 992px) {
+  .col-lg-3 { flex: 0 0 25%; max-width: 25%; }
+  .col-lg-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+}
+
+.d-flex { display: flex; }
+.d-inline-block { display: inline-block; }
+.justify-content-between { justify-content: space-between; }
+.justify-content-center { justify-content: center; }
+.justify-content-end { justify-content: flex-end; }
+.align-items-center { align-items: center; }
+.align-items-start { align-items: flex-start; }
+.flex-row { flex-direction: row; }
+.flex-column { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+
+.gap-3 { gap: 1rem; }
+.g-4 > * { padding: 1.5rem 0.75rem; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mb-5 { margin-bottom: 3rem; }
+.mt-5 { margin-top: 3rem; }
+.me-2 { margin-right: 0.5rem; }
+
+.text-center { text-align: center; }
+.text-white { color: white; }
+
+.h-100 { height: 100%; }
+.w-auto { width: auto; }
+
+/* Form styles */
+.form-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.form-select option {
+  background: #1a1a2e;
+  color: white;
+}
+
+.form-select-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.light .form-select {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: #333;
+}
+
+.light .form-select option {
+  background: white;
+  color: #333;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
   }
-  a:hover {
-    color: #747bff;
+  
+  .container {
+    padding: 0 20px;
   }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
   button {
-    background-color: #f9f9f9;
+    border-width: 2px;
+  }
+  
+  .card {
+    border: 2px solid;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .header, .footer {
+    display: none;
   }
 }
