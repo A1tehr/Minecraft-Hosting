@@ -1,14 +1,23 @@
 <template>
-  <section class="unique-feature-section">
+  <section class="unique-feature-section section-transition">
+    <div class="decorative-elements">
+      <div class="glow-orb orb-1"></div>
+      <div class="glow-orb orb-2"></div>
+      <div class="floating-grid"></div>
+    </div>
+    
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 mb-4 mb-lg-0">
-          <div class="feature-content">
+          <div class="feature-content animate-fade-in">
             <h2 class="section-title onest-bold">{{ t('unique_feature.title') }}</h2>
             <p class="section-subtitle">{{ t('unique_feature.subtitle') }}</p>
             
             <div class="features-grid">
-              <div class="feature-item" v-for="(feature, index) in features" :key="index">
+              <div class="feature-item glass-effect" 
+                   v-for="(feature, index) in features" 
+                   :key="index"
+                   :style="{ 'animation-delay': `${index * 0.2}s` }">
                 <div class="feature-icon">
                   <component :is="feature.icon" />
                 </div>
@@ -16,28 +25,47 @@
                   <h4 class="feature-title onest-bold">{{ feature.title }}</h4>
                   <p class="feature-description">{{ feature.description }}</p>
                 </div>
+                <div class="feature-hover-effect"></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-6">
-          <div class="demo-container">
-            <div class="demo-window">
+          <div class="demo-container animate-slide-right">
+            <div class="demo-window glass-effect glow">
               <div class="window-header">
                 <div class="window-controls">
                   <span class="control close"></span>
                   <span class="control minimize"></span>
                   <span class="control maximize"></span>
                 </div>
-                <div class="window-title">Plugin Manager</div>
+                <div class="window-title">
+                  <span class="title-icon">⚡</span>
+                  Plugin Manager
+                </div>
               </div>
               <div class="window-content">
-                <div class="plugin-item" v-for="plugin in demoPlugins" :key="plugin.id" :class="{ 'installing': plugin.installing }">
+                <div class="search-bar">
+                  <svg class="search-icon" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                  </svg>
+                  <input type="text" placeholder="Поиск плагинов..." class="search-input">
+                </div>
+                
+                <div class="plugin-item" 
+                     v-for="plugin in demoPlugins" 
+                     :key="plugin.id" 
+                     :class="{ 'installing': plugin.installing, 'installed': plugin.installed }">
                   <div class="plugin-info">
                     <div class="plugin-icon">{{ plugin.icon }}</div>
                     <div class="plugin-details">
                       <div class="plugin-name">{{ plugin.name }}</div>
                       <div class="plugin-description">{{ plugin.description }}</div>
+                      <div class="plugin-stats">
+                        <span class="stat">⭐ {{ plugin.rating }}</span>
+                        <span class="stat">⬇ {{ plugin.downloads }}</span>
+                      </div>
                     </div>
                   </div>
                   <div class="plugin-actions">
@@ -47,7 +75,7 @@
                       @click="togglePlugin(plugin)"
                     >
                       <span v-if="plugin.installed">✓</span>
-                      <span v-else-if="plugin.installing">⟳</span>
+                      <span v-else-if="plugin.installing" class="spinner">⟳</span>
                       <span v-else>+</span>
                     </button>
                   </div>
@@ -62,7 +90,7 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
@@ -91,6 +119,8 @@ const demoPlugins = reactive([
     name: 'EssentialsX',
     description: 'Основные команды сервера',
     icon: '⚡',
+    rating: '4.9',
+    downloads: '12M+',
     installed: true,
     installing: false
   },
@@ -99,6 +129,8 @@ const demoPlugins = reactive([
     name: 'WorldEdit',
     description: 'Редактирование мира',
     icon: '🔨',
+    rating: '4.8',
+    downloads: '8.5M+',
     installed: false,
     installing: false
   },
@@ -107,6 +139,8 @@ const demoPlugins = reactive([
     name: 'Citizens',
     description: 'NPC система',
     icon: '👤',
+    rating: '4.7',
+    downloads: '3.2M+',
     installed: false,
     installing: false
   },
@@ -115,6 +149,8 @@ const demoPlugins = reactive([
     name: 'Vault',
     description: 'Экономика и разрешения',
     icon: '💰',
+    rating: '4.9',
+    downloads: '15M+',
     installed: true,
     installing: false
   }
@@ -133,6 +169,20 @@ const togglePlugin = (plugin) => {
     }, 1500)
   }
 }
+
+onMounted(() => {
+  // Добавляем анимации при скролле
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fade-in')
+      }
+    })
+  })
+
+  const featureItems = document.querySelectorAll('.feature-item')
+  featureItems.forEach(item => observer.observe(item))
+})
 </script>
 
 <script>
@@ -150,9 +200,7 @@ const PluginIcon = {
 const DonationIcon = {
   template: `
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-      <rect x="2" y="9" width="4" height="12"/>
-      <circle cx="4" cy="4" r="2"/>
+      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
     </svg>
   `
 }
@@ -177,34 +225,100 @@ export default {
 
 <style scoped>
 .unique-feature-section {
-  padding: 100px 0;
-  background: linear-gradient(135deg, rgba(25, 31, 55, 0.9) 0%, rgba(13, 17, 60, 0.8) 100%);
+  padding: 120px 0;
+  background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.95) 0%, 
+    rgba(13, 13, 26, 0.9) 25%, 
+    rgba(26, 26, 46, 0.85) 50%, 
+    rgba(22, 33, 62, 0.9) 75%, 
+    rgba(15, 52, 96, 0.95) 100%);
   position: relative;
   overflow: hidden;
 }
 
-.unique-feature-section::before {
-  content: '';
+/* Decorative Elements */
+.decorative-elements {
   position: absolute;
-  top: 20%;
-  right: -10%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: float 8s ease-in-out infinite;
+}
+
+.orb-1 {
   width: 300px;
   height: 300px;
-  background: linear-gradient(45deg, rgba(0, 255, 136, 0.1), rgba(83, 91, 242, 0.1));
-  border-radius: 50%;
-  filter: blur(100px);
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.15), rgba(0, 204, 255, 0.1));
+  top: 10%;
+  right: -5%;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, rgba(139, 95, 255, 0.1), rgba(83, 91, 242, 0.15));
+  bottom: 20%;
+  left: -10%;
+  animation-delay: 4s;
+}
+
+.floating-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(139, 95, 255, 0.08) 0%, transparent 50%);
+  background-size: 200px 200px;
+  animation: gridShift 15s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes gridShift {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(200px, 200px);
+  }
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: white;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   line-height: 1.2;
+  background: linear-gradient(135deg, #ffffff, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .section-subtitle {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 3rem;
   line-height: 1.6;
 }
@@ -212,42 +326,89 @@ export default {
 .features-grid {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .feature-item {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  gap: 1.2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  transform: translateX(-30px);
+  opacity: 0;
 }
 
 .feature-item:hover {
-  transform: translateX(10px);
+  transform: translateX(10px) scale(1.02);
   background: rgba(0, 255, 136, 0.05);
-  border-color: rgba(0, 255, 136, 0.2);
+  border-color: rgba(0, 255, 136, 0.3);
+  box-shadow: 
+    0 10px 30px rgba(0, 255, 136, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.feature-hover-effect {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 255, 136, 0.1), 
+    transparent);
+  transition: left 0.6s ease;
+}
+
+.feature-item:hover .feature-hover-effect {
+  left: 100%;
 }
 
 .feature-icon {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(45deg, #00ff88, #00ccff);
-  border-radius: 12px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #00ff88, #00ccff);
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 255, 136, 0.3);
+}
+
+.feature-icon::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #00ff88, #00ccff);
+  border-radius: 18px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-item:hover .feature-icon::before {
+  opacity: 0.5;
 }
 
 .feature-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   color: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .feature-text {
@@ -256,14 +417,15 @@ export default {
 
 .feature-title {
   color: white;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
 }
 
 .feature-description {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.95rem;
-  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1rem;
+  line-height: 1.6;
   margin: 0;
 }
 
@@ -271,37 +433,50 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .demo-window {
   width: 100%;
-  max-width: 450px;
-  background: rgba(15, 15, 25, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  max-width: 480px;
+  background: rgba(15, 15, 25, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(40px);
 }
 
 .window-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
-  background: rgba(30, 30, 40, 0.8);
+  padding: 1.2rem;
+  background: linear-gradient(135deg, 
+    rgba(30, 30, 40, 0.9), 
+    rgba(45, 45, 55, 0.8));
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .window-controls {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .control {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.control:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .control.close { background: #ff5f56; }
@@ -311,34 +486,89 @@ export default {
 .window-title {
   color: white;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.title-icon {
+  font-size: 1.2rem;
 }
 
 .window-content {
-  padding: 1rem;
-  max-height: 300px;
+  padding: 1.5rem;
+  max-height: 350px;
   overflow-y: auto;
+}
+
+.search-bar {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #00ff88;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  stroke: rgba(255, 255, 255, 0.4);
+  stroke-width: 2;
+  fill: none;
 }
 
 .plugin-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
-  margin-bottom: 0.8rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .plugin-item:hover {
   background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .plugin-item.installing {
+  background: rgba(0, 255, 136, 0.08);
+  border-color: rgba(0, 255, 136, 0.25);
+}
+
+.plugin-item.installed {
   background: rgba(0, 255, 136, 0.1);
-  border-color: rgba(0, 255, 136, 0.2);
+  border-color: rgba(0, 255, 136, 0.3);
 }
 
 .plugin-info {
@@ -349,45 +579,65 @@ export default {
 }
 
 .plugin-icon {
-  font-size: 1.5rem;
-  width: 40px;
-  height: 40px;
+  font-size: 1.6rem;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.08), 
+    rgba(255, 255, 255, 0.04));
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
 }
 
 .plugin-name {
   color: white;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
 }
 
 .plugin-description {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+
+.plugin-stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.stat {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
 }
 
 .install-btn {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.05);
   color: white;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  position: relative;
 }
 
 .install-btn:hover {
-  background: rgba(0, 255, 136, 0.2);
+  background: rgba(0, 255, 136, 0.15);
   border-color: #00ff88;
+  transform: scale(1.05);
 }
 
 .install-btn.installed {
@@ -399,6 +649,9 @@ export default {
 .install-btn.installing {
   background: rgba(0, 255, 136, 0.1);
   border-color: rgba(0, 255, 136, 0.3);
+}
+
+.spinner {
   animation: spin 1s linear infinite;
 }
 
@@ -407,78 +660,59 @@ export default {
   100% { transform: rotate(360deg); }
 }
 
-/* Light theme */
-:global(.light) .unique-feature-section {
-  background: linear-gradient(135deg, rgba(240, 244, 248, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%);
+/* Анимации */
+.animate-fade-in {
+  animation: fadeInUp 0.8s ease forwards;
 }
 
-:global(.light) .section-title {
-  color: #333;
+.animate-slide-right {
+  animation: slideInRight 1s ease forwards;
 }
 
-:global(.light) .section-subtitle {
-  color: rgba(0, 0, 0, 0.6);
-}
-
-:global(.light) .feature-item {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-:global(.light) .feature-title {
-  color: #333;
-}
-
-:global(.light) .feature-description {
-  color: rgba(0, 0, 0, 0.6);
-}
-
-:global(.light) .demo-window {
-  background: rgba(255, 255, 255, 0.9);
-}
-
-:global(.light) .window-header {
-  background: rgba(240, 240, 240, 0.8);
-}
-
-:global(.light) .window-title {
-  color: #333;
-}
-
-:global(.light) .plugin-item {
-  background: rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-:global(.light) .plugin-name {
-  color: #333;
-}
-
-:global(.light) .plugin-description {
-  color: rgba(0, 0, 0, 0.6);
-}
-
-:global(.light) .install-btn {
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  background: rgba(0, 0, 0, 0.05);
-  color: #333;
-}
-
+/* Responsive */
 @media (max-width: 768px) {
   .section-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   
   .features-grid {
-    gap: 1.5rem;
+    gap: 1rem;
   }
   
   .feature-item {
-    padding: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .feature-item:hover {
+    transform: translateX(5px) scale(1.01);
   }
   
   .demo-window {
     margin-top: 2rem;
   }
+  
+  .window-content {
+    padding: 1rem;
+    max-height: 300px;
+  }
+  
+  .unique-feature-section {
+    padding: 80px 0;
+  }
+}
+
+/* Custom scrollbar для window-content */
+.window-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.window-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.window-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #00ff88, #00ccff);
+  border-radius: 3px;
 }
 </style>
