@@ -8,11 +8,9 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./docker/nginx/conf.d:/etc/nginx/conf.d
-      - ./landing/dist:/var/www/landing
-      - ./panel/public:/var/www/panel/public
-      - ./panel:/var/www/panel
+      - ./docker/nginx/nginx.develop.conf:/etc/nginx/nginx.conf
+      - ./docker/nginx/sites:/etc/nginx/sites
+      - ./panel:/app
     depends_on:
       - php-fpm
       - node
@@ -21,23 +19,25 @@ services:
 
   php-fpm:
     build:
-      context: .
-      dockerfile: docker/php/Dockerfile
-    container_name: melenium_php
+      context: ./panel
+      dockerfile: ./Dockerfile
+    container_name: melenium_panel_php
     volumes:
-      - ./panel:/var/www/panel
-      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+      - ./panel:/app
+      - ./docker/panel/.env:/app/var/.env
     environment:
-      - DB_HOST=mysql
-      - DB_DATABASE=melenium_panel
-      - DB_USERNAME=melenium_user
-      - DB_PASSWORD=melenium_password
-      - REDIS_HOST=redis
-      - APP_ENV=production
-      - APP_DEBUG=false
-      - APP_KEY=base64:SomeRandomGeneratedKeyHere==
+      DB_HOST: melenium_mariadb
+      DB_PORT: 3306
+      DB_DATABASE: ${MYSQL_DATABASE}
+      DB_USERNAME: ${MYSQL_USER}
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+
+      CACHE_DRIVER: redis
+      SESSION_DRIVER: redis
+      QUEUE_DRIVER: redis
+      REDIS_HOST: redis
     depends_on:
-      - mysql
+      - database
       - redis
     networks:
       - melenium_network
@@ -49,30 +49,28 @@ services:
     container_name: melenium_node
     volumes:
       - ./landing:/app/landing
-      - ./panel:/app/panel
     ports:
       - "3000:3000"
-      - "8080:8080"
     environment:
       - NODE_ENV=production
     networks:
       - melenium_network
 
-  mysql:
-    image: mysql:8.0
-    container_name: melenium_mysql
-    ports:
-      - "3306:3306"
+  database:
+    image: mariadb:10.6
+    container_name: melenium_mariadb
+    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
-      MYSQL_DATABASE: melenium_panel
-      MYSQL_USER: melenium_user
-      MYSQL_PASSWORD: melenium_password
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
-      - mysql_data:/var/lib/mysql
-      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./docker/db:/var/lib/mysql
     networks:
       - melenium_network
+    ports:
+      - "3306:3306"
 
   redis:
     image: redis:alpine
@@ -85,7 +83,6 @@ services:
       - melenium_network
 
 volumes:
-  mysql_data:
   redis_data:
 
 networks:
