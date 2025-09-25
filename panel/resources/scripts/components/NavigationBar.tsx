@@ -17,18 +17,69 @@ const RightNavigation = styled.div`
     & > a,
     & > button,
     & > .navigation-link {
-        ${tw`flex items-center h-full no-underline text-neutral-300 px-6 cursor-pointer transition-all duration-150`};
+        ${tw`flex items-center h-full no-underline text-gray-300 px-6 cursor-pointer transition-all duration-300`};
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 186, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        &:hover::before {
+            left: 100%;
+        }
 
         &:active,
         &:hover {
-            ${tw`text-neutral-100 bg-black`};
+            ${tw`text-white`};
+            background: rgba(0, 186, 255, 0.1);
+            transform: translateY(-1px);
         }
 
         &:active,
         &:hover,
         &.active {
-            box-shadow: inset 0 -2px ${theme`colors.cyan.600`.toString()};
+            box-shadow: inset 0 -3px 0 #00baff, 0 4px 15px rgba(0, 186, 255, 0.2);
         }
+    }
+`;
+
+const Navigation = styled.div`
+    ${tw`w-full shadow-lg overflow-x-auto`};
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 186, 255, 0.2);
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #00baff, transparent);
+    }
+`;
+
+const Logo = styled(Link)`
+    ${tw`text-2xl font-header px-4 no-underline text-white hover:text-white transition-all duration-300`};
+    background: linear-gradient(135deg, #00baff, #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    
+    &:hover {
+        transform: scale(1.05);
+        filter: brightness(1.2);
     }
 `;
 
@@ -46,18 +97,13 @@ export default () => {
     };
 
     return (
-        <div className={'w-full bg-neutral-900 shadow-md overflow-x-auto'}>
+        <Navigation>
             <SpinnerOverlay visible={isLoggingOut} />
-            <div className={'mx-auto w-full flex items-center h-[3.5rem] max-w-[1200px]'}>
+            <div className={'mx-auto w-full flex items-center h-[4rem] max-w-[1200px]'}>
                 <div id={'logo'} className={'flex-1'}>
-                    <Link
-                        to={'/'}
-                        className={
-                            'text-2xl font-header px-4 no-underline text-neutral-200 hover:text-neutral-100 transition-colors duration-150'
-                        }
-                    >
-                        {name}
-                    </Link>
+                    <Logo to={'/'}>
+                        Melenium
+                    </Logo>
                 </div>
                 <RightNavigation className={'flex h-full items-center justify-center'}>
                     <SearchContainer />
@@ -87,6 +133,6 @@ export default () => {
                     </Tooltip>
                 </RightNavigation>
             </div>
-        </div>
+        </Navigation>
     );
 };
