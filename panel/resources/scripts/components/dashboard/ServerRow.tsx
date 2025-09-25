@@ -105,8 +105,8 @@ export default ({ server, className }: { server: Server; className?: string }) =
             </div>
             <div css={tw`flex-1 ml-4 lg:block lg:col-span-2 hidden`}>
                 <div css={tw`flex justify-center`}>
-                    <FontAwesomeIcon icon={faEthernet} css={tw`text-neutral-500`} />
-                    <p css={tw`text-sm text-neutral-400 ml-2`}>
+                    <FontAwesomeIcon icon={faEthernet} css={tw`text-primary-400`} />
+                    <p css={tw`text-sm text-gray-300 ml-2`}>
                         {server.allocations
                             .filter((alloc) => alloc.isDefault)
                             .map((allocation) => (
