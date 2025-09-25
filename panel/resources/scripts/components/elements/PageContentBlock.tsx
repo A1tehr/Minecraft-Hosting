@@ -13,7 +13,7 @@ export interface PageContentBlockProps {
 const PageContentBlock: React.FC<PageContentBlockProps> = ({ title, showFlashKey, className, children }) => {
     useEffect(() => {
         if (title) {
-            document.title = title;
+            document.title = title ? `${title} | Melenium` : 'Melenium';
         }
     }, [title]);
 
@@ -25,16 +25,16 @@ const PageContentBlock: React.FC<PageContentBlockProps> = ({ title, showFlashKey
                     {children}
                 </ContentContainer>
                 <ContentContainer css={tw`mb-4`}>
-                    <p css={tw`text-center text-neutral-500 text-xs`}>
+                    <p css={tw`text-center text-gray-500 text-xs`}>
                         <a
                             rel={'noopener nofollow noreferrer'}
-                            href={'https://pterodactyl.io'}
+                            href={'https://melenium.tech'}
                             target={'_blank'}
-                            css={tw`no-underline text-neutral-500 hover:text-neutral-300`}
+                            css={tw`no-underline text-gray-500 hover:text-primary-500 transition-colors duration-300`}
                         >
-                            Pterodactyl&reg;
+                            Melenium&reg;
                         </a>
-                        &nbsp;&copy; 2015 - {new Date().getFullYear()}
+                        &nbsp;&copy; 2024 - {new Date().getFullYear()}
                     </p>
                 </ContentContainer>
             </>
