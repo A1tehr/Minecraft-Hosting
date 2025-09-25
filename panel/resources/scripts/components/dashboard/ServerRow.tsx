@@ -17,33 +17,35 @@ const isAlarmState = (current: number, limit: number): boolean => limit > 0 && c
 
 const Icon = memo(
     styled(FontAwesomeIcon)<{ $alarm: boolean }>`
-        ${(props) => (props.$alarm ? tw`text-red-400` : tw`text-neutral-500`)};
+        ${(props) => (props.$alarm ? tw`text-red-400` : tw`text-primary-400`)};
     `,
     isEqual
 );
 
 const IconDescription = styled.p<{ $alarm: boolean }>`
     ${tw`text-sm ml-2`};
-    ${(props) => (props.$alarm ? tw`text-white` : tw`text-neutral-400`)};
+    ${(props) => (props.$alarm ? tw`text-white` : tw`text-gray-300`)};
 `;
 
 const StatusIndicatorBox = styled(GreyRowBox)<{ $status: ServerPowerState | undefined }>`
     ${tw`grid grid-cols-12 gap-4 relative`};
 
     & .status-bar {
-        ${tw`w-2 bg-red-500 absolute right-0 z-20 rounded-full m-1 opacity-50 transition-all duration-150`};
+        ${tw`w-2 absolute right-0 z-20 rounded-full m-1 opacity-60 transition-all duration-300`};
         height: calc(100% - 0.5rem);
+        background: linear-gradient(135deg, #ff4757, #ff3838);
 
         ${({ $status }) =>
             !$status || $status === 'offline'
-                ? tw`bg-red-500`
+                ? 'background: linear-gradient(135deg, #ff4757, #ff3838);'
                 : $status === 'running'
-                ? tw`bg-green-500`
-                : tw`bg-yellow-500`};
+                ? 'background: linear-gradient(135deg, #00ff88, #00cc66);'
+                : 'background: linear-gradient(135deg, #ffa502, #ff9500);'};
     }
 
     &:hover .status-bar {
-        ${tw`opacity-75`};
+        ${tw`opacity-90`};
+        box-shadow: 0 0 10px rgba(0, 186, 255, 0.3);
     }
 `;
 
