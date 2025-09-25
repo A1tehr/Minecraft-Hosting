@@ -267,16 +267,17 @@ button:focus-visible {
   overflow: hidden;
 }
 
-.section-transition::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.03), transparent);
-  animation: sectionGlow 10s ease-in-out infinite;
-}
+/*.section-transition::before {*/
+/*  content: '';*/
+/*  position: absolute;*/
+/*  top: -50%;*/
+/*  left: -50%;*/
+/*  width: 200%;*/
+/*  height: 200%;*/
+/*  background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.03), transparent);*/
+/*  animation: sectionGlow 10s ease-in-out infinite;*/
+/*  border: 0;*/
+/*}*/
 
 @keyframes sectionGlow {
   0%, 100% {

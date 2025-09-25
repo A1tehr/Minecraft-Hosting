@@ -95,7 +95,6 @@
               <div class="range-container">
                 <input type="range" v-model="config.players" min="5" max="100" step="5" class="config-slider">
                 <div class="range-track"></div>
-                <div class="range-thumb" :style="{ left: ((config.players - 5) / 95) * 100 + '%' }"></div>
               </div>
               <span class="value">{{ config.players }} игроков</span>
             </div>
@@ -105,7 +104,6 @@
               <div class="range-container">
                 <input type="range" v-model="config.ram" min="1" max="16" step="1" class="config-slider">
                 <div class="range-track"></div>
-                <div class="range-thumb" :style="{ left: ((config.ram - 1) / 15) * 100 + '%' }"></div>
               </div>
               <span class="value">{{ config.ram }} ГБ</span>
             </div>
@@ -115,7 +113,6 @@
               <div class="range-container">
                 <input type="range" v-model="config.storage" min="5" max="100" step="5" class="config-slider">
                 <div class="range-track"></div>
-                <div class="range-thumb" :style="{ left: ((config.storage - 5) / 95) * 100 + '%' }"></div>
               </div>
               <span class="value">{{ config.storage }} ГБ</span>
             </div>
@@ -235,12 +232,6 @@ onMounted(() => {
 <style scoped>
 .pricing-section {
   padding: 120px 0;
-  background: linear-gradient(135deg, 
-    rgba(0, 0, 0, 0.98) 0%, 
-    rgba(13, 13, 26, 0.95) 25%, 
-    rgba(26, 26, 46, 0.9) 50%, 
-    rgba(22, 33, 62, 0.95) 75%, 
-    rgba(15, 52, 96, 0.98) 100%);
   position: relative;
   overflow: hidden;
 }

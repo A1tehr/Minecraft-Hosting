@@ -1,10 +1,10 @@
 <template>
   <section class="unique-feature-section section-transition">
-    <div class="decorative-elements">
-      <div class="glow-orb orb-1"></div>
-      <div class="glow-orb orb-2"></div>
-      <div class="floating-grid"></div>
-    </div>
+<!--    <div class="decorative-elements">-->
+<!--      <div class="glow-orb orb-1"></div>-->
+<!--      <div class="glow-orb orb-2"></div>-->
+<!--      <div class="floating-grid"></div>-->
+<!--    </div>-->
     
     <div class="container">
       <div class="row align-items-center">
@@ -32,7 +32,7 @@
         </div>
         <div class="col-lg-6">
           <div class="demo-container animate-slide-right">
-            <div class="demo-window glass-effect glow">
+            <div class="demo-window">
               <div class="window-header">
                 <div class="window-controls">
                   <span class="control close"></span>
@@ -226,12 +226,6 @@ export default {
 <style scoped>
 .unique-feature-section {
   padding: 120px 0;
-  background: linear-gradient(135deg, 
-    rgba(0, 0, 0, 0.95) 0%, 
-    rgba(13, 13, 26, 0.9) 25%, 
-    rgba(26, 26, 46, 0.85) 50%, 
-    rgba(22, 33, 62, 0.9) 75%, 
-    rgba(15, 52, 96, 0.95) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -351,7 +345,7 @@ export default {
   transform: translateX(10px) scale(1.02);
   background: rgba(0, 255, 136, 0.05);
   border-color: rgba(0, 255, 136, 0.3);
-  box-shadow: 
+  box-shadow:
     0 10px 30px rgba(0, 255, 136, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
@@ -362,9 +356,9 @@ export default {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(0, 255, 136, 0.1), 
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(0, 255, 136, 0.1),
     transparent);
   transition: left 0.6s ease;
 }
@@ -444,7 +438,7 @@ export default {
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 
+  box-shadow:
     0 25px 50px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(40px);

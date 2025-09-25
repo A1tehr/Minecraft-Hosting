@@ -2,10 +2,13 @@
   <div id="app">
     <Header />
     <BodyScene />
-    <UniqueFeature />
-    <PricingSection />
-    <TestimonialsSection />
-    <FAQSection />
+    <div class="sections">
+      <UniqueFeature />
+      <PricingSection />
+      <TestimonialsSection />
+      <FAQSection />
+    </div>
+
     <Footer />
   </div>
 </template>
@@ -41,7 +44,7 @@ onMounted(() => {
 
 /* Smooth transitions for all elements */
 * {
-  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, transform 0.3s ease;
+  //transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, transform 0.3s ease;
 }
 
 /* Improved scrollbar styling */
@@ -162,5 +165,17 @@ html {
 
 .glow:hover {
   box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+}
+
+.sections {
+  background-image: linear-gradient(
+      180deg,
+      hsl(0deg 0% 0%) 1%,
+      hsl(245deg 20% 12%) 62%,
+      hsl(245deg 49% 20%) 80%,
+      hsl(245deg 74% 20%) 91%,
+      hsl(245deg 84% 17%) 97%,
+      hsl(246deg 94% 14%) 100%
+  );
 }
 </style>

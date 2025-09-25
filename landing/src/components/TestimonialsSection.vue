@@ -96,12 +96,6 @@ const getRandomPlayers = () => {
 <style scoped>
 .testimonials-section {
   padding: 120px 0;
-  background: linear-gradient(135deg, 
-    rgba(0, 0, 0, 0.95) 0%, 
-    rgba(13, 13, 26, 0.9) 25%, 
-    rgba(26, 26, 46, 0.85) 50%, 
-    rgba(22, 33, 62, 0.9) 75%, 
-    rgba(15, 52, 96, 0.95) 100%);
   position: relative;
   overflow: hidden;
 }
