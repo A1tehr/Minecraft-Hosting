@@ -6,7 +6,7 @@ import { faCogs, faLayerGroup, faSignOutAlt } from '@fortawesome/free-solid-svg-
 import { useStoreState } from 'easy-peasy';
 import { ApplicationStore } from '@/state';
 import SearchContainer from '@/components/dashboard/search/SearchContainer';
-import tw, { theme } from 'twin.macro';
+import tw from 'twin.macro';
 import styled from 'styled-components/macro';
 import http from '@/api/http';
 import SpinnerOverlay from '@/components/elements/SpinnerOverlay';
@@ -76,7 +76,6 @@ const Logo = styled(Link)`
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 700;
-    
     &:hover {
         transform: scale(1.05);
         filter: brightness(1.2);
@@ -84,7 +83,6 @@ const Logo = styled(Link)`
 `;
 
 export default () => {
-    const name = useStoreState((state: ApplicationStore) => state.settings.data!.name);
     const rootAdmin = useStoreState((state: ApplicationStore) => state.user.data!.rootAdmin);
     const [isLoggingOut, setIsLoggingOut] = useState(false);
 
@@ -101,9 +99,7 @@ export default () => {
             <SpinnerOverlay visible={isLoggingOut} />
             <div className={'mx-auto w-full flex items-center h-[4rem] max-w-[1200px]'}>
                 <div id={'logo'} className={'flex-1'}>
-                    <Logo to={'/'}>
-                        Melenium
-                    </Logo>
+                    <Logo to={'/'}>Melenium</Logo>
                 </div>
                 <RightNavigation className={'flex h-full items-center justify-center'}>
                     <SearchContainer />
