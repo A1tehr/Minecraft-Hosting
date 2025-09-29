@@ -121,39 +121,39 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <p class="text-muted small">Enter the total amount of memory available for new servers. If you would like to allow overallocation of memory enter the percentage that you want to allow. To disable checking for overallocation enter <code>-1</code> into the field. Entering <code>0</code> will prevent creating new servers if it would put the node over the limit.</p>
+                            <p class="text-muted small">@lang('admin/node.memory_help')</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="pDisk" class="form-label">Total Disk Space</label>
+                            <label for="pDisk" class="form-label">@lang('admin/node.disk')</label>
                             <div class="input-group">
                                 <input type="text" name="disk" data-multiplicator="true" class="form-control" id="pDisk" value="{{ old('disk') }}"/>
                                 <span class="input-group-addon">MiB</span>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="pDiskOverallocate" class="form-label">Disk Over-Allocation</label>
+                            <label for="pDiskOverallocate" class="form-label">@lang('admin/node.disk_overallocate')</label>
                             <div class="input-group">
                                 <input type="text" name="disk_overallocate" class="form-control" id="pDiskOverallocate" value="{{ old('disk_overallocate') }}"/>
                                 <span class="input-group-addon">%</span>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <p class="text-muted small">Enter the total amount of disk space available for new servers. If you would like to allow overallocation of disk space enter the percentage that you want to allow. To disable checking for overallocation enter <code>-1</code> into the field. Entering <code>0</code> will prevent creating new servers if it would put the node over the limit.</p>
+                            <p class="text-muted small">@lang('admin/node.disk_help')</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="pDaemonListen" class="form-label">Daemon Port</label>
+                            <label for="pDaemonListen" class="form-label">@lang('admin/node.daemon_port')</label>
                             <input type="text" name="daemonListen" class="form-control" id="pDaemonListen" value="8080" />
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="pDaemonSFTP" class="form-label">Daemon SFTP Port</label>
+                            <label for="pDaemonSFTP" class="form-label">@lang('admin/node.daemon_sftp_port')</label>
                             <input type="text" name="daemonSFTP" class="form-control" id="pDaemonSFTP" value="2022" />
                         </div>
                         <div class="col-md-12">
-                            <p class="text-muted small">The daemon runs its own SFTP management container and does not use the SSHd process on the main physical server. <Strong>Do not use the same port that you have assigned for your physical server's SSH process.</strong> If you will be running the daemon behind CloudFlare&reg; you should set the daemon port to <code>8443</code> to allow websocket proxying over SSL.</p>
+                            <p class="text-muted small">{!! __('admin/node.daemon_port_help') !!}</p>
                         </div>
                     </div>
                 </div>
