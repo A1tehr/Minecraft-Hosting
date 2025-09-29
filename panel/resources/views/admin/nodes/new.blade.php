@@ -40,39 +40,39 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Node Visibility</label>
+                        <label class="form-label">@lang('admin/node.node_visibility')</label>
                         <div>
                             <div class="radio radio-success radio-inline">
 
                                 <input type="radio" id="pPublicTrue" value="1" name="public" checked>
-                                <label for="pPublicTrue"> Public </label>
+                                <label for="pPublicTrue"> @lang('admin/node.public') </label>
                             </div>
                             <div class="radio radio-danger radio-inline">
                                 <input type="radio" id="pPublicFalse" value="0" name="public">
-                                <label for="pPublicFalse"> Private </label>
+                                <label for="pPublicFalse"> @lang('admin/node.private') </label>
                             </div>
                         </div>
-                        <p class="text-muted small">By setting a node to <code>private</code> you will be denying the ability to auto-deploy to this node.
+                        <p class="text-muted small">{!! __('admin/node.private_help') !!}</p>
                     </div>
                     <div class="form-group">
-                        <label for="pFQDN" class="form-label">FQDN</label>
+                        <label for="pFQDN" class="form-label">@lang('admin/node.fqdn')</label>
                         <input type="text" name="fqdn" id="pFQDN" class="form-control" value="{{ old('fqdn') }}"/>
-                        <p class="text-muted small">Please enter domain name (e.g <code>node.example.com</code>) to be used for connecting to the daemon. An IP address may be used <em>only</em> if you are not using SSL for this node.</p>
+                        <p class="text-muted small">{!! __('admin/node.fqdn_help') !!}</p>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Communicate Over SSL</label>
+                        <label class="form-label">@lang('admin/node.ssl_connection')</label>
                         <div>
                             <div class="radio radio-success radio-inline">
                                 <input type="radio" id="pSSLTrue" value="https" name="scheme" checked>
-                                <label for="pSSLTrue"> Use SSL Connection</label>
+                                <label for="pSSLTrue"> @lang('admin/node.use_ssl')</label>
                             </div>
                             <div class="radio radio-danger radio-inline">
                                 <input type="radio" id="pSSLFalse" value="http" name="scheme" @if(request()->isSecure()) disabled @endif>
-                                <label for="pSSLFalse"> Use HTTP Connection</label>
+                                <label for="pSSLFalse"> @lang('admin/node.use_http')</label>
                             </div>
                         </div>
                         @if(request()->isSecure())
-                            <p class="text-danger small">Your Panel is currently configured to use a secure connection. In order for browsers to connect to your node it <strong>must</strong> use a SSL connection.</p>
+                            <p class="text-danger small">{!! __('admin/node.ssl_warning') !!}</p>
                         @else
                             <p class="text-muted small">In most cases you should select to use a SSL connection. If using an IP Address or you do not wish to use SSL at all, select a HTTP connection.</p>
                         @endif
