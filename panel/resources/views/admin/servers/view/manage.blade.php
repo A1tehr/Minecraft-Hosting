@@ -20,19 +20,19 @@
         <div class="col-sm-4">
             <div class="box box-danger">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Reinstall Server</h3>
+                    <h3 class="box-title">@lang('admin/server.reinstall_server_title')</h3>
                 </div>
                 <div class="box-body">
-                    <p>This will reinstall the server with the assigned service scripts. <strong>Danger!</strong> This could overwrite server data.</p>
+                    <p>{!! __('admin/server.reinstall_server_description') !!}</p>
                 </div>
                 <div class="box-footer">
                     @if($server->isInstalled())
                         <form action="{{ route('admin.servers.view.manage.reinstall', $server->id) }}" method="POST">
                             {!! csrf_field() !!}
-                            <button type="submit" class="btn btn-danger">Reinstall Server</button>
+                            <button type="submit" class="btn btn-danger">@lang('admin/server.reinstall_server_button')</button>
                         </form>
                     @else
-                        <button class="btn btn-danger disabled">Server Must Install Properly to Reinstall</button>
+                        <button class="btn btn-danger disabled">@lang('admin/server.server_must_install_properly')</button>
                     @endif
                 </div>
             </div>
