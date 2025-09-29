@@ -1,6 +1,36 @@
 <?php
 
 return [
+    // Page Titles
+    'list_servers' => 'List Servers',
+    'create_server' => 'Create Server',
+    'server_management' => 'Server Management',
+
+    // Headers and Descriptions  
+    'servers_title' => 'Servers',
+    'servers_description' => 'All servers available on the system.',
+    'server_list' => 'Server List',
+    'create_new' => 'Create New',
+
+    // Navigation
+    'breadcrumb_admin' => 'Admin',
+    'breadcrumb_servers' => 'Servers',
+
+    // Table Headers
+    'server_name' => 'Server Name',
+    'uuid' => 'UUID',
+    'owner' => 'Owner',
+    'node' => 'Node',
+    'connection' => 'Connection',
+
+    // Server Status
+    'suspended' => 'Suspended',
+    'installing' => 'Installing',
+    'active' => 'Active',
+
+    // Search
+    'search_servers' => 'Search Servers',
+
     'exceptions' => [
         'no_new_default_allocation' => 'You are attempting to delete the default allocation for this server but there is no fallback allocation to use.',
         'marked_as_failed' => 'This server was marked as having failed a previous installation. Current status cannot be toggled in this state.',
