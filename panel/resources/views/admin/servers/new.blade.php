@@ -138,66 +138,66 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Resource Management</h3>
+                    <h3 class="box-title">@lang('admin/server.resource_management')</h3>
                 </div>
 
                 <div class="box-body row">
                     <div class="form-group col-xs-6">
-                        <label for="pCPU">CPU Limit</label>
+                        <label for="pCPU">@lang('admin/server.cpu_limit')</label>
 
                         <div class="input-group">
                             <input type="text" id="pCPU" name="cpu" class="form-control" value="{{ old('cpu', 0) }}" />
                             <span class="input-group-addon">%</span>
                         </div>
 
-                        <p class="text-muted small">If you do not want to limit CPU usage, set the value to <code>0</code>. To determine a value, take the number of threads and multiply it by 100. For example, on a quad core system without hyperthreading <code>(4 * 100 = 400)</code> there is <code>400%</code> available. To limit a server to using half of a single thread, you would set the value to <code>50</code>. To allow a server to use up to two threads, set the value to <code>200</code>.<p>
+                        <p class="text-muted small">@lang('admin/server.cpu_limit_help')</p>
                     </div>
 
                     <div class="form-group col-xs-6">
-                        <label for="pThreads">CPU Pinning</label>
+                        <label for="pThreads">@lang('admin/server.cpu_pinning')</label>
 
                         <div>
                             <input type="text" id="pThreads" name="threads" class="form-control" value="{{ old('threads') }}" />
                         </div>
 
-                        <p class="text-muted small"><strong>Advanced:</strong> Enter the specific CPU threads that this process can run on, or leave blank to allow all threads. This can be a single number, or a comma separated list. Example: <code>0</code>, <code>0-1,3</code>, or <code>0,1,3,4</code>.</p>
+                        <p class="text-muted small">{!! __('admin/server.cpu_pinning_help') !!}</p>
                     </div>
                 </div>
 
                 <div class="box-body row">
                     <div class="form-group col-xs-6">
-                        <label for="pMemory">Memory</label>
+                        <label for="pMemory">@lang('admin/server.memory')</label>
 
                         <div class="input-group">
                             <input type="text" id="pMemory" name="memory" class="form-control" value="{{ old('memory') }}" />
                             <span class="input-group-addon">MiB</span>
                         </div>
 
-                        <p class="text-muted small">The maximum amount of memory allowed for this container. Setting this to <code>0</code> will allow unlimited memory in a container.</p>
+                        <p class="text-muted small">@lang('admin/server.memory_help')</p>
                     </div>
 
                     <div class="form-group col-xs-6">
-                        <label for="pSwap">Swap</label>
+                        <label for="pSwap">@lang('admin/server.swap')</label>
 
                         <div class="input-group">
                             <input type="text" id="pSwap" name="swap" class="form-control" value="{{ old('swap', 0) }}" />
                             <span class="input-group-addon">MiB</span>
                         </div>
 
-                        <p class="text-muted small">Setting this to <code>0</code> will disable swap space on this server. Setting to <code>-1</code> will allow unlimited swap.</p>
+                        <p class="text-muted small">@lang('admin/server.swap_help')</p>
                     </div>
                 </div>
 
                 <div class="box-body row">
                     <div class="form-group col-xs-6">
-                        <label for="pDisk">Disk Space</label>
+                        <label for="pDisk">@lang('admin/server.disk_space')</label>
 
                         <div class="input-group">
                             <input type="text" id="pDisk" name="disk" class="form-control" value="{{ old('disk') }}" />
                             <span class="input-group-addon">MiB</span>
                         </div>
 
-                        <p class="text-muted small">This server will not be allowed to boot if it is using more than this amount of space. If a server goes over this limit while running it will be safely stopped and locked until enough space is available. Set to <code>0</code> to allow unlimited disk usage.</p>
+                        <p class="text-muted small">@lang('admin/server.disk_space_help')</p>
                     </div>
 
                     <div class="form-group col-xs-6">
