@@ -84,32 +84,32 @@
                 </div>
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Automatic Allocation Creation</h3>
+                        <h3 class="box-title">@lang('admin/settings.auto_allocation')</h3>
                     </div>
                     <div class="box-body">
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label class="control-label">Status</label>
+                                <label class="control-label">@lang('admin/settings.status')</label>
                                 <div>
                                     <select class="form-control" name="pterodactyl:client_features:allocations:enabled">
-                                        <option value="false">Disabled</option>
-                                        <option value="true" @if(old('pterodactyl:client_features:allocations:enabled', config('pterodactyl.client_features.allocations.enabled'))) selected @endif>Enabled</option>
+                                        <option value="false">@lang('admin/settings.disabled')</option>
+                                        <option value="true" @if(old('pterodactyl:client_features:allocations:enabled', config('pterodactyl.client_features.allocations.enabled'))) selected @endif>@lang('admin/settings.enabled')</option>
                                     </select>
-                                    <p class="text-muted small">If enabled users will have the option to automatically create new allocations for their server via the frontend.</p>
+                                    <p class="text-muted small">@lang('admin/settings.auto_allocation_help')</p>
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
-                                <label class="control-label">Starting Port</label>
+                                <label class="control-label">@lang('admin/settings.starting_port')</label>
                                 <div>
                                     <input type="number" class="form-control" name="pterodactyl:client_features:allocations:range_start" value="{{ old('pterodactyl:client_features:allocations:range_start', config('pterodactyl.client_features.allocations.range_start')) }}">
-                                    <p class="text-muted small">The starting port in the range that can be automatically allocated.</p>
+                                    <p class="text-muted small">@lang('admin/settings.starting_port_help')</p>
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
-                                <label class="control-label">Ending Port</label>
+                                <label class="control-label">@lang('admin/settings.ending_port')</label>
                                 <div>
                                     <input type="number" class="form-control" name="pterodactyl:client_features:allocations:range_end" value="{{ old('pterodactyl:client_features:allocations:range_end', config('pterodactyl.client_features.allocations.range_end')) }}">
-                                    <p class="text-muted small">The ending port in the range that can be automatically allocated.</p>
+                                    <p class="text-muted small">@lang('admin/settings.ending_port_help')</p>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +118,7 @@
                 <div class="box box-primary">
                     <div class="box-footer">
                         {{ csrf_field() }}
-                        <button type="submit" name="_method" value="PATCH" class="btn btn-sm btn-primary pull-right">Save</button>
+                        <button type="submit" name="_method" value="PATCH" class="btn btn-sm btn-primary pull-right">@lang('admin/settings.save')</button>
                     </div>
                 </div>
             </form>
