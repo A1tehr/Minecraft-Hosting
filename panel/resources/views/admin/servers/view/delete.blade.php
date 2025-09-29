@@ -20,16 +20,16 @@
     <div class="col-md-6">
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Safely Delete Server</h3>
+                <h3 class="box-title">@lang('admin/server.safe_delete_title')</h3>
             </div>
             <div class="box-body">
-                <p>This action will attempt to delete the server from both the panel and daemon. If either one reports an error the action will be cancelled.</p>
-                <p class="text-danger small">Deleting a server is an irreversible action. <strong>All server data</strong> (including files and users) will be removed from the system.</p>
+                <p>@lang('admin/server.safe_delete_description')</p>
+                <p class="text-danger small">{!! __('admin/server.safe_delete_warning') !!}</p>
             </div>
             <div class="box-footer">
                 <form id="deleteform" action="{{ route('admin.servers.view.delete', $server->id) }}" method="POST">
                     {!! csrf_field() !!}
-                    <button id="deletebtn" class="btn btn-danger">Safely Delete This Server</button>
+                    <button id="deletebtn" class="btn btn-danger">@lang('admin/server.safely_delete_server')</button>
                 </form>
             </div>
         </div>
