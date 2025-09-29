@@ -89,6 +89,14 @@ return [
     // Navigation
     'breadcrumb_admin' => 'Admin',
     'breadcrumb_servers' => 'Servers',
+    'nav_about' => 'About',
+    'nav_details' => 'Details',
+    'nav_build_configuration' => 'Build Configuration',
+    'nav_startup' => 'Startup',
+    'nav_database' => 'Database',
+    'nav_mounts' => 'Mounts',
+    'nav_manage' => 'Manage',
+    'nav_delete' => 'Delete',
 
     // Table Headers
     'uuid' => 'UUID',
