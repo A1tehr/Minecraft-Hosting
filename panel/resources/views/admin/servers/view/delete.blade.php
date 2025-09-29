@@ -63,9 +63,9 @@
         swal({
             title: '',
             type: 'warning',
-            text: 'Are you sure that you want to delete this server? There is no going back, all data will immediately be removed.',
+            text: '@lang('admin/server.delete_confirmation')',
             showCancelButton: true,
-            confirmButtonText: 'Delete',
+            confirmButtonText: '@lang('admin/server.nav_delete')',
             confirmButtonColor: '#d9534f',
             closeOnConfirm: false
         }, function () {
@@ -78,9 +78,9 @@
         swal({
             title: '',
             type: 'warning',
-            text: 'Are you sure that you want to delete this server? There is no going back, all data will immediately be removed.',
+            text: '@lang('admin/server.delete_confirmation')',
             showCancelButton: true,
-            confirmButtonText: 'Delete',
+            confirmButtonText: '@lang('admin/server.nav_delete')',
             confirmButtonColor: '#d9534f',
             closeOnConfirm: false
         }, function () {
