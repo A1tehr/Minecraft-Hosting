@@ -180,8 +180,8 @@
             }
 
             swal({
-                title: 'Whoops!',
-                text: 'An error occurred while attempting to ' + verb + ' mail settings: ' + errorText,
+                title: '@lang('admin/settings.error_title')',
+                text: '@lang('admin/settings.error_prefix')' + verb + '@lang('admin/settings.error_suffix')' + errorText,
                 type: 'error'
             });
         }
