@@ -1,15 +1,15 @@
 @extends('layouts.admin')
 
 @section('title')
-    Nodes &rarr; New
+    @lang('admin/node.title')
 @endsection
 
 @section('content-header')
-    <h1>New Node<small>Create a new local or remote node for servers to be installed to.</small></h1>
+    <h1>@lang('admin/node.header')<small>@lang('admin/node.header_sub')</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li><a href="{{ route('admin.nodes') }}">Nodes</a></li>
-        <li class="active">New</li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/node.breadcrumb_admin')</a></li>
+        <li><a href="{{ route('admin.nodes') }}">@lang('admin/node.breadcrumb_nodes')</a></li>
+        <li class="active">@lang('admin/node.breadcrumb_new')</li>
     </ol>
 @endsection
 
