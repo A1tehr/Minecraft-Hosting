@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
 @section('title')
-    Administration
+    @lang('admin/index.administration')
 @endsection
 
 @section('content-header')
-    <h1>Administrative Overview<small>A quick glance at your system.</small></h1>
+    <h1>@lang('admin/index.admin_overview')<small>@lang('admin/index.admin_overview_desc')</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li class="active">Index</li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/index.breadcrumb_admin')</a></li>
+        <li class="active">@lang('admin/index.breadcrumb_index')</li>
     </ol>
 @endsection
 
