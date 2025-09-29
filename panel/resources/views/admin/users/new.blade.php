@@ -19,48 +19,48 @@
         <div class="col-md-6">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Identity</h3>
+                    <h3 class="box-title">@lang('admin/user.identity')</h3>
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="email" class="control-label">Email</label>
+                        <label for="email" class="control-label">@lang('admin/user.email')</label>
                         <div>
                             <input type="text" autocomplete="off" name="email" value="{{ old('email') }}" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="username" class="control-label">Username</label>
+                        <label for="username" class="control-label">@lang('admin/user.username')</label>
                         <div>
                             <input type="text" autocomplete="off" name="username" value="{{ old('username') }}" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="name_first" class="control-label">Client First Name</label>
+                        <label for="name_first" class="control-label">@lang('admin/user.client_first_name')</label>
                         <div>
                             <input type="text" autocomplete="off" name="name_first" value="{{ old('name_first') }}" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="name_last" class="control-label">Client Last Name</label>
+                        <label for="name_last" class="control-label">@lang('admin/user.client_last_name')</label>
                         <div>
                             <input type="text" autocomplete="off" name="name_last" value="{{ old('name_last') }}" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">Default Language</label>
+                        <label class="control-label">@lang('admin/user.default_language')</label>
                         <div>
                             <select name="language" class="form-control">
                                 @foreach($languages as $key => $value)
                                     <option value="{{ $key }}" @if(config('app.locale') === $key) selected @endif>{{ $value }}</option>
                                 @endforeach
                             </select>
-                            <p class="text-muted"><small>The default language to use when rendering the Panel for this user.</small></p>
+                            <p class="text-muted"><small>@lang('admin/user.default_language_help')</small></p>
                         </div>
                     </div>
                 </div>
                 <div class="box-footer">
                     {!! csrf_field() !!}
-                    <input type="submit" value="Create User" class="btn btn-success btn-sm">
+                    <input type="submit" value="@lang('admin/user.create_user_button')" class="btn btn-success btn-sm">
                 </div>
             </div>
         </div>
