@@ -137,10 +137,10 @@
         function testSettings() {
             swal({
                 type: 'info',
-                title: 'Test Mail Settings',
-                text: 'Click "Test" to begin the test.',
+                title: '@lang('admin/settings.test_mail_title')',
+                text: '@lang('admin/settings.test_mail_text')',
                 showCancelButton: true,
-                confirmButtonText: 'Test',
+                confirmButtonText: '@lang('admin/settings.test')',
                 closeOnConfirm: false,
                 showLoaderOnConfirm: true
             }, function () {
