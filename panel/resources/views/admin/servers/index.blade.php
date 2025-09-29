@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
 @section('title')
-    List Servers
+    @lang('admin/server.list_servers')
 @endsection
 
 @section('content-header')
-    <h1>Servers<small>All servers available on the system.</small></h1>
+    <h1>@lang('admin/server.servers_title')<small>@lang('admin/server.servers_description')</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li class="active">Servers</li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/server.breadcrumb_admin')</a></li>
+        <li class="active">@lang('admin/server.breadcrumb_servers')</li>
     </ol>
 @endsection
 
