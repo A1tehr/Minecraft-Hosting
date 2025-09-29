@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
 @section('title')
-    Manager User: {{ $user->username }}
+    @lang('admin/user.manage_user', ['username' => $user->username])
 @endsection
 
 @section('content-header')
     <h1>{{ $user->name_first }} {{ $user->name_last}}<small>{{ $user->username }}</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li><a href="{{ route('admin.users') }}">Users</a></li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/user.breadcrumb_admin')</a></li>
+        <li><a href="{{ route('admin.users') }}">@lang('admin/user.breadcrumb_users')</a></li>
         <li class="active">{{ $user->username }}</li>
     </ol>
 @endsection
