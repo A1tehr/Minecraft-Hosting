@@ -249,15 +249,15 @@
                     <div class="form-group col-xs-12">
                         <label for="pEggId">@lang('admin/server.egg')</label>
                         <select id="pEggId" name="egg_id" class="form-control"></select>
-                        <p class="small text-muted no-margin">Select the Egg that will define how this server should operate.</p>
+                        <p class="small text-muted no-margin">@lang('admin/server.egg_help')</p>
                     </div>
                     <div class="form-group col-xs-12">
                         <div class="checkbox checkbox-primary no-margin-bottom">
                             <input type="checkbox" id="pSkipScripting" name="skip_scripts" value="1" {{ \Pterodactyl\Helpers\Utilities::checked('skip_scripts', 0) }} />
-                            <label for="pSkipScripting" class="strong">Skip Egg Install Script</label>
+                            <label for="pSkipScripting" class="strong">@lang('admin/server.skip_egg_install_script')</label>
                         </div>
 
-                        <p class="small text-muted no-margin">If the selected Egg has an install script attached to it, the script will run during the install. If you would like to skip this step, check this box.</p>
+                        <p class="small text-muted no-margin">@lang('admin/server.skip_egg_install_help')</p>
                     </div>
                 </div>
             </div>
@@ -266,15 +266,15 @@
         <div class="col-md-6">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Docker Configuration</h3>
+                    <h3 class="box-title">@lang('admin/server.docker_configuration')</h3>
                 </div>
 
                 <div class="box-body row">
                     <div class="form-group col-xs-12">
-                        <label for="pDefaultContainer">Docker Image</label>
+                        <label for="pDefaultContainer">@lang('admin/server.docker_image')</label>
                         <select id="pDefaultContainer" name="image" class="form-control"></select>
-                        <input id="pDefaultContainerCustom" name="custom_image" value="{{ old('custom_image') }}" class="form-control" placeholder="Or enter a custom image..." style="margin-top:1rem"/>
-                        <p class="small text-muted no-margin">This is the default Docker image that will be used to run this server. Select an image from the dropdown above, or enter a custom image in the text field above.</p>
+                        <input id="pDefaultContainerCustom" name="custom_image" value="{{ old('custom_image') }}" class="form-control" placeholder="@lang('admin/server.docker_image_custom_placeholder')" style="margin-top:1rem"/>
+                        <p class="small text-muted no-margin">@lang('admin/server.docker_image_help')</p>
                     </div>
                 </div>
             </div>
@@ -285,26 +285,26 @@
         <div class="col-md-12">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Startup Configuration</h3>
+                    <h3 class="box-title">@lang('admin/server.startup_configuration')</h3>
                 </div>
 
                 <div class="box-body row">
                     <div class="form-group col-xs-12">
-                        <label for="pStartup">Startup Command</label>
+                        <label for="pStartup">@lang('admin/server.startup_command')</label>
                         <input type="text" id="pStartup" name="startup" value="{{ old('startup') }}" class="form-control" />
-                        <p class="small text-muted no-margin">The following data substitutes are available for the startup command: <code>@{{SERVER_MEMORY}}</code>, <code>@{{SERVER_IP}}</code>, and <code>@{{SERVER_PORT}}</code>. They will be replaced with the allocated memory, server IP, and server port respectively.</p>
+                        <p class="small text-muted no-margin">@lang('admin/server.startup_command_help')</p>
                     </div>
                 </div>
 
                 <div class="box-header with-border" style="margin-top:-10px;">
-                    <h3 class="box-title">Service Variables</h3>
+                    <h3 class="box-title">@lang('admin/server.service_variables')</h3>
                 </div>
 
                 <div class="box-body row" id="appendVariablesTo"></div>
 
                 <div class="box-footer">
                     {!! csrf_field() !!}
-                    <input type="submit" class="btn btn-success pull-right" value="Create Server" />
+                    <input type="submit" class="btn btn-success pull-right" value="@lang('admin/server.create_server_button')" />
                 </div>
             </div>
         </div>
