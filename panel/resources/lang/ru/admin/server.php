@@ -89,6 +89,14 @@ return [
     // Navigation
     'breadcrumb_admin' => 'Администрирование',
     'breadcrumb_servers' => 'Серверы',
+    'nav_about' => 'О сервере',
+    'nav_details' => 'Детали',
+    'nav_build_configuration' => 'Конфигурация сборки',
+    'nav_startup' => 'Запуск',
+    'nav_database' => 'База данных',
+    'nav_mounts' => 'Монтирования',
+    'nav_manage' => 'Управление',
+    'nav_delete' => 'Удалить',
 
     // Table Headers
     'uuid' => 'UUID',
