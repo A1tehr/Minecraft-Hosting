@@ -191,8 +191,8 @@
             $('#saveButton').on('click', function () {
                 saveSettings().done(function () {
                     swal({
-                        title: 'Success',
-                        text: 'Mail settings have been updated successfully and the queue worker was restarted to apply these changes.',
+                        title: '@lang('admin/settings.save_success_title')',
+                        text: '@lang('admin/settings.save_success_text')',
                         type: 'success'
                     });
                 });
