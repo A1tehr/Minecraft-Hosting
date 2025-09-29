@@ -226,12 +226,12 @@
         <div class="col-md-6">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Nest Configuration</h3>
+                    <h3 class="box-title">@lang('admin/server.nest_configuration')</h3>
                 </div>
 
                 <div class="box-body row">
                     <div class="form-group col-xs-12">
-                        <label for="pNestId">Nest</label>
+                        <label for="pNestId">@lang('admin/server.nest')</label>
 
                         <select id="pNestId" name="nest_id" class="form-control">
                             @foreach($nests as $nest)
@@ -243,11 +243,11 @@
                             @endforeach
                         </select>
 
-                        <p class="small text-muted no-margin">Select the Nest that this server will be grouped under.</p>
+                        <p class="small text-muted no-margin">@lang('admin/server.nest_help')</p>
                     </div>
 
                     <div class="form-group col-xs-12">
-                        <label for="pEggId">Egg</label>
+                        <label for="pEggId">@lang('admin/server.egg')</label>
                         <select id="pEggId" name="egg_id" class="form-control"></select>
                         <p class="small text-muted no-margin">Select the Egg that will define how this server should operate.</p>
                     </div>
