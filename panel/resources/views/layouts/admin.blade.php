@@ -183,12 +183,12 @@
 
                         var that = this;
                         swal({
-                            title: 'Do you want to log out?',
+                            title: '@lang('admin/layout.logout_confirmation')',
                             type: 'warning',
                             showCancelButton: true,
                             confirmButtonColor: '#d9534f',
                             cancelButtonColor: '#d33',
-                            confirmButtonText: 'Log out'
+                            confirmButtonText: '@lang('admin/layout.log_out')'
                         }, function () {
                              $.ajax({
                                 type: 'POST',
