@@ -105,30 +105,30 @@
             <div class="box">
                 <div class="overlay" id="allocationLoader" style="display:none;"><i class="fa fa-refresh fa-spin"></i></div>
                 <div class="box-header with-border">
-                    <h3 class="box-title">Application Feature Limits</h3>
+                    <h3 class="box-title">@lang('admin/server.application_feature_limits')</h3>
                 </div>
 
                 <div class="box-body row">
                     <div class="form-group col-xs-6">
-                        <label for="pDatabaseLimit" class="control-label">Database Limit</label>
+                        <label for="pDatabaseLimit" class="control-label">@lang('admin/server.database_limit')</label>
                         <div>
                             <input type="text" id="pDatabaseLimit" name="database_limit" class="form-control" value="{{ old('database_limit', 0) }}"/>
                         </div>
-                        <p class="text-muted small">The total number of databases a user is allowed to create for this server.</p>
+                        <p class="text-muted small">@lang('admin/server.database_limit_help')</p>
                     </div>
                     <div class="form-group col-xs-6">
-                        <label for="pAllocationLimit" class="control-label">Allocation Limit</label>
+                        <label for="pAllocationLimit" class="control-label">@lang('admin/server.allocation_limit')</label>
                         <div>
                             <input type="text" id="pAllocationLimit" name="allocation_limit" class="form-control" value="{{ old('allocation_limit', 0) }}"/>
                         </div>
-                        <p class="text-muted small">The total number of allocations a user is allowed to create for this server.</p>
+                        <p class="text-muted small">@lang('admin/server.allocation_limit_help')</p>
                     </div>
                     <div class="form-group col-xs-6">
-                        <label for="pBackupLimit" class="control-label">Backup Limit</label>
+                        <label for="pBackupLimit" class="control-label">@lang('admin/server.backup_limit')</label>
                         <div>
                             <input type="text" id="pBackupLimit" name="backup_limit" class="form-control" value="{{ old('backup_limit', 0) }}"/>
                         </div>
-                        <p class="text-muted small">The total number of backups that can be created for this server.</p>
+                        <p class="text-muted small">@lang('admin/server.backup_limit_help')</p>
                     </div>
                 </div>
             </div>
