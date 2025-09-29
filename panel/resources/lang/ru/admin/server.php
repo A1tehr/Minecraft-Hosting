@@ -85,6 +85,9 @@ return [
 
     // Buttons
     'create_server_button' => 'Создать сервер',
+    'safely_delete_server' => 'Безопасно удалить этот сервер',
+    'forcibly_delete_server' => 'Принудительно удалить этот сервер',
+    'update_details' => 'Обновить детали',
 
     // Navigation
     'breadcrumb_admin' => 'Администрирование',
