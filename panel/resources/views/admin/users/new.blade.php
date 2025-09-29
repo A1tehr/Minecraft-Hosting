@@ -1,15 +1,15 @@
 @extends('layouts.admin')
 
 @section('title')
-    Create User
+    @lang('admin/user.create_user')
 @endsection
 
 @section('content-header')
-    <h1>Create User<small>Add a new user to the system.</small></h1>
+    <h1>@lang('admin/user.create_user')<small>@lang('admin/user.create_description')</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li><a href="{{ route('admin.users') }}">Users</a></li>
-        <li class="active">Create</li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/user.breadcrumb_admin')</a></li>
+        <li><a href="{{ route('admin.users') }}">@lang('admin/user.breadcrumb_users')</a></li>
+        <li class="active">@lang('admin/user.breadcrumb_create')</li>
     </ol>
 @endsection
 
