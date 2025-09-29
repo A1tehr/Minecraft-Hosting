@@ -110,6 +110,7 @@ return [
     'suspended' => 'Suspended',
     'installing' => 'Installing',
     'active' => 'Active',
+    'install_failed' => 'Install Failed',
 
     // Search
     'search_servers' => 'Search Servers',
