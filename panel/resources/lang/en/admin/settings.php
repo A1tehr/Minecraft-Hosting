@@ -12,6 +12,7 @@ return [
     'advanced_description' => 'Configure advanced settings for Pterodactyl.',
     'mail_description' => 'Configure how Pterodactyl should handle sending emails.',
     'email_settings' => 'Email Settings',
+    'environment_only_notice' => 'Your Panel is currently configured to read settings from the environment only. You will need to set <code>APP_ENVIRONMENT_ONLY=false</code> in your environment file in order to load settings dynamically.',
 
     // Navigation
     'breadcrumb_admin' => 'Admin',
