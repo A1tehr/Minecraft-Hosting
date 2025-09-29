@@ -19,20 +19,20 @@
         <div class="col-sm-6">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Basic Details</h3>
+                    <h3 class="box-title">@lang('admin/node.basic_details')</h3>
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="pName" class="form-label">Name</label>
+                        <label for="pName" class="form-label">@lang('admin/node.name')</label>
                         <input type="text" name="name" id="pName" class="form-control" value="{{ old('name') }}"/>
-                        <p class="text-muted small">Character limits: <code>a-zA-Z0-9_.-</code> and <code>[Space]</code> (min 1, max 100 characters).</p>
+                        <p class="text-muted small">@lang('admin/node.name_help')</p>
                     </div>
                     <div class="form-group">
-                        <label for="pDescription" class="form-label">Description</label>
+                        <label for="pDescription" class="form-label">@lang('admin/node.description')</label>
                         <textarea name="description" id="pDescription" rows="4" class="form-control">{{ old('description') }}</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="pLocationId" class="form-label">Location</label>
+                        <label for="pLocationId" class="form-label">@lang('admin/node.location')</label>
                         <select name="location_id" id="pLocationId">
                             @foreach($locations as $location)
                                 <option value="{{ $location->id }}" {{ $location->id != old('location_id') ?: 'selected' }}>{{ $location->short }}</option>
