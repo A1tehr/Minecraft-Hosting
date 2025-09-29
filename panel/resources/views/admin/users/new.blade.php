@@ -67,17 +67,17 @@
         <div class="col-md-6">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Permissions</h3>
+                    <h3 class="box-title">@lang('admin/user.permissions')</h3>
                 </div>
                 <div class="box-body">
                     <div class="form-group col-md-12">
-                        <label for="root_admin" class="control-label">Administrator</label>
+                        <label for="root_admin" class="control-label">@lang('admin/user.administrator')</label>
                         <div>
                             <select name="root_admin" class="form-control">
                                 <option value="0">@lang('strings.no')</option>
                                 <option value="1">@lang('strings.yes')</option>
                             </select>
-                            <p class="text-muted"><small>Setting this to 'Yes' gives a user full administrative access.</small></p>
+                            <p class="text-muted"><small>@lang('admin/user.admin_help')</small></p>
                         </div>
                     </div>
                 </div>
