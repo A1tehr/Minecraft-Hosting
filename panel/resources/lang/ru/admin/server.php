@@ -110,6 +110,7 @@ return [
     'suspended' => 'Приостановлен',
     'installing' => 'Установка',
     'active' => 'Активен',
+    'install_failed' => 'Ошибка установки',
 
     // Search
     'search_servers' => 'Поиск серверов',
