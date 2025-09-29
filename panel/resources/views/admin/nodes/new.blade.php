@@ -74,7 +74,7 @@
                         @if(request()->isSecure())
                             <p class="text-danger small">{!! __('admin/node.ssl_warning') !!}</p>
                         @else
-                            <p class="text-muted small">In most cases you should select to use a SSL connection. If using an IP Address or you do not wish to use SSL at all, select a HTTP connection.</p>
+                            <p class="text-muted small">@lang('admin/node.ssl_recommendation')</p>
                         @endif
                     </div>
                     <div class="form-group">
