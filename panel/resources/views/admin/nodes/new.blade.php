@@ -78,18 +78,18 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Behind Proxy</label>
+                        <label class="form-label">@lang('admin/node.behind_proxy')</label>
                         <div>
                             <div class="radio radio-success radio-inline">
                                 <input type="radio" id="pProxyFalse" value="0" name="behind_proxy" checked>
-                                <label for="pProxyFalse"> Not Behind Proxy </label>
+                                <label for="pProxyFalse"> @lang('admin/node.not_behind_proxy') </label>
                             </div>
                             <div class="radio radio-info radio-inline">
                                 <input type="radio" id="pProxyTrue" value="1" name="behind_proxy">
-                                <label for="pProxyTrue"> Behind Proxy </label>
+                                <label for="pProxyTrue"> @lang('admin/node.behind_proxy') </label>
                             </div>
                         </div>
-                        <p class="text-muted small">If you are running the daemon behind a proxy such as Cloudflare, select this to have the daemon skip looking for certificates on boot.</p>
+                        <p class="text-muted small">@lang('admin/node.proxy_help')</p>
                     </div>
                 </div>
             </div>
