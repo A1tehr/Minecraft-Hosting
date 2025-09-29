@@ -53,11 +53,11 @@
                                 </td>
                                 <td class="text-center">
                                     @if($server->isSuspended())
-                                        <span class="label bg-maroon">Suspended</span>
+                                        <span class="label bg-maroon">@lang('admin/server.suspended')</span>
                                     @elseif(! $server->isInstalled())
-                                        <span class="label label-warning">Installing</span>
+                                        <span class="label label-warning">@lang('admin/server.installing')</span>
                                     @else
-                                        <span class="label label-success">Active</span>
+                                        <span class="label label-success">@lang('admin/server.active')</span>
                                     @endif
                                 </td>
                                 <td class="text-center">
