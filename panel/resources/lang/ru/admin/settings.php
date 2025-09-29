@@ -12,6 +12,7 @@ return [
     'advanced_description' => 'Настройка расширенных параметров для Pterodactyl.',
     'mail_description' => 'Настройте, как Pterodactyl должен обрабатывать отправку электронных писем.',
     'email_settings' => 'Настройки электронной почты',
+    'environment_only_notice' => 'Ваша панель в настоящее время настроена на чтение настроек только из окружения. Вам необходимо установить <code>APP_ENVIRONMENT_ONLY=false</code> в вашем файле окружения для динамической загрузки настроек.',
 
     // Navigation
     'breadcrumb_admin' => 'Администрирование',
