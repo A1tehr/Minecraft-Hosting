@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
 @section('title')
-    List Users
+    @lang('admin/user.list_users')
 @endsection
 
 @section('content-header')
-    <h1>Users<small>All registered users on the system.</small></h1>
+    <h1>@lang('admin/user.users_title')<small>@lang('admin/user.users_description')</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li class="active">Users</li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/user.breadcrumb_admin')</a></li>
+        <li class="active">@lang('admin/user.breadcrumb_users')</li>
     </ol>
 @endsection
 
