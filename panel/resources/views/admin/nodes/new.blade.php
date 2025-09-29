@@ -159,7 +159,7 @@
                 </div>
                 <div class="box-footer">
                     {!! csrf_field() !!}
-                    <button type="submit" class="btn btn-success pull-right">Create Node</button>
+                    <button type="submit" class="btn btn-success pull-right">@lang('admin/node.create_node')</button>
                 </div>
             </div>
         </div>
