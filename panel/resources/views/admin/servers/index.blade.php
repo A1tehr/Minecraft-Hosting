@@ -34,11 +34,11 @@
                 <table class="table table-hover">
                     <tbody>
                         <tr>
-                            <th>Server Name</th>
-                            <th>UUID</th>
-                            <th>Owner</th>
-                            <th>Node</th>
-                            <th>Connection</th>
+                            <th>@lang('admin/server.server_name')</th>
+                            <th>@lang('admin/server.uuid')</th>
+                            <th>@lang('admin/server.owner')</th>
+                            <th>@lang('admin/server.node')</th>
+                            <th>@lang('admin/server.connection')</th>
                             <th></th>
                             <th></th>
                         </tr>
