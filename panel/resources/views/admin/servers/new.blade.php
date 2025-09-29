@@ -61,12 +61,12 @@
             <div class="box">
                 <div class="overlay" id="allocationLoader" style="display:none;"><i class="fa fa-refresh fa-spin"></i></div>
                 <div class="box-header with-border">
-                    <h3 class="box-title">Allocation Management</h3>
+                    <h3 class="box-title">@lang('admin/server.allocation_management')</h3>
                 </div>
 
                 <div class="box-body row">
                     <div class="form-group col-sm-4">
-                        <label for="pNodeId">Node</label>
+                        <label for="pNodeId">@lang('admin/server.node')</label>
                         <select name="node_id" id="pNodeId" class="form-control">
                             @foreach($locations as $location)
                                 <optgroup label="{{ $location->long }} ({{ $location->short }})">
@@ -81,19 +81,19 @@
                             @endforeach
                         </select>
 
-                        <p class="small text-muted no-margin">The node which this server will be deployed to.</p>
+                        <p class="small text-muted no-margin">@lang('admin/server.node_help')</p>
                     </div>
 
                     <div class="form-group col-sm-4">
-                        <label for="pAllocation">Default Allocation</label>
+                        <label for="pAllocation">@lang('admin/server.default_allocation')</label>
                         <select id="pAllocation" name="allocation_id" class="form-control"></select>
-                        <p class="small text-muted no-margin">The main allocation that will be assigned to this server.</p>
+                        <p class="small text-muted no-margin">@lang('admin/server.default_allocation_help')</p>
                     </div>
 
                     <div class="form-group col-sm-4">
-                        <label for="pAllocationAdditional">Additional Allocation(s)</label>
+                        <label for="pAllocationAdditional">@lang('admin/server.additional_allocations')</label>
                         <select id="pAllocationAdditional" name="allocation_additional[]" class="form-control" multiple></select>
-                        <p class="small text-muted no-margin">Additional allocations to assign to this server on creation.</p>
+                        <p class="small text-muted no-margin">@lang('admin/server.additional_allocations_help')</p>
                     </div>
                 </div>
             </div>
