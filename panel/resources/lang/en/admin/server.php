@@ -125,6 +125,19 @@ return [
     'force_delete_warning' => 'Deleting a server is an irreversible action. <strong>All server data</strong> (including files and users) will be removed from the system. This method may leave dangling files on your daemon if it reports an error.',
     'delete_confirmation' => 'Are you sure that you want to delete this server? There is no going back, all data will immediately be removed.',
 
+    // Details Page
+    'page_details_title' => 'Details',
+    'edit_details_description' => 'Edit details for this server including owner and container.',
+    'base_information' => 'Base Information',
+    'server_name_label' => 'Server Name',
+    'server_name_limits' => 'Character limits: <code>a-zA-Z0-9_-</code> and <code>[Space]</code>.',
+    'external_identifier' => 'External Identifier',
+    'external_identifier_help' => 'Leave empty to not assign an external identifier for this server. The external ID should be unique to this server and not be in use by any other servers.',
+    'server_owner_label' => 'Server Owner',
+    'server_owner_change_help' => 'You can change the owner of this server by changing this field to an email matching another use on this system. If you do this a new daemon security token will be generated automatically.',
+    'server_description_label' => 'Server Description',
+    'server_description_brief' => 'A brief description of this server.',
+
     'exceptions' => [
         'no_new_default_allocation' => 'You are attempting to delete the default allocation for this server but there is no fallback allocation to use.',
         'marked_as_failed' => 'This server was marked as having failed a previous installation. Current status cannot be toggled in this state.',
