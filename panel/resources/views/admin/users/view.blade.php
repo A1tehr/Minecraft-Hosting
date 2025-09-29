@@ -68,15 +68,15 @@
         <div class="col-md-6">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Password</h3>
+                    <h3 class="box-title">@lang('admin/user.password')</h3>
                 </div>
                 <div class="box-body">
                     <div class="alert alert-success" style="display:none;margin-bottom:10px;" id="gen_pass"></div>
                     <div class="form-group no-margin-bottom">
-                        <label for="password" class="control-label">Password <span class="field-optional"></span></label>
+                        <label for="password" class="control-label">@lang('admin/user.password_optional') <span class="field-optional"></span></label>
                         <div>
                             <input type="password" id="password" name="password" class="form-control form-autocomplete-stop">
-                            <p class="text-muted small">Leave blank to keep this user's password the same. User will not receive any notification if password is changed.</p>
+                            <p class="text-muted small">@lang('admin/user.password_help')</p>
                         </div>
                     </div>
                 </div>
