@@ -141,7 +141,7 @@
                         <div class="col-sm-12">
                             <div class="small-box {{ (! $server->isInstalled()) ? 'bg-blue' : 'bg-maroon' }}">
                                 <div class="inner">
-                                    <h3 class="no-margin">{{ (! $server->isInstalled()) ? 'Installing' : 'Install Failed' }}</h3>
+                                    <h3 class="no-margin">{{ (! $server->isInstalled()) ? __('admin/server.installing') : __('admin/server.install_failed') }}</h3>
                                 </div>
                             </div>
                         </div>
