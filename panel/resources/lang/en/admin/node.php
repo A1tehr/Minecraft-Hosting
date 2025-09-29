@@ -1,6 +1,47 @@
 <?php
 
 return [
+    // Page Elements
+    'title' => 'Nodes → New',
+    'header' => 'New Node',
+    'header_sub' => 'Create a new local or remote node for servers to be installed to.',
+    'breadcrumb_admin' => 'Admin',
+    'breadcrumb_nodes' => 'Nodes',
+    'breadcrumb_new' => 'New',
+    
+    // Form Sections
+    'basic_details' => 'Basic Details',
+    'configuration' => 'Configuration',
+    
+    // Form Fields
+    'name' => 'Name',
+    'name_help' => 'Character limits: <code>a-zA-Z0-9_.-</code> and <code>[Space]</code> (min 1, max 100 characters).',
+    'description' => 'Description',
+    'location' => 'Location',
+    'node_visibility' => 'Node Visibility',
+    'public' => 'Public',
+    'private' => 'Private',
+    'private_help' => 'By setting a node to <code>private</code> you will be denying the ability to auto-deploy to this node.',
+    'fqdn' => 'FQDN',
+    'fqdn_help' => 'Please enter domain name (e.g <code>node.example.com</code>) to be used for connecting to the daemon. An IP address may be used <em>only</em> if you are not using SSL for this node.',
+    'ssl_connection' => 'Communicate Over SSL',
+    'use_ssl' => 'Use SSL Connection',
+    'use_http' => 'Use HTTP Connection',
+    'ssl_warning' => 'Your Panel is currently configured to use a secure connection. In order for browsers to connect to your node it <strong>must</strong> use a SSL connection.',
+    'behind_proxy' => 'Behind Proxy',
+    'not_behind_proxy' => 'Not Behind Proxy',
+    'behind_proxy_help' => 'Is this node behind a proxy or load balancer?',
+    
+    // Configuration Fields
+    'daemon_base' => 'Daemon Server File Directory',
+    'memory' => 'Total Memory',
+    'memory_overallocate' => 'Memory Over-Allocation',
+    'disk' => 'Total Disk Space',
+    'disk_overallocate' => 'Disk Over-Allocation',
+    'daemon_port' => 'Daemon Port',
+    'daemon_sftp_port' => 'Daemon SFTP Port',
+    'create_node' => 'Create Node',
+    
     'validation' => [
         'fqdn_not_resolvable' => 'The FQDN or IP address provided does not resolve to a valid IP address.',
         'fqdn_required_for_ssl' => 'A fully qualified domain name that resolves to a public IP address is required in order to use SSL for this node.',
