@@ -1,15 +1,15 @@
 @extends('layouts.admin')
 
 @section('title')
-    New Server
+    @lang('admin/server.new_server')
 @endsection
 
 @section('content-header')
-    <h1>Create Server<small>Add a new server to the panel.</small></h1>
+    <h1>@lang('admin/server.create_server')<small>@lang('admin/server.create_server_desc')</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li><a href="{{ route('admin.servers') }}">Servers</a></li>
-        <li class="active">Create Server</li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/server.breadcrumb_admin')</a></li>
+        <li><a href="{{ route('admin.servers') }}">@lang('admin/server.breadcrumb_servers')</a></li>
+        <li class="active">@lang('admin/server.breadcrumb_create')</li>
     </ol>
 @endsection
 
