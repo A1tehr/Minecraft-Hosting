@@ -132,7 +132,7 @@
                         <div class="col-sm-12">
                             <div class="small-box bg-yellow">
                                 <div class="inner">
-                                    <h3 class="no-margin">Suspended</h3>
+                                    <h3 class="no-margin">@lang('admin/server.suspended')</h3>
                                 </div>
                             </div>
                         </div>
