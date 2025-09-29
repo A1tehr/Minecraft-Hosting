@@ -152,8 +152,8 @@
                     showErrorDialog(jqXHR, 'test');
                 }).done(function () {
                     swal({
-                        title: 'Success',
-                        text: 'The test message was sent successfully.',
+                        title: '@lang('admin/settings.test_success_title')',
+                        text: '@lang('admin/settings.test_success_text')',
                         type: 'success'
                     });
                 });
