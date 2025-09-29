@@ -7,29 +7,29 @@
         <div class="nav-tabs-custom nav-tabs-floating">
             <ul class="nav nav-tabs">
                 <li class="{{ $router->currentRouteNamed('admin.servers.view') ? 'active' : '' }}">
-                    <a href="{{ route('admin.servers.view', $server->id) }}">About</a></li>
+                    <a href="{{ route('admin.servers.view', $server->id) }}">@lang('admin/server.nav_about')</a></li>
                 @if($server->isInstalled())
                     <li class="{{ $router->currentRouteNamed('admin.servers.view.details') ? 'active' : '' }}">
-                        <a href="{{ route('admin.servers.view.details', $server->id) }}">Details</a>
+                        <a href="{{ route('admin.servers.view.details', $server->id) }}">@lang('admin/server.nav_details')</a>
                     </li>
                     <li class="{{ $router->currentRouteNamed('admin.servers.view.build') ? 'active' : '' }}">
-                        <a href="{{ route('admin.servers.view.build', $server->id) }}">Build Configuration</a>
+                        <a href="{{ route('admin.servers.view.build', $server->id) }}">@lang('admin/server.nav_build_configuration')</a>
                     </li>
                     <li class="{{ $router->currentRouteNamed('admin.servers.view.startup') ? 'active' : '' }}">
-                        <a href="{{ route('admin.servers.view.startup', $server->id) }}">Startup</a>
+                        <a href="{{ route('admin.servers.view.startup', $server->id) }}">@lang('admin/server.nav_startup')</a>
                     </li>
                     <li class="{{ $router->currentRouteNamed('admin.servers.view.database') ? 'active' : '' }}">
-                        <a href="{{ route('admin.servers.view.database', $server->id) }}">Database</a>
+                        <a href="{{ route('admin.servers.view.database', $server->id) }}">@lang('admin/server.nav_database')</a>
                     </li>
                     <li class="{{ $router->currentRouteNamed('admin.servers.view.mounts') ? 'active' : '' }}">
-                        <a href="{{ route('admin.servers.view.mounts', $server->id) }}">Mounts</a>
+                        <a href="{{ route('admin.servers.view.mounts', $server->id) }}">@lang('admin/server.nav_mounts')</a>
                     </li>
                 @endif
                 <li class="{{ $router->currentRouteNamed('admin.servers.view.manage') ? 'active' : '' }}">
-                    <a href="{{ route('admin.servers.view.manage', $server->id) }}">Manage</a>
+                    <a href="{{ route('admin.servers.view.manage', $server->id) }}">@lang('admin/server.nav_manage')</a>
                 </li>
                 <li class="tab-danger {{ $router->currentRouteNamed('admin.servers.view.delete') ? 'active' : '' }}">
-                    <a href="{{ route('admin.servers.view.delete', $server->id) }}">Delete</a>
+                    <a href="{{ route('admin.servers.view.delete', $server->id) }}">@lang('admin/server.nav_delete')</a>
                 </li>
                 <li class="tab-success">
                     <a href="/server/{{ $server->uuidShort }}" target="_blank"><i class="fa fa-external-link"></i></a>
