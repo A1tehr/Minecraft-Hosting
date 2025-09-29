@@ -105,16 +105,16 @@
     <div class="col-xs-12">
         <div class="box box-danger">
             <div class="box-header with-border">
-                <h3 class="box-title">Delete User</h3>
+                <h3 class="box-title">@lang('admin/user.delete_user')</h3>
             </div>
             <div class="box-body">
-                <p class="no-margin">There must be no servers associated with this account in order for it to be deleted.</p>
+                <p class="no-margin">@lang('admin/user.delete_warning')</p>
             </div>
             <div class="box-footer">
                 <form action="{{ route('admin.users.view', $user->id) }}" method="POST">
                     {!! csrf_field() !!}
                     {!! method_field('DELETE') !!}
-                    <input id="delete" type="submit" class="btn btn-sm btn-danger pull-right" {{ $user->servers->count() < 1 ?: 'disabled' }} value="Delete User" />
+                    <input id="delete" type="submit" class="btn btn-sm btn-danger pull-right" {{ $user->servers->count() < 1 ?: 'disabled' }} value="@lang('admin/user.delete_user_button')" />
                 </form>
             </div>
         </div>
