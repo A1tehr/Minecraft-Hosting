@@ -37,17 +37,17 @@
 </div>
 <div class="row">
     <div class="col-xs-6 col-sm-3 text-center">
-        <a href="{{ $version->getDiscord() }}"><button class="btn btn-warning" style="width:100%;"><i class="fa fa-fw fa-support"></i> Get Help <small>(via Discord)</small></button></a>
+        <a href="{{ $version->getDiscord() }}"><button class="btn btn-warning" style="width:100%;"><i class="fa fa-fw fa-support"></i> @lang('admin/index.get_help') <small>(@lang('admin/index.via_discord'))</small></button></a>
     </div>
     <div class="col-xs-6 col-sm-3 text-center">
-        <a href="https://pterodactyl.io"><button class="btn btn-primary" style="width:100%;"><i class="fa fa-fw fa-link"></i> Documentation</button></a>
+        <a href="https://pterodactyl.io"><button class="btn btn-primary" style="width:100%;"><i class="fa fa-fw fa-link"></i> @lang('admin/index.documentation')</button></a>
     </div>
     <div class="clearfix visible-xs-block">&nbsp;</div>
     <div class="col-xs-6 col-sm-3 text-center">
-        <a href="https://github.com/pterodactyl/panel"><button class="btn btn-primary" style="width:100%;"><i class="fa fa-fw fa-support"></i> Github</button></a>
+        <a href="https://github.com/pterodactyl/panel"><button class="btn btn-primary" style="width:100%;"><i class="fa fa-fw fa-support"></i> @lang('admin/index.github')</button></a>
     </div>
     <div class="col-xs-6 col-sm-3 text-center">
-        <a href="{{ $version->getDonations() }}"><button class="btn btn-success" style="width:100%;"><i class="fa fa-fw fa-money"></i> Support the Project</button></a>
+        <a href="{{ $version->getDonations() }}"><button class="btn btn-success" style="width:100%;"><i class="fa fa-fw fa-money"></i> @lang('admin/index.support_project')</button></a>
     </div>
 </div>
 @endsection
