@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Server — {{ $server->name }}: Details
+    @lang('admin/server.breadcrumb_servers') — {{ $server->name }}: @lang('admin/server.page_details_title')
 @endsection
 
 @section('content-header')
