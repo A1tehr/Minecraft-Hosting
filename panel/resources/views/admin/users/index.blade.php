@@ -34,13 +34,13 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Email</th>
-                            <th>Client Name</th>
-                            <th>Username</th>
-                            <th class="text-center">2FA</th>
-                            <th class="text-center"><span data-toggle="tooltip" data-placement="top" title="Servers that this user is marked as the owner of.">Servers Owned</span></th>
-                            <th class="text-center"><span data-toggle="tooltip" data-placement="top" title="Servers that this user can access because they are marked as a subuser.">Can Access</span></th>
+                            <th>@lang('admin/user.id')</th>
+                            <th>@lang('admin/user.email')</th>
+                            <th>@lang('admin/user.client_name')</th>
+                            <th>@lang('admin/user.username')</th>
+                            <th class="text-center">@lang('strings.2fa')</th>
+                            <th class="text-center"><span data-toggle="tooltip" data-placement="top" title="@lang('admin/user.servers_owned_help')">@lang('admin/user.servers_owned')</span></th>
+                            <th class="text-center"><span data-toggle="tooltip" data-placement="top" title="@lang('admin/user.can_access_help')">@lang('admin/user.can_access')</span></th>
                             <th></th>
                         </tr>
                     </thead>
