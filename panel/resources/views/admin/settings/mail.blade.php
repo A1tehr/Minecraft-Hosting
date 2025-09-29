@@ -19,14 +19,14 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Email Settings</h3>
+                    <h3 class="box-title">@lang('admin/settings.email_settings')</h3>
                 </div>
                 @if($disabled)
                     <div class="box-body">
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="alert alert-info no-margin-bottom">
-                                    This interface is limited to instances using SMTP as the mail driver. Please either use <code>php artisan p:environment:mail</code> command to update your email settings, or set <code>MAIL_DRIVER=smtp</code> in your environment file.
+                                    {!! __('admin/settings.smtp_limited') !!}
                                 </div>
                             </div>
                         </div>
