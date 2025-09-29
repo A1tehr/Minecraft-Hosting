@@ -26,4 +26,12 @@ return [
     
     // Validation Error
     'validation_error' => 'There was an error validating the data provided.',
+    
+    // Navigation
+    'toggle_navigation' => 'Toggle navigation',
+    
+    // Settings Navigation
+    'general' => 'General',
+    'mail' => 'Mail', 
+    'advanced' => 'Advanced',
 ];
