@@ -2,14 +2,14 @@
 @include('partials/admin.settings.nav', ['activeTab' => 'basic'])
 
 @section('title')
-    Settings
+    @lang('admin/settings.settings')
 @endsection
 
 @section('content-header')
-    <h1>Panel Settings<small>Configure Pterodactyl to your liking.</small></h1>
+    <h1>@lang('admin/settings.panel_settings_title')<small>@lang('admin/settings.panel_settings_description')</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li class="active">Settings</li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/settings.breadcrumb_admin')</a></li>
+        <li class="active">@lang('admin/settings.breadcrumb_settings')</li>
     </ol>
 @endsection
 
