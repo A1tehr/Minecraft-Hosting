@@ -81,17 +81,17 @@
                             <div class="row">
                                 <hr />
                                 <div class="form-group col-md-6">
-                                    <label class="control-label">Mail From</label>
+                                    <label class="control-label">@lang('admin/settings.mail_from')</label>
                                     <div>
                                         <input required type="email" class="form-control" name="mail:from:address" value="{{ old('mail:from:address', config('mail.from.address')) }}" />
-                                        <p class="text-muted small">Enter an email address that all outgoing emails will originate from.</p>
+                                        <p class="text-muted small">@lang('admin/settings.mail_from_help')</p>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label class="control-label">Mail From Name <span class="field-optional"></span></label>
+                                    <label class="control-label">@lang('admin/settings.mail_from_name') <span class="field-optional"></span></label>
                                     <div>
                                         <input type="text" class="form-control" name="mail:from:name" value="{{ old('mail:from:name', config('mail.from.name')) }}" />
-                                        <p class="text-muted small">The name that emails should appear to come from.</p>
+                                        <p class="text-muted small">@lang('admin/settings.mail_from_name_help')</p>
                                     </div>
                                 </div>
                             </div>
@@ -99,8 +99,8 @@
                         <div class="box-footer">
                             {{ csrf_field() }}
                             <div class="pull-right">
-                                <button type="button" id="testButton" class="btn btn-sm btn-success">Test</button>
-                                <button type="button" id="saveButton" class="btn btn-sm btn-primary">Save</button>
+                                <button type="button" id="testButton" class="btn btn-sm btn-success">@lang('admin/settings.test')</button>
+                                <button type="button" id="saveButton" class="btn btn-sm btn-primary">@lang('admin/settings.save')</button>
                             </div>
                         </div>
                     </form>
