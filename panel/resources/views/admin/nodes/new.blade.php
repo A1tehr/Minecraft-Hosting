@@ -97,24 +97,24 @@
         <div class="col-sm-6">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Configuration</h3>
+                    <h3 class="box-title">@lang('admin/node.configuration')</h3>
                 </div>
                 <div class="box-body">
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="pDaemonBase" class="form-label">Daemon Server File Directory</label>
+                            <label for="pDaemonBase" class="form-label">@lang('admin/node.daemon_base')</label>
                             <input type="text" name="daemonBase" id="pDaemonBase" class="form-control" value="/var/lib/pterodactyl/volumes" />
-                            <p class="text-muted small">Enter the directory where server files should be stored. <strong>If you use OVH you should check your partition scheme. You may need to use <code>/home/daemon-data</code> to have enough space.</strong></p>
+                            <p class="text-muted small">{!! __('admin/node.daemon_base_help') !!}</p>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="pMemory" class="form-label">Total Memory</label>
+                            <label for="pMemory" class="form-label">@lang('admin/node.memory')</label>
                             <div class="input-group">
                                 <input type="text" name="memory" data-multiplicator="true" class="form-control" id="pMemory" value="{{ old('memory') }}"/>
                                 <span class="input-group-addon">MiB</span>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="pMemoryOverallocate" class="form-label">Memory Over-Allocation</label>
+                            <label for="pMemoryOverallocate" class="form-label">@lang('admin/node.memory_overallocate')</label>
                             <div class="input-group">
                                 <input type="text" name="memory_overallocate" class="form-control" id="pMemoryOverallocate" value="{{ old('memory_overallocate') }}"/>
                                 <span class="input-group-addon">%</span>
