@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Server — {{ $server->name }}: Delete
+    @lang('admin/server.breadcrumb_servers') — {{ $server->name }}: @lang('admin/server.page_delete_title')
 @endsection
 
 @section('content-header')
