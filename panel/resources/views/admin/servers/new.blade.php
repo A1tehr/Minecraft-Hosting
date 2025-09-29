@@ -19,35 +19,35 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Core Details</h3>
+                    <h3 class="box-title">@lang('admin/server.core_details')</h3>
                 </div>
 
                 <div class="box-body row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="pName">Server Name</label>
-                            <input type="text" class="form-control" id="pName" name="name" value="{{ old('name') }}" placeholder="Server Name">
-                            <p class="small text-muted no-margin">Character limits: <code>a-z A-Z 0-9 _ - .</code> and <code>[Space]</code>.</p>
+                            <label for="pName">@lang('admin/server.server_name')</label>
+                            <input type="text" class="form-control" id="pName" name="name" value="{{ old('name') }}" placeholder="@lang('admin/server.server_name')">
+                            <p class="small text-muted no-margin">@lang('admin/server.server_name_help')</p>
                         </div>
 
                         <div class="form-group">
-                            <label for="pUserId">Server Owner</label>
+                            <label for="pUserId">@lang('admin/server.server_owner')</label>
                             <select id="pUserId" name="owner_id" class="form-control" style="padding-left:0;"></select>
-                            <p class="small text-muted no-margin">Email address of the Server Owner.</p>
+                            <p class="small text-muted no-margin">@lang('admin/server.server_owner_help')</p>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="pDescription" class="control-label">Server Description</label>
+                            <label for="pDescription" class="control-label">@lang('admin/server.server_description')</label>
                             <textarea id="pDescription" name="description" rows="3" class="form-control">{{ old('description') }}</textarea>
-                            <p class="text-muted small">A brief description of this server.</p>
+                            <p class="text-muted small">@lang('admin/server.server_description_help')</p>
                         </div>
 
                         <div class="form-group">
                             <div class="checkbox checkbox-primary no-margin-bottom">
                                 <input id="pStartOnCreation" name="start_on_completion" type="checkbox" {{ \Pterodactyl\Helpers\Utilities::checked('start_on_completion', 1) }} />
-                                <label for="pStartOnCreation" class="strong">Start Server when Installed</label>
+                                <label for="pStartOnCreation" class="strong">@lang('admin/server.start_when_installed')</label>
                             </div>
                         </div>
                     </div>
