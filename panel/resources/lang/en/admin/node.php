@@ -32,6 +32,8 @@ return [
     'behind_proxy' => 'Behind Proxy',
     'not_behind_proxy' => 'Not Behind Proxy',
     'behind_proxy_help' => 'Is this node behind a proxy or load balancer?',
+    'proxy_help' => 'If you are running the daemon behind a proxy such as Cloudflare, select this to have the daemon skip looking for certificates on boot.',
+    'daemon_base_help' => 'Enter the directory where server files should be stored. <strong>If you use OVH you should check your partition scheme. You may need to use <code>/home/daemon-data</code> to have enough space.</strong>',
     
     // Configuration Fields
     'daemon_base' => 'Daemon Server File Directory',
