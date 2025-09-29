@@ -86,15 +86,15 @@
         <div class="col-md-6">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Password</h3>
+                    <h3 class="box-title">@lang('admin/user.password')</h3>
                 </div>
                 <div class="box-body">
                     <div class="alert alert-info">
-                        <p>Providing a user password is optional. New user emails prompt users to create a password the first time they login. If a password is provided here you will need to find a different method of providing it to the user.</p>
+                        <p>@lang('admin/user.password_creation_info')</p>
                     </div>
                     <div id="gen_pass" class=" alert alert-success" style="display:none;margin-bottom: 10px;"></div>
                     <div class="form-group">
-                        <label for="pass" class="control-label">Password</label>
+                        <label for="pass" class="control-label">@lang('admin/user.password')</label>
                         <div>
                             <input type="password" name="password" class="form-control" />
                         </div>
