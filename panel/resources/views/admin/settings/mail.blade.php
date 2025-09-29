@@ -36,45 +36,45 @@
                         <div class="box-body">
                             <div class="row">
                                 <div class="form-group col-md-6">
-                                    <label class="control-label">SMTP Host</label>
+                                    <label class="control-label">@lang('admin/settings.smtp_host')</label>
                                     <div>
                                         <input required type="text" class="form-control" name="mail:mailers:smtp:host" value="{{ old('mail:mailers:smtp:host', config('mail.mailers.smtp.host')) }}" />
-                                        <p class="text-muted small">Enter the SMTP server address that mail should be sent through.</p>
+                                        <p class="text-muted small">@lang('admin/settings.smtp_host_help')</p>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-2">
-                                    <label class="control-label">SMTP Port</label>
+                                    <label class="control-label">@lang('admin/settings.smtp_port')</label>
                                     <div>
                                         <input required type="number" class="form-control" name="mail:mailers:smtp:port" value="{{ old('mail:mailers:smtp:port', config('mail.mailers.smtp.port')) }}" />
-                                        <p class="text-muted small">Enter the SMTP server port that mail should be sent through.</p>
+                                        <p class="text-muted small">@lang('admin/settings.smtp_port_help')</p>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label class="control-label">Encryption</label>
+                                    <label class="control-label">@lang('admin/settings.encryption')</label>
                                     <div>
                                         @php
                                             $encryption = old('mail:mailers:smtp:encryption', config('mail.mailers.smtp.encryption'));
                                         @endphp
                                         <select name="mail:mailers:smtp:encryption" class="form-control">
-                                            <option value="" @if($encryption === '') selected @endif>None</option>
-                                            <option value="tls" @if($encryption === 'tls') selected @endif>Transport Layer Security (TLS)</option>
-                                            <option value="ssl" @if($encryption === 'ssl') selected @endif>Secure Sockets Layer (SSL)</option>
+                                            <option value="" @if($encryption === '') selected @endif>@lang('admin/settings.encryption_none')</option>
+                                            <option value="tls" @if($encryption === 'tls') selected @endif>@lang('admin/settings.encryption_tls')</option>
+                                            <option value="ssl" @if($encryption === 'ssl') selected @endif>@lang('admin/settings.encryption_ssl')</option>
                                         </select>
-                                        <p class="text-muted small">Select the type of encryption to use when sending mail.</p>
+                                        <p class="text-muted small">@lang('admin/settings.encryption_help')</p>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label class="control-label">Username <span class="field-optional"></span></label>
+                                    <label class="control-label">@lang('admin/settings.smtp_username') <span class="field-optional"></span></label>
                                     <div>
                                         <input type="text" class="form-control" name="mail:mailers:smtp:username" value="{{ old('mail:mailers:smtp:username', config('mail.mailers.smtp.username')) }}" />
-                                        <p class="text-muted small">The username to use when connecting to the SMTP server.</p>
+                                        <p class="text-muted small">@lang('admin/settings.smtp_username_help')</p>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label class="control-label">Password <span class="field-optional"></span></label>
+                                    <label class="control-label">@lang('admin/settings.smtp_password') <span class="field-optional"></span></label>
                                     <div>
                                         <input type="password" class="form-control" name="mail:mailers:smtp:password"/>
-                                        <p class="text-muted small">The password to use in conjunction with the SMTP username. Leave blank to continue using the existing password. To set the password to an empty value enter <code>!e</code> into the field.</p>
+                                        <p class="text-muted small">{!! __('admin/settings.smtp_password_help') !!}</p>
                                     </div>
                                 </div>
                             </div>
