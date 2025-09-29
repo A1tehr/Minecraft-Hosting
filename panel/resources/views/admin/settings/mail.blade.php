@@ -2,14 +2,14 @@
 @include('partials/admin.settings.nav', ['activeTab' => 'mail'])
 
 @section('title')
-    Mail Settings
+    @lang('admin/settings.mail_settings')
 @endsection
 
 @section('content-header')
-    <h1>Mail Settings<small>Configure how Pterodactyl should handle sending emails.</small></h1>
+    <h1>@lang('admin/settings.mail_settings')<small>@lang('admin/settings.mail_description')</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li class="active">Settings</li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/settings.breadcrumb_admin')</a></li>
+        <li class="active">@lang('admin/settings.breadcrumb_settings')</li>
     </ol>
 @endsection
 
