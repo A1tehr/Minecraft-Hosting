@@ -23,13 +23,13 @@
             @endif
         ">
             <div class="box-header with-border">
-                <h3 class="box-title">System Information</h3>
+                <h3 class="box-title">@lang('admin/index.system_information')</h3>
             </div>
             <div class="box-body">
                 @if ($version->isLatestPanel())
-                    You are running Pterodactyl Panel version <code>{{ config('app.version') }}</code>. Your panel is up-to-date!
+                    {!! __('admin/index.panel_up_to_date', ['version' => config('app.version')]) !!}
                 @else
-                    Your panel is <strong>not up-to-date!</strong> The latest version is <a href="https://github.com/Pterodactyl/Panel/releases/v{{ $version->getPanel() }}" target="_blank"><code>{{ $version->getPanel() }}</code></a> and you are currently running version <code>{{ config('app.version') }}</code>.
+                    {!! __('admin/index.panel_outdated', ['latest' => $version->getPanel(), 'current' => config('app.version')]) !!}
                 @endif
             </div>
         </div>
