@@ -5,12 +5,12 @@
 @endsection
 
 @section('content-header')
-    <h1>{{ $server->name }}<small>Delete this server from the panel.</small></h1>
+    <h1>{{ $server->name }}<small>@lang('admin/server.delete_server_description')</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li><a href="{{ route('admin.servers') }}">Servers</a></li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/server.breadcrumb_admin')</a></li>
+        <li><a href="{{ route('admin.servers') }}">@lang('admin/server.breadcrumb_servers')</a></li>
         <li><a href="{{ route('admin.servers.view', $server->id) }}">{{ $server->name }}</a></li>
-        <li class="active">Delete</li>
+        <li class="active">@lang('admin/server.page_delete_title')</li>
     </ol>
 @endsection
 
