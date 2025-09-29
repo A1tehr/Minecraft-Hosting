@@ -26,4 +26,12 @@ return [
     
     // Validation Error
     'validation_error' => 'Произошла ошибка при валидации предоставленных данных.',
+    
+    // Navigation
+    'toggle_navigation' => 'Переключить навигацию',
+    
+    // Settings Navigation
+    'general' => 'Основные',
+    'mail' => 'Почта', 
+    'advanced' => 'Дополнительно',
 ];
