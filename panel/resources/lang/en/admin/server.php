@@ -85,6 +85,9 @@ return [
 
     // Buttons
     'create_server_button' => 'Create Server',
+    'safely_delete_server' => 'Safely Delete This Server',
+    'forcibly_delete_server' => 'Forcibly Delete This Server',
+    'update_details' => 'Update Details',
 
     // Navigation
     'breadcrumb_admin' => 'Admin',
