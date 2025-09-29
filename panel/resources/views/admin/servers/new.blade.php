@@ -201,21 +201,21 @@
                     </div>
 
                     <div class="form-group col-xs-6">
-                        <label for="pIO">Block IO Weight</label>
+                        <label for="pIO">@lang('admin/server.block_io_weight')</label>
 
                         <div>
                             <input type="text" id="pIO" name="io" class="form-control" value="{{ old('io', 500) }}" />
                         </div>
 
-                        <p class="text-muted small"><strong>Advanced</strong>: The IO performance of this server relative to other <em>running</em> containers on the system. Value should be between <code>10</code> and <code>1000</code>. Please see <a href="https://docs.docker.com/engine/reference/run/#block-io-bandwidth-blkio-constraint" target="_blank">this documentation</a> for more information about it.</p>
+                        <p class="text-muted small">{!! __('admin/server.block_io_weight_help') !!}</p>
                     </div>
                     <div class="form-group col-xs-12">
                         <div class="checkbox checkbox-primary no-margin-bottom">
                             <input type="checkbox" id="pOomDisabled" name="oom_disabled" value="0" {{ \Pterodactyl\Helpers\Utilities::checked('oom_disabled', 0) }} />
-                            <label for="pOomDisabled" class="strong">Enable OOM Killer</label>
+                            <label for="pOomDisabled" class="strong">@lang('admin/server.enable_oom_killer')</label>
                         </div>
 
-                        <p class="small text-muted no-margin">Terminates the server if it breaches the memory limits. Enabling OOM killer may cause server processes to exit unexpectedly.</p>
+                        <p class="small text-muted no-margin">@lang('admin/server.oom_killer_help')</p>
                     </div>
                 </div>
             </div>
