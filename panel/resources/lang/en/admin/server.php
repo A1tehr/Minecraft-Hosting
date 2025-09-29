@@ -114,6 +114,17 @@ return [
     // Search
     'search_servers' => 'Search Servers',
 
+    // Delete Page
+    'page_delete_title' => 'Delete',
+    'delete_server_description' => 'Delete this server from the panel.',
+    'safe_delete_title' => 'Safely Delete Server',
+    'safe_delete_description' => 'This action will attempt to delete the server from both the panel and daemon. If either one reports an error the action will be cancelled.',
+    'safe_delete_warning' => 'Deleting a server is an irreversible action. <strong>All server data</strong> (including files and users) will be removed from the system.',
+    'force_delete_title' => 'Force Delete Server',
+    'force_delete_description' => 'This action will attempt to delete the server from both the panel and daemon. If the daemon does not respond, or reports an error the deletion will continue.',
+    'force_delete_warning' => 'Deleting a server is an irreversible action. <strong>All server data</strong> (including files and users) will be removed from the system. This method may leave dangling files on your daemon if it reports an error.',
+    'delete_confirmation' => 'Are you sure that you want to delete this server? There is no going back, all data will immediately be removed.',
+
     'exceptions' => [
         'no_new_default_allocation' => 'You are attempting to delete the default allocation for this server but there is no fallback allocation to use.',
         'marked_as_failed' => 'This server was marked as having failed a previous installation. Current status cannot be toggled in this state.',
