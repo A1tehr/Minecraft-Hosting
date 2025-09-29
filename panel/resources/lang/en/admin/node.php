@@ -28,6 +28,7 @@ return [
     'use_ssl' => 'Use SSL Connection',
     'use_http' => 'Use HTTP Connection',
     'ssl_warning' => 'Your Panel is currently configured to use a secure connection. In order for browsers to connect to your node it <strong>must</strong> use a SSL connection.',
+    'ssl_recommendation' => 'In most cases you should select to use a SSL connection. If using an IP Address or you do not wish to use SSL at all, select a HTTP connection.',
     'behind_proxy' => 'Behind Proxy',
     'not_behind_proxy' => 'Not Behind Proxy',
     'behind_proxy_help' => 'Is this node behind a proxy or load balancer?',
