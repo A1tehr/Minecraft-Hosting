@@ -73,4 +73,15 @@ return [
         'node_updated' => 'Node information has been updated. If any daemon settings were changed you will need to reboot it for those changes to take effect.',
         'unallocated_deleted' => 'Deleted all un-allocated ports for <code>:ip</code>.',
     ],
+
+    // Navigation
+    'nav_about' => 'About',
+    'nav_settings' => 'Settings',
+    'nav_configuration' => 'Configuration',
+    'nav_allocation' => 'Allocation',
+    'nav_servers' => 'Servers',
+
+    // Server View
+    'servers_on_node' => 'All servers currently assigned to this node.',
+    'breadcrumb_node_servers' => 'Servers',
 ];
