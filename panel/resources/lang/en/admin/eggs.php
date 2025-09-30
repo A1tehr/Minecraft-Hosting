@@ -54,6 +54,7 @@ return [
     // Actions
     'save' => 'Save',
     'delete_egg' => 'Delete Egg',
+    'create' => 'Create',
     
     // JavaScript Messages
     'delete_egg_hover' => 'Delete Egg',
