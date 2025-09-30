@@ -85,16 +85,16 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Databases</h3>
+                <h3 class="box-title">@lang('admin/databases.databases')</h3>
             </div>
             <div class="box-body table-responsive no-padding">
                 <table class="table table-hover">
                     <tr>
-                        <th>Server</th>
-                        <th>Database Name</th>
-                        <th>Username</th>
-                        <th>Connections From</th>
-                        <th>Max Connections</th>
+                        <th>@lang('admin/databases.server')</th>
+                        <th>@lang('admin/databases.database_name')</th>
+                        <th>@lang('admin/databases.username')</th>
+                        <th>@lang('admin/databases.connections_from')</th>
+                        <th>@lang('admin/databases.max_connections')</th>
                         <th></th>
                     </tr>
                     @foreach($databases as $database)
@@ -106,11 +106,11 @@
                             @if($database->max_connections != null)
                                 <td class="middle">{{ $database->max_connections }}</td>
                             @else
-                                <td class="middle">Unlimited</td>
+                                <td class="middle">@lang('admin/databases.unlimited')</td>
                             @endif
                             <td class="text-center">
                                 <a href="{{ route('admin.servers.view.database', $database->getRelation('server')->id) }}">
-                                    <button class="btn btn-xs btn-primary">Manage</button>
+                                    <button class="btn btn-xs btn-primary">@lang('admin/databases.manage')</button>
                                 </a>
                             </td>
                         </tr>
