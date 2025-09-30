@@ -1,15 +1,15 @@
 @extends('layouts.admin')
 
 @section('title')
-    New Nest
+    @lang('admin/nests.new_nest')
 @endsection
 
 @section('content-header')
-    <h1>New Nest<small>Configure a new nest to deploy to all nodes.</small></h1>
+    <h1>@lang('admin/nests.new_nest')<small>@lang('admin/nests.nest_description')</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li><a href="{{ route('admin.nests') }}">Nests</a></li>
-        <li class="active">New</li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/nests.breadcrumb_admin')</a></li>
+        <li><a href="{{ route('admin.nests') }}">@lang('admin/nests.breadcrumb_nests')</a></li>
+        <li class="active">@lang('admin/nests.breadcrumb_new')</li>
     </ol>
 @endsection
 
