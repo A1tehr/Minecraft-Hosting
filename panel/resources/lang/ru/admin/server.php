@@ -190,4 +190,16 @@ return [
         'transfer_started' => 'Передача сервера была запущена.',
         'transfer_not_viable' => 'Выбранный вами узел не имеет необходимого дискового пространства или памяти для размещения этого сервера.',
     ],
+
+    // Database Management
+    'databases_title' => 'Базы данных',
+    'databases_description' => 'Управление базами данных сервера.',
+    'active_databases' => 'Активные базы данных',
+    'database_passwords_note' => 'Пароли баз данных можно просмотреть при <a href="/server/:uuid/databases">посещении этого сервера</a> во фронтенде.',
+    'database_name' => 'База данных',
+    'database_username' => 'Имя пользователя',
+    'connections_from' => 'Подключения от',
+    'database_host' => 'Хост',
+    'max_connections' => 'Максимум подключений',
+    'unlimited' => 'Неограниченно',
 ];
