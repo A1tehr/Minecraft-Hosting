@@ -67,9 +67,9 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="pName" class="form-label">Name</label>
+                        <label for="pName" class="form-label">@lang('admin/databases.name')</label>
                         <input type="text" name="name" id="pName" class="form-control" />
-                        <p class="text-muted small">A short identifier used to distinguish this location from others. Must be between 1 and 60 characters, for example, <code>us.nyc.lvl3</code>.</p>
+                        <p class="text-muted small">{!! __('admin/databases.name_help') !!}</p>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
