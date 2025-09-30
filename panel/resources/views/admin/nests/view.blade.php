@@ -109,7 +109,7 @@
     @parent
     <script>
         $('#deleteButton').on('mouseenter', function (event) {
-            $(this).find('i').html(' Delete Nest');
+            $(this).find('i').html(' @lang('admin/nests.delete_nest')');
         }).on('mouseleave', function (event) {
             $(this).find('i').html('');
         });
