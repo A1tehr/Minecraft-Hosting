@@ -58,14 +58,14 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="pShortModal" class="form-label">Short Code</label>
+                            <label for="pShortModal" class="form-label">@lang('admin/location.short_code')</label>
                             <input type="text" name="short" id="pShortModal" class="form-control" />
-                            <p class="text-muted small">A short identifier used to distinguish this location from others. Must be between 1 and 60 characters, for example, <code>us.nyc.lvl3</code>.</p>
+                            <p class="text-muted small">{!! __('admin/location.short_code_help') !!}</p>
                         </div>
                         <div class="col-md-12">
-                            <label for="pLongModal" class="form-label">Description</label>
+                            <label for="pLongModal" class="form-label">@lang('admin/location.description')</label>
                             <textarea name="long" id="pLongModal" class="form-control" rows="4"></textarea>
-                            <p class="text-muted small">A longer description of this location. Must be less than 191 characters.</p>
+                            <p class="text-muted small">@lang('admin/location.description_help')</p>
                         </div>
                     </div>
                 </div>
