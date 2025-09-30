@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Database Hosts &rarr; View &rarr; {{ $host->name }}
+    @lang('admin/databases.database_hosts') &rarr; @lang('strings.view') &rarr; {{ $host->name }}
 @endsection
 
 @section('content-header')
