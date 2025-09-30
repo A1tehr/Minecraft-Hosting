@@ -73,14 +73,14 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="pHost" class="form-label">Host</label>
+                            <label for="pHost" class="form-label">@lang('admin/databases.host')</label>
                             <input type="text" name="host" id="pHost" class="form-control" />
-                            <p class="text-muted small">The IP address or FQDN that should be used when attempting to connect to this MySQL host <em>from the panel</em> to add new databases.</p>
+                            <p class="text-muted small">{!! __('admin/databases.host_help') !!}</p>
                         </div>
                         <div class="col-md-6">
-                            <label for="pPort" class="form-label">Port</label>
+                            <label for="pPort" class="form-label">@lang('admin/databases.port')</label>
                             <input type="text" name="port" id="pPort" class="form-control" value="3306"/>
-                            <p class="text-muted small">The port that MySQL is running on for this host.</p>
+                            <p class="text-muted small">@lang('admin/databases.port_help')</p>
                         </div>
                     </div>
                     <div class="row">
