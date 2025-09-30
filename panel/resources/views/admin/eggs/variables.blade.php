@@ -46,42 +46,42 @@
                 <form action="{{ route('admin.nests.egg.variables.edit', ['egg' => $egg->id, 'variable' => $variable->id]) }}" method="POST">
                     <div class="box-body">
                         <div class="form-group">
-                            <label class="form-label">Name</label>
+                            <label class="form-label">@lang('admin/eggs.name')</label>
                             <input type="text" name="name" value="{{ $variable->name }}" class="form-control" />
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Description</label>
+                            <label class="form-label">@lang('admin/eggs.description')</label>
                             <textarea name="description" class="form-control" rows="3">{{ $variable->description }}</textarea>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label class="form-label">Environment Variable</label>
+                                <label class="form-label">@lang('admin/eggs.environment_variable')</label>
                                 <input type="text" name="env_variable" value="{{ $variable->env_variable }}" class="form-control" />
                             </div>
                             <div class="form-group col-md-6">
-                                <label class="form-label">Default Value</label>
+                                <label class="form-label">@lang('admin/eggs.default_value')</label>
                                 <input type="text" name="default_value" value="{{ $variable->default_value }}" class="form-control" />
                             </div>
                             <div class="col-xs-12">
-                                <p class="text-muted small">This variable can be accessed in the startup command by using <code>{{ $variable->env_variable }}</code>.</p>
+                                <p class="text-muted small">{!! __('admin/eggs.variable_access_help', ['var' => $variable->env_variable]) !!}</p>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Permissions</label>
+                            <label class="form-label">@lang('admin/eggs.permissions')</label>
                             <select name="options[]" class="pOptions form-control" multiple>
-                                <option value="user_viewable" {{ (! $variable->user_viewable) ?: 'selected' }}>Users Can View</option>
-                                <option value="user_editable" {{ (! $variable->user_editable) ?: 'selected' }}>Users Can Edit</option>
+                                <option value="user_viewable" {{ (! $variable->user_viewable) ?: 'selected' }}>@lang('admin/eggs.users_can_view')</option>
+                                <option value="user_editable" {{ (! $variable->user_editable) ?: 'selected' }}>@lang('admin/eggs.users_can_edit')</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Input Rules</label>
+                            <label class="form-label">@lang('admin/eggs.input_rules')</label>
                             <input type="text" name="rules" class="form-control" value="{{ $variable->rules }}" />
-                            <p class="text-muted small">These rules are defined using standard <a href="https://laravel.com/docs/5.7/validation#available-validation-rules" target="_blank">Laravel Framework validation rules</a>.</p>
+                            <p class="text-muted small">{!! __('admin/eggs.input_rules_help') !!}</p>
                         </div>
                     </div>
                     <div class="box-footer">
                         {!! csrf_field() !!}
-                        <button class="btn btn-sm btn-primary pull-right" name="_method" value="PATCH" type="submit">Save</button>
+                        <button class="btn btn-sm btn-primary pull-right" name="_method" value="PATCH" type="submit">@lang('admin/eggs.save')</button>
                         <button class="btn btn-sm btn-danger pull-left muted muted-hover" data-action="delete" name="_method" value="DELETE" type="submit"><i class="fa fa-trash-o"></i></button>
                     </div>
                 </form>
