@@ -1,15 +1,15 @@
 @extends('layouts.admin')
 
 @section('title')
-    Nests &rarr; New Egg
+    @lang('admin/eggs.breadcrumb_nests') &rarr; @lang('admin/eggs.new_egg')
 @endsection
 
 @section('content-header')
-    <h1>New Egg<small>Create a new Egg to assign to servers.</small></h1>
+    <h1>@lang('admin/eggs.new_egg')<small>@lang('admin/eggs.new_egg_description')</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li><a href="{{ route('admin.nests') }}">Nests</a></li>
-        <li class="active">New Egg</li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/eggs.breadcrumb_admin')</a></li>
+        <li><a href="{{ route('admin.nests') }}">@lang('admin/eggs.breadcrumb_nests')</a></li>
+        <li class="active">@lang('admin/eggs.new_egg')</li>
     </ol>
 @endsection
 
