@@ -2,14 +2,14 @@
 @extends('layouts.admin')
 
 @section('title')
-    Mounts &rarr; View &rarr; {{ $mount->id }}
+    @lang('admin/mounts.view_mount', ['id' => $mount->id])
 @endsection
 
 @section('content-header')
     <h1>{{ $mount->name }}<small>{{ str_limit($mount->description, 75) }}</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li><a href="{{ route('admin.mounts') }}">Mounts</a></li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/mounts.breadcrumb_admin')</a></li>
+        <li><a href="{{ route('admin.mounts') }}">@lang('admin/mounts.breadcrumb_mounts')</a></li>
         <li class="active">{{ $mount->name }}</li>
     </ol>
 @endsection
