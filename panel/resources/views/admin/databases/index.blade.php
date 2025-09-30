@@ -96,9 +96,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="pNodeId" class="form-label">Linked Node</label>
+                        <label for="pNodeId" class="form-label">@lang('admin/databases.linked_node')</label>
                         <select name="node_id" id="pNodeId" class="form-control">
-                            <option value="">None</option>
+                            <option value="">@lang('admin/databases.none')</option>
                             @foreach($locations as $location)
                                 <optgroup label="{{ $location->short }}">
                                     @foreach($location->nodes as $node)
@@ -107,7 +107,7 @@
                                 </optgroup>
                             @endforeach
                         </select>
-                        <p class="text-muted small">This setting does nothing other than default to this database host when adding a database to a server on the selected node.</p>
+                        <p class="text-muted small">@lang('admin/databases.linked_node_help')</p>
                     </div>
                 </div>
                 <div class="modal-footer">
