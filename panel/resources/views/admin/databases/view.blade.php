@@ -19,27 +19,27 @@
         <div class="col-sm-6">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Host Details</h3>
+                    <h3 class="box-title">@lang('admin/databases.host_details')</h3>
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="pName" class="form-label">Name</label>
+                        <label for="pName" class="form-label">@lang('admin/databases.name')</label>
                         <input type="text" id="pName" name="name" class="form-control" value="{{ old('name', $host->name) }}" />
                     </div>
                     <div class="form-group">
-                        <label for="pHost" class="form-label">Host</label>
+                        <label for="pHost" class="form-label">@lang('admin/databases.host')</label>
                         <input type="text" id="pHost" name="host" class="form-control" value="{{ old('host', $host->host) }}" />
-                        <p class="text-muted small">The IP address or FQDN that should be used when attempting to connect to this MySQL host <em>from the panel</em> to add new databases.</p>
+                        <p class="text-muted small">@lang('admin/databases.host_help')</p>
                     </div>
                     <div class="form-group">
-                        <label for="pPort" class="form-label">Port</label>
+                        <label for="pPort" class="form-label">@lang('admin/databases.port')</label>
                         <input type="text" id="pPort" name="port" class="form-control" value="{{ old('port', $host->port) }}" />
-                        <p class="text-muted small">The port that MySQL is running on for this host.</p>
+                        <p class="text-muted small">@lang('admin/databases.port_help')</p>
                     </div>
                     <div class="form-group">
-                        <label for="pNodeId" class="form-label">Linked Node</label>
+                        <label for="pNodeId" class="form-label">@lang('admin/databases.linked_node')</label>
                         <select name="node_id" id="pNodeId" class="form-control">
-                            <option value="">None</option>
+                            <option value="">@lang('admin/databases.none')</option>
                             @foreach($locations as $location)
                                 <optgroup label="{{ $location->short }}">
                                     @foreach($location->nodes as $node)
@@ -48,7 +48,7 @@
                                 </optgroup>
                             @endforeach
                         </select>
-                        <p class="text-muted small">This setting does nothing other than default to this database host when adding a database to a server on the selected node.</p>
+                        <p class="text-muted small">@lang('admin/databases.linked_node_help')</p>
                     </div>
                 </div>
             </div>
