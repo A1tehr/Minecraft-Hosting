@@ -91,5 +91,6 @@ return [
     'enable' => 'Включить',
     'disable' => 'Отключить',
     'save' => 'Сохранить',
+    'view' => 'Просмотр',
     'copyright' => '&copy; 2015 – :year Pterodactyl Software',
 ];
