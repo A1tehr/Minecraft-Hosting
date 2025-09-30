@@ -19,18 +19,18 @@
         <div class="col-md-12">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">New Nest</h3>
+                    <h3 class="box-title">@lang('admin/nests.new_nest')</h3>
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <label class="control-label">Name</label>
+                        <label class="control-label">@lang('admin/nests.name')</label>
                         <div>
                             <input type="text" name="name" class="form-control" value="{{ old('name') }}" />
-                            <p class="text-muted"><small>This should be a descriptive category name that encompasses all of the eggs within the nest.</small></p>
+                            <p class="text-muted"><small>@lang('admin/nests.name_description')</small></p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">Description</label>
+                        <label class="control-label">@lang('admin/nests.description')</label>
                         <div>
                             <textarea name="description" class="form-control" rows="6">{{ old('description') }}</textarea>
                         </div>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="box-footer">
                     {!! csrf_field() !!}
-                    <button type="submit" class="btn btn-primary pull-right">Save</button>
+                    <button type="submit" class="btn btn-primary pull-right">@lang('admin/nests.save')</button>
                 </div>
             </div>
         </div>
