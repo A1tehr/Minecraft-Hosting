@@ -47,29 +47,29 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="form-group col-sm-4">
-                            <label class="control-label">Copy Script From</label>
+                            <label class="control-label">@lang('admin/eggs.copy_script_from')</label>
                             <select id="pCopyScriptFrom" name="copy_script_from">
-                                <option value="">None</option>
+                                <option value="">@lang('admin/eggs.none')</option>
                                 @foreach($copyFromOptions as $opt)
                                     <option value="{{ $opt->id }}" {{ $egg->copy_script_from !== $opt->id ?: 'selected' }}>{{ $opt->name }}</option>
                                 @endforeach
                             </select>
-                            <p class="text-muted small">If selected, script above will be ignored and script from selected option will be used in place.</p>
+                            <p class="text-muted small">@lang('admin/eggs.copy_script_help')</p>
                         </div>
                         <div class="form-group col-sm-4">
-                            <label class="control-label">Script Container</label>
+                            <label class="control-label">@lang('admin/eggs.script_container')</label>
                             <input type="text" name="script_container" class="form-control" value="{{ $egg->script_container }}" />
-                            <p class="text-muted small">Docker container to use when running this script for the server.</p>
+                            <p class="text-muted small">@lang('admin/eggs.script_container_help')</p>
                         </div>
                         <div class="form-group col-sm-4">
-                            <label class="control-label">Script Entrypoint Command</label>
+                            <label class="control-label">@lang('admin/eggs.script_entrypoint')</label>
                             <input type="text" name="script_entry" class="form-control" value="{{ $egg->script_entry }}" />
-                            <p class="text-muted small">The entrypoint command to use for this script.</p>
+                            <p class="text-muted small">@lang('admin/eggs.script_entrypoint_help')</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 text-muted">
-                            The following service options rely on this script:
+                            @lang('admin/eggs.rely_on_script')
                             @if(count($relyOnScript) > 0)
                                 @foreach($relyOnScript as $rely)
                                     <a href="{{ route('admin.nests.egg.view', $rely->id) }}">
@@ -77,7 +77,7 @@
                                     </a>
                                 @endforeach
                             @else
-                                <em>none</em>
+                                <em>@lang('admin/eggs.none_rely')</em>
                             @endif
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                 <div class="box-footer">
                     {!! csrf_field() !!}
                     <textarea name="script_install" class="hidden"></textarea>
-                    <button type="submit" name="_method" value="PATCH" class="btn btn-primary btn-sm pull-right">Save</button>
+                    <button type="submit" name="_method" value="PATCH" class="btn btn-primary btn-sm pull-right">@lang('admin/eggs.save')</button>
                 </div>
             </div>
         </div>
