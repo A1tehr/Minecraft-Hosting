@@ -19,67 +19,67 @@
         <div class="col-sm-6">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Mount Details</h3>
+                    <h3 class="box-title">@lang('admin/mounts.mount_details')</h3>
                 </div>
 
                 <form action="{{ route('admin.mounts.view', $mount->id) }}" method="POST">
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="PUniqueID" class="form-label">Unique ID</label>
+                            <label for="PUniqueID" class="form-label">@lang('admin/mounts.unique_id')</label>
                             <input type="text" id="PUniqueID" class="form-control" value="{{ $mount->uuid }}" disabled />
                         </div>
 
                         <div class="form-group">
-                            <label for="pName" class="form-label">Name</label>
+                            <label for="pName" class="form-label">@lang('admin/mounts.name')</label>
                             <input type="text" id="pName" name="name" class="form-control" value="{{ $mount->name }}" />
                         </div>
 
                         <div class="form-group">
-                            <label for="pDescription" class="form-label">Description</label>
+                            <label for="pDescription" class="form-label">@lang('admin/mounts.description')</label>
                             <textarea id="pDescription" name="description" class="form-control" rows="4">{{ $mount->description }}</textarea>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="pSource" class="form-label">Source</label>
+                                <label for="pSource" class="form-label">@lang('admin/mounts.source')</label>
                                 <input type="text" id="pSource" name="source" class="form-control" value="{{ $mount->source }}" />
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="pTarget" class="form-label">Target</label>
+                                <label for="pTarget" class="form-label">@lang('admin/mounts.target')</label>
                                 <input type="text" id="pTarget" name="target" class="form-control" value="{{ $mount->target }}" />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label class="form-label">Read Only</label>
+                                <label class="form-label">@lang('admin/mounts.read_only')</label>
 
                                 <div>
                                     <div class="radio radio-success radio-inline">
                                         <input type="radio" id="pReadOnlyFalse" name="read_only" value="0" @if(!$mount->read_only) checked @endif>
-                                        <label for="pReadOnlyFalse">False</label>
+                                        <label for="pReadOnlyFalse">@lang('admin/mounts.false')</label>
                                     </div>
 
                                     <div class="radio radio-warning radio-inline">
                                         <input type="radio" id="pReadOnly" name="read_only" value="1" @if($mount->read_only) checked @endif>
-                                        <label for="pReadOnly">True</label>
+                                        <label for="pReadOnly">@lang('admin/mounts.true')</label>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label class="form-label">User Mountable</label>
+                                <label class="form-label">@lang('admin/mounts.user_mountable')</label>
 
                                 <div>
                                     <div class="radio radio-success radio-inline">
                                         <input type="radio" id="pUserMountableFalse" name="user_mountable" value="0" @if(!$mount->user_mountable) checked @endif>
-                                        <label for="pUserMountableFalse">False</label>
+                                        <label for="pUserMountableFalse">@lang('admin/mounts.false')</label>
                                     </div>
 
                                     <div class="radio radio-warning radio-inline">
                                         <input type="radio" id="pUserMountable" name="user_mountable" value="1" @if($mount->user_mountable) checked @endif>
-                                        <label for="pUserMountable">True</label>
+                                        <label for="pUserMountable">@lang('admin/mounts.true')</label>
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                         {!! csrf_field() !!}
                         {!! method_field('PATCH') !!}
 
-                        <button name="action" value="edit" class="btn btn-sm btn-primary pull-right">Save</button>
+                        <button name="action" value="edit" class="btn btn-sm btn-primary pull-right">@lang('admin/mounts.save')</button>
                         <button name="action" value="delete" class="btn btn-sm btn-danger pull-left muted muted-hover"><i class="fa fa-trash-o"></i></button>
                     </div>
                 </form>
