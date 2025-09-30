@@ -1,6 +1,29 @@
 <?php
 
 return [
+    // Page Titles
+    'nests' => 'Гнёзда',
+    'new_nest' => 'Новое гнездо',
+    'nest_configuration' => 'Конфигурация гнезда',
+    
+    // Headers and Descriptions
+    'nest_description' => 'Настройте новое гнездо для развертывания на всех узлах.',
+    'nest_details' => 'Настройте детали гнезда.',
+    
+    // Navigation
+    'breadcrumb_admin' => 'Администрирование',
+    'breadcrumb_nests' => 'Гнёзда',
+    'breadcrumb_new' => 'Новое',
+    
+    // Form Fields
+    'name' => 'Название',
+    'name_description' => 'Это должно быть описательное название категории, охватывающее все яйца в гнезде.',
+    'description' => 'Описание',
+    
+    // Actions
+    'save' => 'Сохранить',
+    'create' => 'Создать',
+    
     'notices' => [
         'created' => 'Новое гнездо «:name» успешно создано.',
         'deleted' => 'Запрошенное гнездо успешно удалено из панели.',
