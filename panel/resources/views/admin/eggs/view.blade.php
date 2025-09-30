@@ -178,7 +178,7 @@
     <script>
     $('#pConfigFrom').select2();
     $('#deleteButton').on('mouseenter', function (event) {
-        $(this).find('i').html(' Delete Egg');
+        $(this).find('i').html(' @lang('admin/eggs.delete_egg_hover')');
     }).on('mouseleave', function (event) {
         $(this).find('i').html('');
     });
