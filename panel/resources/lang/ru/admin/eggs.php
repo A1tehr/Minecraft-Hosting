@@ -54,6 +54,7 @@ return [
     // Actions
     'save' => 'Сохранить',
     'delete_egg' => 'Удалить яйцо',
+    'create' => 'Создать',
     
     // JavaScript Messages
     'delete_egg_hover' => 'Удалить яйцо',
