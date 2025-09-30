@@ -19,31 +19,31 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Configuration</h3>
+                    <h3 class="box-title">@lang('admin/eggs.configuration')</h3>
                 </div>
                 <div class="box-body">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="pNestId" class="form-label">Associated Nest</label>
+                                <label for="pNestId" class="form-label">@lang('admin/eggs.associated_nest')</label>
                                 <div>
                                     <select name="nest_id" id="pNestId">
                                         @foreach($nests as $nest)
                                             <option value="{{ $nest->id }}" {{ old('nest_id') != $nest->id ?: 'selected' }}>{{ $nest->name }} &lt;{{ $nest->author }}&gt;</option>
                                         @endforeach
                                     </select>
-                                    <p class="text-muted small">Think of a Nest as a category. You can put multiple Eggs in a nest, but consider putting only Eggs that are related to each other in each Nest.</p>
+                                    <p class="text-muted small">@lang('admin/eggs.associated_nest_help')</p>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="pName" class="form-label">Name</label>
+                                <label for="pName" class="form-label">@lang('admin/eggs.name')</label>
                                 <input type="text" id="pName" name="name" value="{{ old('name') }}" class="form-control" />
-                                <p class="text-muted small">A simple, human-readable name to use as an identifier for this Egg. This is what users will see as their game server type.</p>
+                                <p class="text-muted small">@lang('admin/eggs.name_help')</p>
                             </div>
                             <div class="form-group">
-                                <label for="pDescription" class="form-label">Description</label>
+                                <label for="pDescription" class="form-label">@lang('admin/eggs.description')</label>
                                 <textarea id="pDescription" name="description" class="form-control" rows="8">{{ old('description') }}</textarea>
-                                <p class="text-muted small">A description of this Egg.</p>
+                                <p class="text-muted small">@lang('admin/eggs.description_help')</p>
                             </div>
                             <div class="form-group">
                                 <div class="checkbox checkbox-primary no-margin-bottom">
