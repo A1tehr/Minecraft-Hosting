@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
 @section('title')
-    Locations
+    @lang('admin/location.locations')
 @endsection
 
 @section('content-header')
-    <h1>Locations<small>All locations that nodes can be assigned to for easier categorization.</small></h1>
+    <h1>@lang('admin/location.locations')<small>@lang('admin/location.locations_description')</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li class="active">Locations</li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/location.breadcrumb_admin')</a></li>
+        <li class="active">@lang('admin/location.breadcrumb_locations')</li>
     </ol>
 @endsection
 
