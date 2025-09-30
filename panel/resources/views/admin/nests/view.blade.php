@@ -45,24 +45,24 @@
         <div class="box">
             <div class="box-body">
                 <div class="form-group">
-                    <label class="control-label">Nest ID</label>
+                    <label class="control-label">@lang('admin/nests.nest_id')</label>
                     <div>
                         <input type="text" readonly class="form-control" value="{{ $nest->id }}" />
-                        <p class="text-muted small">A unique ID used for identification of this nest internally and through the API.</p>
+                        <p class="text-muted small">@lang('admin/nests.nest_id_help')</p>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Author</label>
+                    <label class="control-label">@lang('admin/nests.author')</label>
                     <div>
                         <input type="text" readonly class="form-control" value="{{ $nest->author }}" />
-                        <p class="text-muted small">The author of this service option. Please direct questions and issues to them unless this is an official option authored by <code>support@pterodactyl.io</code>.</p>
+                        <p class="text-muted small">{!! __('admin/nests.author_help') !!}</p>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">UUID</label>
+                    <label class="control-label">@lang('admin/nests.uuid')</label>
                     <div>
                         <input type="text" readonly class="form-control" value="{{ $nest->uuid }}" />
-                        <p class="text-muted small">A UUID that all servers using this option are assigned for identification purposes.</p>
+                        <p class="text-muted small">@lang('admin/nests.uuid_help')</p>
                     </div>
                 </div>
             </div>
