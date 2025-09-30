@@ -20,14 +20,14 @@
             <div class="box">
                 <div class="box-body">
                     <div class="form-group">
-                        <label class="control-label">Name <span class="field-required"></span></label>
+                        <label class="control-label">@lang('admin/nests.name') <span class="field-required"></span></label>
                         <div>
                             <input type="text" name="name" class="form-control" value="{{ $nest->name }}" />
-                            <p class="text-muted"><small>This should be a descriptive category name that encompasses all of the options within the service.</small></p>
+                            <p class="text-muted"><small>@lang('admin/nests.name_description')</small></p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">Description</label>
+                        <label class="control-label">@lang('admin/nests.description')</label>
                         <div>
                             <textarea name="description" class="form-control" rows="7">{{ $nest->description }}</textarea>
                         </div>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="box-footer">
                     {!! csrf_field() !!}
-                    <button type="submit" name="_method" value="PATCH" class="btn btn-primary btn-sm pull-right">Save</button>
+                    <button type="submit" name="_method" value="PATCH" class="btn btn-primary btn-sm pull-right">@lang('admin/nests.save')</button>
                     <button id="deleteButton" type="submit" name="_method" value="DELETE" class="btn btn-sm btn-danger muted muted-hover"><i class="fa fa-trash-o"></i></button>
                 </div>
             </div>
