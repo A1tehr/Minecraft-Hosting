@@ -43,15 +43,15 @@
     <div class="col-sm-6">
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Nodes</h3>
+                <h3 class="box-title">@lang('admin/location.nodes')</h3>
             </div>
             <div class="box-body table-responsive no-padding">
                 <table class="table table-hover">
                     <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>FQDN</th>
-                        <th>Servers</th>
+                        <th>@lang('admin/location.id')</th>
+                        <th>@lang('admin/location.name')</th>
+                        <th>@lang('admin/location.fqdn')</th>
+                        <th>@lang('admin/location.servers')</th>
                     </tr>
                     @foreach($location->nodes as $node)
                         <tr>
