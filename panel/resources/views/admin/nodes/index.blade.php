@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    List Nodes
+    @lang('admin/node.list_nodes')
 @endsection
 
 @section('scripts')
@@ -10,10 +10,10 @@
 @endsection
 
 @section('content-header')
-    <h1>Nodes<small>All nodes available on the system.</small></h1>
+    <h1>@lang('admin/node.nodes')<small>@lang('admin/node.nodes_description')</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li class="active">Nodes</li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/node.breadcrumb_admin')</a></li>
+        <li class="active">@lang('admin/node.breadcrumb_nodes')</li>
     </ol>
 @endsection
 
