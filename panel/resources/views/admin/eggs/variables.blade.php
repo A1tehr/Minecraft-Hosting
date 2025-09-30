@@ -1,17 +1,17 @@
 @extends('layouts.admin')
 
 @section('title')
-    Egg &rarr; {{ $egg->name }} &rarr; Variables
+    @lang('admin/eggs.breadcrumb_nests') &rarr; {{ $egg->name }} &rarr; @lang('admin/eggs.variables')
 @endsection
 
 @section('content-header')
-    <h1>{{ $egg->name }}<small>Managing variables for this Egg.</small></h1>
+    <h1>{{ $egg->name }}<small>@lang('admin/eggs.managing_variables')</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li><a href="{{ route('admin.nests') }}">Nests</a></li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/eggs.breadcrumb_admin')</a></li>
+        <li><a href="{{ route('admin.nests') }}">@lang('admin/eggs.breadcrumb_nests')</a></li>
         <li><a href="{{ route('admin.nests.view', $egg->nest->id) }}">{{ $egg->nest->name }}</a></li>
         <li><a href="{{ route('admin.nests.egg.view', $egg->id) }}">{{ $egg->name }}</a></li>
-        <li class="active">Variables</li>
+        <li class="active">@lang('admin/eggs.variables')</li>
     </ol>
 @endsection
 
