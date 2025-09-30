@@ -2,6 +2,10 @@
 
 return [
     // Page Elements
+    'list_nodes' => 'Список узлов',
+    'nodes' => 'Узлы', 
+    'nodes_description' => 'Все узлы, доступные в системе.',
+    'node_list' => 'Список узлов',
     'title' => 'Узлы → Новый',
     'header' => 'Новый узел',
     'header_sub' => 'Создать новый локальный или удаленный узел для установки серверов.',
@@ -9,17 +13,27 @@ return [
     'breadcrumb_nodes' => 'Узлы',
     'breadcrumb_new' => 'Новый',
     
+    // Search and Create
+    'search_nodes' => 'Поиск узлов',
+    'create_new' => 'Создать новый',
+    
+    // Table Headers
+    'name' => 'Имя',
+    'location' => 'Местоположение',
+    'memory' => 'Память',
+    'disk' => 'Диск',
+    'servers' => 'Серверы',
+    'ssl' => 'SSL',
+    'public' => 'Публичный',
+    
     // Form Sections
     'basic_details' => 'Основные данные',
     'configuration' => 'Конфигурация',
     
     // Form Fields
-    'name' => 'Имя',
     'name_help' => 'Ограничения символов: <code>a-zA-Z0-9_.-</code> и <code>[Пробел]</code> (мин 1, макс 100 символов).',
     'description' => 'Описание',
-    'location' => 'Местоположение',
     'node_visibility' => 'Видимость узла',
-    'public' => 'Публичный',
     'private' => 'Приватный',
     'private_help' => 'Установка узла как <code>приватного</code> запретит возможность автоматического развертывания на этом узле.',
     'fqdn' => 'FQDN',
@@ -40,9 +54,7 @@ return [
     
     // Configuration Fields
     'daemon_base' => 'Директория файлов демона сервера',
-    'memory' => 'Общая память',
     'memory_overallocate' => 'Превышение выделения памяти',
-    'disk' => 'Общее дисковое пространство',
     'disk_overallocate' => 'Превышение выделения диска',
     'daemon_port' => 'Порт демона',
     'daemon_sftp_port' => 'SFTP порт демона',
