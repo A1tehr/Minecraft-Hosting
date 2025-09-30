@@ -2,14 +2,14 @@
 @extends('layouts.admin')
 
 @section('title')
-    Mounts
+    @lang('admin/mounts.mounts')
 @endsection
 
 @section('content-header')
-    <h1>Mounts<small>Configure and manage additional mount points for servers.</small></h1>
+    <h1>@lang('admin/mounts.mounts')<small>@lang('admin/mounts.mounts_description')</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li class="active">Mounts</li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/mounts.breadcrumb_admin')</a></li>
+        <li class="active">@lang('admin/mounts.breadcrumb_mounts')</li>
     </ol>
 @endsection
 
