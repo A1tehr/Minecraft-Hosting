@@ -91,7 +91,7 @@
                 });
                 $(element).removeClass('text-muted').find('i').removeClass().addClass('fa fa-fw fa-heartbeat faa-pulse animated').css('color', '#50af51');
             }).fail(function (error) {
-                var errorText = 'Error connecting to node! Check browser console for details.';
+                var errorText = '@lang('admin/node.error_connecting_node')';
                 try {
                     errorText = error.responseJSON.errors[0].detail || errorText;
                 } catch (ex) {}
