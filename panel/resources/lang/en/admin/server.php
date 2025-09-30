@@ -190,4 +190,16 @@ return [
         'transfer_started' => 'Server transfer has been started.',
         'transfer_not_viable' => 'The node you selected does not have the required disk space or memory available to accommodate this server.',
     ],
+
+    // Database Management
+    'databases_title' => 'Databases',
+    'databases_description' => 'Manage server databases.',
+    'active_databases' => 'Active Databases',
+    'database_passwords_note' => 'Database passwords can be viewed when <a href="/server/:uuid/databases">visiting this server</a> on the front-end.',
+    'database_name' => 'Database',
+    'database_username' => 'Username',
+    'connections_from' => 'Connections From',
+    'database_host' => 'Host',
+    'max_connections' => 'Max Connections',
+    'unlimited' => 'Unlimited',
 ];
