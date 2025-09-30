@@ -171,13 +171,13 @@
                             <span aria-hidden="true" style="color: #FFFFFF">&times;</span>
                         </button>
 
-                        <h4 class="modal-title">Add Eggs</h4>
+                        <h4 class="modal-title">@lang('admin/mounts.add_eggs')</h4>
                     </div>
 
                     <div class="modal-body">
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <label for="pEggs">Eggs</label>
+                                <label for="pEggs">@lang('admin/mounts.eggs')</label>
                                 <select id="pEggs" name="eggs[]" class="form-control" multiple>
                                     @foreach ($nests as $nest)
                                         <optgroup label="{{ $nest->name }}">
@@ -198,8 +198,8 @@
                     <div class="modal-footer">
                         {!! csrf_field() !!}
 
-                        <button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary btn-sm">Add</button>
+                        <button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal">@lang('admin/mounts.cancel')</button>
+                        <button type="submit" class="btn btn-primary btn-sm">@lang('admin/mounts.add')</button>
                     </div>
                 </form>
             </div>
