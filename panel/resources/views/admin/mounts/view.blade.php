@@ -215,13 +215,13 @@
                             <span aria-hidden="true" style="color: #FFFFFF">&times;</span>
                         </button>
 
-                        <h4 class="modal-title">Add Nodes</h4>
+                        <h4 class="modal-title">@lang('admin/mounts.add_nodes')</h4>
                     </div>
 
                     <div class="modal-body">
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <label for="pNodes">Nodes</label>
+                                <label for="pNodes">@lang('admin/mounts.nodes')</label>
                                 <select id="pNodes" name="nodes[]" class="form-control" multiple>
                                     @foreach ($locations as $location)
                                         <optgroup label="{{ $location->long }} ({{ $location->short }})">
@@ -242,8 +242,8 @@
                     <div class="modal-footer">
                         {!! csrf_field() !!}
 
-                        <button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary btn-sm">Add</button>
+                        <button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal">@lang('admin/mounts.cancel')</button>
+                        <button type="submit" class="btn btn-primary btn-sm">@lang('admin/mounts.add')</button>
                     </div>
                 </form>
             </div>
