@@ -20,9 +20,9 @@
     <div class="col-xs-12">
         <div class="nav-tabs-custom nav-tabs-floating">
             <ul class="nav nav-tabs">
-                <li><a href="{{ route('admin.nests.egg.view', $egg->id) }}">Configuration</a></li>
-                <li class="active"><a href="{{ route('admin.nests.egg.variables', $egg->id) }}">Variables</a></li>
-                <li><a href="{{ route('admin.nests.egg.scripts', $egg->id) }}">Install Script</a></li>
+                <li><a href="{{ route('admin.nests.egg.view', $egg->id) }}">@lang('admin/eggs.configuration')</a></li>
+                <li class="active"><a href="{{ route('admin.nests.egg.variables', $egg->id) }}">@lang('admin/eggs.variables')</a></li>
+                <li><a href="{{ route('admin.nests.egg.scripts', $egg->id) }}">@lang('admin/eggs.install_script')</a></li>
             </ul>
         </div>
     </div>
@@ -31,7 +31,7 @@
     <div class="col-xs-12">
         <div class="box no-border">
             <div class="box-body">
-                <a href="#" class="btn btn-sm btn-success pull-right" data-toggle="modal" data-target="#newVariableModal">Create New Variable</a>
+                <a href="#" class="btn btn-sm btn-success pull-right" data-toggle="modal" data-target="#newVariableModal">@lang('admin/eggs.create_new_variable')</a>
             </div>
         </div>
     </div>
