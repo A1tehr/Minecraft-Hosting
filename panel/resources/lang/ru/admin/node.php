@@ -75,4 +75,15 @@ return [
         'node_updated' => 'Информация об узле обновлена. Если были изменены настройки демона, потребуется перезагрузка демона, чтобы изменения вступили в силу.',
         'unallocated_deleted' => 'Все неназначенные порты для <code>:ip</code> удалены.',
     ],
+
+    // Navigation
+    'nav_about' => 'О системе',
+    'nav_settings' => 'Настройки',
+    'nav_configuration' => 'Конфигурация',
+    'nav_allocation' => 'Выделения',
+    'nav_servers' => 'Серверы',
+
+    // Server View
+    'servers_on_node' => 'Все серверы, назначенные на этот узел.',
+    'breadcrumb_node_servers' => 'Серверы',
 ];
