@@ -49,52 +49,52 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Server Name</td>
+                                <td>@lang('admin/server.server_name')</td>
                                 <td>{{ $server->name }}</td>
                             </tr>
                             <tr>
-                                <td>CPU Limit</td>
+                                <td>@lang('admin/server.cpu_limit')</td>
                                 <td>
                                     @if($server->cpu === 0)
-                                        <code>Unlimited</code>
+                                        <code>@lang('admin/server.unlimited')</code>
                                     @else
                                         <code>{{ $server->cpu }}%</code>
                                     @endif
                                 </td>
                             </tr>
                             <tr>
-                                <td>CPU Pinning</td>
+                                <td>@lang('admin/server.cpu_pinning')</td>
                                 <td>
                                     @if($server->threads != null)
                                         <code>{{ $server->threads }}</code>
                                     @else
-                                        <span class="label label-default">Not Set</span>
+                                        <span class="label label-default">@lang('admin/server.not_set')</span>
                                     @endif
                                 </td>
                             </tr>
                             <tr>
-                                <td>Memory</td>
+                                <td>@lang('admin/server.memory')</td>
                                 <td>
                                     @if($server->memory === 0)
-                                        <code>Unlimited</code>
+                                        <code>@lang('admin/server.unlimited')</code>
                                     @else
                                         <code>{{ $server->memory }}MiB</code>
                                     @endif
                                     /
                                     @if($server->swap === 0)
-                                        <code data-toggle="tooltip" data-placement="top" title="Swap Space">Not Set</code>
+                                        <code data-toggle="tooltip" data-placement="top" title="@lang('admin/server.swap')">@lang('admin/server.not_set')</code>
                                     @elseif($server->swap === -1)
-                                        <code data-toggle="tooltip" data-placement="top" title="Swap Space">Unlimited</code>
+                                        <code data-toggle="tooltip" data-placement="top" title="@lang('admin/server.swap')">@lang('admin/server.unlimited')</code>
                                     @else
-                                        <code data-toggle="tooltip" data-placement="top" title="Swap Space"> {{ $server->swap }}MiB</code>
+                                        <code data-toggle="tooltip" data-placement="top" title="@lang('admin/server.swap')"> {{ $server->swap }}MiB</code>
                                     @endif
                                 </td>
                             </tr>
                             <tr>
-                                <td>Disk Space</td>
+                                <td>@lang('admin/server.disk_space')</td>
                                 <td>
                                     @if($server->disk === 0)
-                                        <code>Unlimited</code>
+                                        <code>@lang('admin/server.unlimited')</code>
                                     @else
                                         <code>{{ $server->disk }}MiB</code>
                                     @endif
