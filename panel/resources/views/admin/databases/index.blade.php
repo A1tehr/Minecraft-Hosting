@@ -46,7 +46,7 @@
                                     @if(! is_null($host->node))
                                         <a href="{{ route('admin.nodes.view', $host->node->id) }}">{{ $host->node->name }}</a>
                                     @else
-                                        <span class="label label-default">None</span>
+                                        <span class="label label-default">@lang('admin/databases.none')</span>
                                     @endif
                                 </td>
                             </tr>
