@@ -19,20 +19,20 @@
 <div class="row">
     <div class="col-sm-7">
         <div class="alert alert-info">
-            Database passwords can be viewed when <a href="/server/{{ $server->uuidShort }}/databases">visiting this server</a> on the front-end.
+            {!! __('admin/server.database_passwords_note', ['uuid' => $server->uuidShort]) !!}
         </div>
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Active Databases</h3>
+                <h3 class="box-title">@lang('admin/server.active_databases')</h3>
             </div>
             <div class="box-body table-responsible no-padding">
                 <table class="table table-hover">
                     <tr>
-                        <th>Database</th>
-                        <th>Username</th>
-                        <th>Connections From</th>
-                        <th>Host</th>
-                        <th>Max Connections</th>
+                        <th>@lang('admin/server.database_name')</th>
+                        <th>@lang('admin/server.database_username')</th>
+                        <th>@lang('admin/server.connections_from')</th>
+                        <th>@lang('admin/server.database_host')</th>
+                        <th>@lang('admin/server.max_connections')</th>
                         <th></th>
                     </tr>
                     @foreach($server->databases as $database)
@@ -44,7 +44,7 @@
                             @if($database->max_connections != null)
                                 <td>{{ $database->max_connections }}</td>
                             @else
-                                <td>Unlimited</td>
+                                <td>@lang('admin/server.unlimited')</td>
                             @endif
                             <td class="text-center">
                                 <button data-action="reset-password" data-id="{{ $database->id }}" class="btn btn-xs btn-primary"><i class="fa fa-refresh"></i></button>
