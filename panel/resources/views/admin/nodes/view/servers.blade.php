@@ -1,16 +1,16 @@
 @extends('layouts.admin')
 
 @section('title')
-    {{ $node->name }}: Servers
+    {{ $node->name }}: @lang('admin/node.nav_servers')
 @endsection
 
 @section('content-header')
-    <h1>{{ $node->name }}<small>All servers currently assigned to this node.</small></h1>
+    <h1>{{ $node->name }}<small>@lang('admin/node.servers_on_node')</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li><a href="{{ route('admin.nodes') }}">Nodes</a></li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/node.breadcrumb_admin')</a></li>
+        <li><a href="{{ route('admin.nodes') }}">@lang('admin/node.breadcrumb_nodes')</a></li>
         <li><a href="{{ route('admin.nodes.view', $node->id) }}">{{ $node->name }}</a></li>
-        <li class="active">Servers</li>
+        <li class="active">@lang('admin/node.breadcrumb_node_servers')</li>
     </ol>
 @endsection
 
