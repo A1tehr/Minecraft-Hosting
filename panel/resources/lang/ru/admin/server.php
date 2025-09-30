@@ -220,4 +220,11 @@ return [
     'network_usage' => 'Сетевой I/O (МиБ)',
     'uptime' => 'Время работы',
     'unavailable' => 'Недоступно',
+
+    // Additional server info
+    'block_io_weight' => 'Вес Block IO',
+    'default_connection' => 'Подключение по умолчанию',
+    'connection_alias' => 'Псевдоним подключения',
+    'no_alias_assigned' => 'Псевдоним не назначен',
+    'swap_space' => 'Пространство подкачки',
 ];
