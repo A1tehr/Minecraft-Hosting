@@ -1,6 +1,29 @@
 <?php
 
 return [
+    // Page Titles
+    'nests' => 'Nests',
+    'new_nest' => 'New Nest',
+    'nest_configuration' => 'Nest Configuration',
+    
+    // Headers and Descriptions
+    'nest_description' => 'Configure a new nest to deploy to all nodes.',
+    'nest_details' => 'Configure nest details.',
+    
+    // Navigation
+    'breadcrumb_admin' => 'Admin',
+    'breadcrumb_nests' => 'Nests',
+    'breadcrumb_new' => 'New',
+    
+    // Form Fields
+    'name' => 'Name',
+    'name_description' => 'This should be a descriptive category name that encompasses all of the eggs within the nest.',
+    'description' => 'Description',
+    
+    // Actions
+    'save' => 'Save',
+    'create' => 'Create',
+    
     'notices' => [
         'created' => 'A new nest, :name, has been successfully created.',
         'deleted' => 'Successfully deleted the requested nest from the Panel.',
