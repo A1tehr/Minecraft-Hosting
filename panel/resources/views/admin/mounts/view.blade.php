@@ -257,11 +257,11 @@
     <script>
         $(document).ready(function() {
             $('#pEggs').select2({
-                placeholder: 'Select eggs..',
+                placeholder: '@lang('admin/mounts.select_eggs')',
             });
 
             $('#pNodes').select2({
-                placeholder: 'Select nodes..',
+                placeholder: '@lang('admin/mounts.select_nodes')',
             });
 
             $('button[data-action="detach-egg"]').click(function (event) {
@@ -276,11 +276,11 @@
                     headers: { 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content') },
                 }).done(function () {
                     element.parent().parent().addClass('warning').delay(100).fadeOut();
-                    swal({ type: 'success', title: 'Egg detached.' });
+                    swal({ type: 'success', title: '@lang('admin/mounts.egg_detached')' });
                 }).fail(function (jqXHR) {
                     console.error(jqXHR);
                     swal({
-                        title: 'Whoops!',
+                        title: '@lang('admin/mounts.whoops')',
                         text: jqXHR.responseJSON.error,
                         type: 'error'
                     });
@@ -299,11 +299,11 @@
                     headers: { 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content') },
                 }).done(function () {
                     element.parent().parent().addClass('warning').delay(100).fadeOut();
-                    swal({ type: 'success', title: 'Node detached.' });
+                    swal({ type: 'success', title: '@lang('admin/mounts.node_detached')' });
                 }).fail(function (jqXHR) {
                     console.error(jqXHR);
                     swal({
-                        title: 'Whoops!',
+                        title: '@lang('admin/mounts.whoops')',
                         text: jqXHR.responseJSON.error,
                         type: 'error'
                     });
