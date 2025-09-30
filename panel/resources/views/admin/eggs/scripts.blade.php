@@ -20,9 +20,9 @@
     <div class="col-xs-12">
         <div class="nav-tabs-custom nav-tabs-floating">
             <ul class="nav nav-tabs">
-                <li><a href="{{ route('admin.nests.egg.view', $egg->id) }}">Configuration</a></li>
-                <li><a href="{{ route('admin.nests.egg.variables', $egg->id) }}">Variables</a></li>
-                <li class="active"><a href="{{ route('admin.nests.egg.scripts', $egg->id) }}">Install Script</a></li>
+                <li><a href="{{ route('admin.nests.egg.view', $egg->id) }}">@lang('admin/eggs.configuration')</a></li>
+                <li><a href="{{ route('admin.nests.egg.variables', $egg->id) }}">@lang('admin/eggs.variables')</a></li>
+                <li class="active"><a href="{{ route('admin.nests.egg.scripts', $egg->id) }}">@lang('admin/eggs.install_script')</a></li>
             </ul>
         </div>
     </div>
@@ -32,12 +32,12 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Install Script</h3>
+                    <h3 class="box-title">@lang('admin/eggs.install_script')</h3>
                 </div>
                 @if(! is_null($egg->copyFrom))
                     <div class="box-body">
                         <div class="callout callout-warning no-margin">
-                            This service option is copying installation scripts and container options from <a href="{{ route('admin.nests.egg.view', $egg->copyFrom->id) }}">{{ $egg->copyFrom->name }}</a>. Any changes you make to this script will not apply unless you select "None" from the dropdown box below.
+                            {!! __('admin/eggs.copy_script_from_warning', ['link' => route('admin.nests.egg.view', $egg->copyFrom->id), 'name' => $egg->copyFrom->name]) !!}
                         </div>
                     </div>
                 @endif
