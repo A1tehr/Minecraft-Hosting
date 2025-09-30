@@ -202,4 +202,22 @@ return [
     'database_host' => 'Host',
     'max_connections' => 'Max Connections',
     'unlimited' => 'Unlimited',
+
+    // Server Information
+    'information' => 'Information',
+    'internal_identifier' => 'Internal Identifier',
+    'external_identifier' => 'External Identifier',
+    'not_set' => 'Not Set',
+    'uuid_docker_container' => 'UUID / Docker Container ID',
+    'current_egg' => 'Current Egg',
+    'server_owner_full' => 'Server Owner',
+    'node_info' => 'Node',
+    'server_status' => 'Server Status',
+    'server_resources' => 'Server Resources',
+    'cpu_usage' => 'CPU Usage',
+    'memory_usage' => 'Memory Usage (MiB)', 
+    'disk_usage' => 'Disk Usage (MiB)',
+    'network_usage' => 'Network I/O (MiB)',
+    'uptime' => 'Uptime',
+    'unavailable' => 'Unavailable',
 ];
