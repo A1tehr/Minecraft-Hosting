@@ -91,5 +91,6 @@ return [
     'enable' => 'Enable',
     'disable' => 'Disable',
     'save' => 'Save',
+    'view' => 'View',
     'copyright' => '&copy; 2015 - :year Pterodactyl Software',
 ];
