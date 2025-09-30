@@ -85,14 +85,14 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="pUsername" class="form-label">Username</label>
+                            <label for="pUsername" class="form-label">@lang('admin/databases.username')</label>
                             <input type="text" name="username" id="pUsername" class="form-control" />
-                            <p class="text-muted small">The username of an account that has enough permissions to create new users and databases on the system.</p>
+                            <p class="text-muted small">@lang('admin/databases.username_help')</p>
                         </div>
                         <div class="col-md-6">
-                            <label for="pPassword" class="form-label">Password</label>
+                            <label for="pPassword" class="form-label">@lang('admin/databases.password')</label>
                             <input type="password" name="password" id="pPassword" class="form-control" />
-                            <p class="text-muted small">The password to the account defined.</p>
+                            <p class="text-muted small">@lang('admin/databases.password_help')</p>
                         </div>
                     </div>
                     <div class="form-group">
