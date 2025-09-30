@@ -1,16 +1,16 @@
 @extends('layouts.admin')
 
 @section('title')
-    Server — {{ $server->name }}: Databases
+    @lang('admin/server.server_management') — {{ $server->name }}: @lang('admin/server.databases_title')
 @endsection
 
 @section('content-header')
-    <h1>{{ $server->name }}<small>Manage server databases.</small></h1>
+    <h1>{{ $server->name }}<small>@lang('admin/server.databases_description')</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li><a href="{{ route('admin.servers') }}">Servers</a></li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/server.breadcrumb_admin')</a></li>
+        <li><a href="{{ route('admin.servers') }}">@lang('admin/server.breadcrumb_servers')</a></li>
         <li><a href="{{ route('admin.servers.view', $server->id) }}">{{ $server->name }}</a></li>
-        <li class="active">Databases</li>
+        <li class="active">@lang('admin/server.databases_title')</li>
     </ol>
 @endsection
 
