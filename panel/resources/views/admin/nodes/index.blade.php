@@ -40,13 +40,13 @@
                     <tbody>
                         <tr>
                             <th></th>
-                            <th>Name</th>
-                            <th>Location</th>
-                            <th>Memory</th>
-                            <th>Disk</th>
-                            <th class="text-center">Servers</th>
-                            <th class="text-center">SSL</th>
-                            <th class="text-center">Public</th>
+                            <th>@lang('admin/node.name')</th>
+                            <th>@lang('admin/node.location')</th>
+                            <th>@lang('admin/node.memory')</th>
+                            <th>@lang('admin/node.disk')</th>
+                            <th class="text-center">@lang('admin/node.servers')</th>
+                            <th class="text-center">@lang('admin/node.ssl')</th>
+                            <th class="text-center">@lang('admin/node.public')</th>
                         </tr>
                         @foreach ($nodes as $node)
                             <tr>
