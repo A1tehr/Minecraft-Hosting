@@ -26,11 +26,11 @@
                 <table class="table table-hover">
                     <tbody>
                         <tr>
-                            <th>ID</th>
-                            <th>Short Code</th>
-                            <th>Description</th>
-                            <th class="text-center">Nodes</th>
-                            <th class="text-center">Servers</th>
+                            <th>@lang('admin/location.id')</th>
+                            <th>@lang('admin/location.short_code')</th>
+                            <th>@lang('admin/location.description')</th>
+                            <th class="text-center">@lang('admin/location.nodes')</th>
+                            <th class="text-center">@lang('admin/location.servers')</th>
                         </tr>
                         @foreach ($locations as $location)
                             <tr>
