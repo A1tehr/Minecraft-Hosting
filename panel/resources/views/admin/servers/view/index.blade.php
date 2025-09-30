@@ -21,28 +21,28 @@
             <div class="col-xs-12">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Information</h3>
+                        <h3 class="box-title">@lang('admin/server.information')</h3>
                     </div>
                     <div class="box-body table-responsive no-padding">
                         <table class="table table-hover">
                             <tr>
-                                <td>Internal Identifier</td>
+                                <td>@lang('admin/server.internal_identifier')</td>
                                 <td><code>{{ $server->id }}</code></td>
                             </tr>
                             <tr>
-                                <td>External Identifier</td>
+                                <td>@lang('admin/server.external_identifier')</td>
                                 @if(is_null($server->external_id))
-                                    <td><span class="label label-default">Not Set</span></td>
+                                    <td><span class="label label-default">@lang('admin/server.not_set')</span></td>
                                 @else
                                     <td><code>{{ $server->external_id }}</code></td>
                                 @endif
                             </tr>
                             <tr>
-                                <td>UUID / Docker Container ID</td>
+                                <td>@lang('admin/server.uuid_docker_container')</td>
                                 <td><code>{{ $server->uuid }}</code></td>
                             </tr>
                             <tr>
-                                <td>Current Egg</td>
+                                <td>@lang('admin/server.current_egg')</td>
                                 <td>
                                     <a href="{{ route('admin.nests.view', $server->nest_id) }}">{{ $server->nest->name }}</a> ::
                                     <a href="{{ route('admin.nests.egg.view', $server->egg_id) }}">{{ $server->egg->name }}</a>
