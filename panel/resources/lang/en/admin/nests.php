@@ -23,6 +23,22 @@ return [
     // Actions
     'save' => 'Save',
     'create' => 'Create',
+    'delete_nest' => 'Delete Nest',
+    
+    // View Nest Page
+    'view_nest' => 'Nests → :name',
+    'nest_id' => 'Nest ID',
+    'nest_id_help' => 'A unique ID used for identification of this nest internally and through the API.',
+    'author' => 'Author',
+    'author_help' => 'The author of this service option. Please direct questions and issues to them unless this is an official option authored by <code>support@pterodactyl.io</code>.',
+    'uuid' => 'UUID',
+    'uuid_help' => 'A UUID that all servers using this option are assigned for identification purposes.',
+    'nest_eggs' => 'Nest Eggs',
+    'egg_id' => 'ID',
+    'egg_name' => 'Name',
+    'egg_description' => 'Description',
+    'servers' => 'Servers',
+    'new_egg' => 'New Egg',
     
     'notices' => [
         'created' => 'A new nest, :name, has been successfully created.',
