@@ -38,4 +38,19 @@ return [
     
     // Warnings and Notices
     'grant_option_warning' => 'The account defined for this database host <strong>must</strong> have the <code>WITH GRANT OPTION</code> permission. If the defined account does not have this permission requests to create databases <em>will</em> fail. <strong>Do not use the same account details for MySQL that you have defined for this panel.</strong>',
+    
+    // View Page
+    'view_description' => 'Viewing associated databases and details for this database host.',
+    'host_details' => 'Host Details',
+    'user_details' => 'User Details',
+    'password_leave_blank' => 'The password to the account defined. Leave blank to continue using the assigned password.',
+    'save' => 'Save',
+    
+    // Database Table
+    'server' => 'Server',
+    'database_name' => 'Database Name',
+    'connections_from' => 'Connections From',
+    'max_connections' => 'Max Connections',
+    'unlimited' => 'Unlimited',
+    'manage' => 'Manage',
 ];
