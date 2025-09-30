@@ -101,20 +101,20 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Block IO Weight</td>
+                                <td>@lang('admin/server.block_io_weight')</td>
                                 <td><code>{{ $server->io }}</code></td>
                             </tr>
                             <tr>
-                                <td>Default Connection</td>
+                                <td>@lang('admin/server.default_connection')</td>
                                 <td><code>{{ $server->allocation->ip }}:{{ $server->allocation->port }}</code></td>
                             </tr>
                             <tr>
-                                <td>Connection Alias</td>
+                                <td>@lang('admin/server.connection_alias')</td>
                                 <td>
                                     @if($server->allocation->alias !== $server->allocation->ip)
                                         <code>{{ $server->allocation->alias }}:{{ $server->allocation->port }}</code>
                                     @else
-                                        <span class="label label-default">No Alias Assigned</span>
+                                        <span class="label label-default">@lang('admin/server.no_alias_assigned')</span>
                                     @endif
                                 </td>
                             </tr>
