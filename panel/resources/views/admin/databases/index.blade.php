@@ -17,9 +17,9 @@
     <div class="col-xs-12">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Host List</h3>
+                <h3 class="box-title">@lang('admin/databases.host_list')</h3>
                 <div class="box-tools">
-                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#newHostModal">Create New</button>
+                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#newHostModal">@lang('admin/databases.create_new')</button>
                 </div>
             </div>
             <div class="box-body table-responsive no-padding">
