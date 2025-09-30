@@ -2,6 +2,10 @@
 
 return [
     // Page Elements
+    'list_nodes' => 'List Nodes',
+    'nodes' => 'Nodes', 
+    'nodes_description' => 'All nodes available on the system.',
+    'node_list' => 'Node List',
     'title' => 'Nodes → New',
     'header' => 'New Node',
     'header_sub' => 'Create a new local or remote node for servers to be installed to.',
@@ -9,17 +13,27 @@ return [
     'breadcrumb_nodes' => 'Nodes',
     'breadcrumb_new' => 'New',
     
+    // Search and Create
+    'search_nodes' => 'Search Nodes',
+    'create_new' => 'Create New',
+    
+    // Table Headers
+    'name' => 'Name',
+    'location' => 'Location',
+    'memory' => 'Memory',
+    'disk' => 'Disk',
+    'servers' => 'Servers',
+    'ssl' => 'SSL',
+    'public' => 'Public',
+    
     // Form Sections
     'basic_details' => 'Basic Details',
     'configuration' => 'Configuration',
     
     // Form Fields
-    'name' => 'Name',
     'name_help' => 'Character limits: <code>a-zA-Z0-9_.-</code> and <code>[Space]</code> (min 1, max 100 characters).',
     'description' => 'Description',
-    'location' => 'Location',
     'node_visibility' => 'Node Visibility',
-    'public' => 'Public',
     'private' => 'Private',
     'private_help' => 'By setting a node to <code>private</code> you will be denying the ability to auto-deploy to this node.',
     'fqdn' => 'FQDN',
@@ -40,9 +54,7 @@ return [
     
     // Configuration Fields
     'daemon_base' => 'Daemon Server File Directory',
-    'memory' => 'Total Memory',
     'memory_overallocate' => 'Memory Over-Allocation',
-    'disk' => 'Total Disk Space',
     'disk_overallocate' => 'Disk Over-Allocation',
     'daemon_port' => 'Daemon Port',
     'daemon_sftp_port' => 'Daemon SFTP Port',
