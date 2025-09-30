@@ -220,4 +220,11 @@ return [
     'network_usage' => 'Network I/O (MiB)',
     'uptime' => 'Uptime',
     'unavailable' => 'Unavailable',
+
+    // Additional server info
+    'block_io_weight' => 'Block IO Weight',
+    'default_connection' => 'Default Connection',
+    'connection_alias' => 'Connection Alias',
+    'no_alias_assigned' => 'No Alias Assigned',
+    'swap_space' => 'Swap Space',
 ];
