@@ -135,7 +135,7 @@
         $('#pConfigFrom').select2();
     });
     $('#pNestId').on('change', function (event) {
-        $('#pConfigFrom').html('<option value="">None</option>').select2({
+        $('#pConfigFrom').html('<option value="">@lang('admin/eggs.none')</option>').select2({
             data: $.map(_.get(Pterodactyl.nests, $(this).val() + '.eggs', []), function (item) {
                 return {
                     id: item.id,
