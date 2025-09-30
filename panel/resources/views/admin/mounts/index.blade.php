@@ -18,10 +18,10 @@
         <div class="col-xs-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Mount List</h3>
+                    <h3 class="box-title">@lang('admin/mounts.mount_list')</h3>
 
                     <div class="box-tools">
-                        <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#newMountModal">Create New</button>
+                        <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#newMountModal">@lang('admin/mounts.create_new')</button>
                     </div>
                 </div>
 
@@ -29,13 +29,13 @@
                     <table class="table table-hover">
                         <tbody>
                             <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Source</th>
-                                <th>Target</th>
-                                <th class="text-center">Eggs</th>
-                                <th class="text-center">Nodes</th>
-                                <th class="text-center">Servers</th>
+                                <th>@lang('admin/mounts.id')</th>
+                                <th>@lang('admin/mounts.name')</th>
+                                <th>@lang('admin/mounts.source')</th>
+                                <th>@lang('admin/mounts.target')</th>
+                                <th class="text-center">@lang('admin/mounts.eggs')</th>
+                                <th class="text-center">@lang('admin/mounts.nodes')</th>
+                                <th class="text-center">@lang('admin/mounts.servers')</th>
                             </tr>
 
                             @foreach ($mounts as $mount)
