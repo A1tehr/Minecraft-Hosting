@@ -18,23 +18,23 @@
     <div class="col-sm-6">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Location Details</h3>
+                <h3 class="box-title">@lang('admin/location.location_details')</h3>
             </div>
             <form action="{{ route('admin.locations.view', $location->id) }}" method="POST">
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="pShort" class="form-label">Short Code</label>
+                        <label for="pShort" class="form-label">@lang('admin/location.short_code')</label>
                         <input type="text" id="pShort" name="short" class="form-control" value="{{ $location->short }}" />
                     </div>
                     <div class="form-group">
-                        <label for="pLong" class="form-label">Description</label>
+                        <label for="pLong" class="form-label">@lang('admin/location.description')</label>
                         <textarea id="pLong" name="long" class="form-control" rows="4">{{ $location->long }}</textarea>
                     </div>
                 </div>
                 <div class="box-footer">
                     {!! csrf_field() !!}
                     {!! method_field('PATCH') !!}
-                    <button name="action" value="edit" class="btn btn-sm btn-primary pull-right">Save</button>
+                    <button name="action" value="edit" class="btn btn-sm btn-primary pull-right">@lang('admin/location.save')</button>
                     <button name="action" value="delete" class="btn btn-sm btn-danger pull-left muted muted-hover"><i class="fa fa-trash-o"></i></button>
                 </div>
             </form>
