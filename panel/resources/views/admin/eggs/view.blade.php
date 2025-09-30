@@ -34,16 +34,16 @@
                     <div class="row">
                         <div class="col-xs-8">
                             <div class="form-group no-margin-bottom">
-                                <label for="pName" class="control-label">Egg File</label>
+                                <label for="pName" class="control-label">@lang('admin/eggs.egg_file')</label>
                                 <div>
                                     <input type="file" name="import_file" class="form-control" style="border: 0;margin-left:-10px;" />
-                                    <p class="text-muted small no-margin-bottom">If you would like to replace settings for this Egg by uploading a new JSON file, simply select it here and press "Update Egg". This will not change any existing startup strings or Docker images for existing servers.</p>
+                                    <p class="text-muted small no-margin-bottom">@lang('admin/eggs.egg_file_help')</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xs-4">
                             {!! csrf_field() !!}
-                            <button type="submit" name="_method" value="PUT" class="btn btn-sm btn-danger pull-right">Update Egg</button>
+                            <button type="submit" name="_method" value="PUT" class="btn btn-sm btn-danger pull-right">@lang('admin/eggs.update_egg')</button>
                         </div>
                     </div>
                 </div>
