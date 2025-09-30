@@ -94,48 +94,48 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Create New Egg Variable</h4>
+                <h4 class="modal-title">@lang('admin/eggs.create_new_variable')</h4>
             </div>
             <form action="{{ route('admin.nests.egg.variables', $egg->id) }}" method="POST">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="control-label">Name <span class="field-required"></span></label>
+                        <label class="control-label">@lang('admin/eggs.name') <span class="field-required"></span></label>
                         <input type="text" name="name" class="form-control" value="{{ old('name') }}"/>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">Description</label>
+                        <label class="control-label">@lang('admin/eggs.description')</label>
                         <textarea name="description" class="form-control" rows="3">{{ old('description') }}</textarea>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label class="control-label">Environment Variable <span class="field-required"></span></label>
+                            <label class="control-label">@lang('admin/eggs.environment_variable') <span class="field-required"></span></label>
                             <input type="text" name="env_variable" class="form-control" value="{{ old('env_variable') }}" />
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="control-label">Default Value</label>
+                            <label class="control-label">@lang('admin/eggs.default_value')</label>
                             <input type="text" name="default_value" class="form-control" value="{{ old('default_value') }}" />
                         </div>
                         <div class="col-xs-12">
-                            <p class="text-muted small">This variable can be accessed in the startup command by entering <code>@{{environment variable value}}</code>.</p>
+                            <p class="text-muted small">@lang('admin/eggs.variable_access_help_new')</p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">Permissions</label>
+                        <label class="control-label">@lang('admin/eggs.permissions')</label>
                         <select name="options[]" class="pOptions form-control" multiple>
-                            <option value="user_viewable">Users Can View</option>
-                            <option value="user_editable">Users Can Edit</option>
+                            <option value="user_viewable">@lang('admin/eggs.users_can_view')</option>
+                            <option value="user_editable">@lang('admin/eggs.users_can_edit')</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">Input Rules <span class="field-required"></span></label>
+                        <label class="control-label">@lang('admin/eggs.input_rules') <span class="field-required"></span></label>
                         <input type="text" name="rules" class="form-control" value="{{ old('rules', 'required|string|max:20') }}" placeholder="required|string|max:20" />
-                        <p class="text-muted small">These rules are defined using standard <a href="https://laravel.com/docs/5.7/validation#available-validation-rules" target="_blank">Laravel Framework validation rules</a>.</p>
+                        <p class="text-muted small">{!! __('admin/eggs.input_rules_help') !!}</p>
                     </div>
                 </div>
                 <div class="modal-footer">
                     {!! csrf_field() !!}
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Create Variable</button>
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">@lang('admin/eggs.close')</button>
+                    <button type="submit" class="btn btn-primary">@lang('admin/eggs.create_variable')</button>
                 </div>
             </form>
         </div>
