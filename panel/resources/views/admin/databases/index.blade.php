@@ -26,13 +26,13 @@
                 <table class="table table-hover">
                     <tbody>
                         <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Host</th>
-                            <th>Port</th>
-                            <th>Username</th>
-                            <th class="text-center">Databases</th>
-                            <th class="text-center">Node</th>
+                            <th>@lang('admin/databases.id')</th>
+                            <th>@lang('admin/databases.name')</th>
+                            <th>@lang('admin/databases.host')</th>
+                            <th>@lang('admin/databases.port')</th>
+                            <th>@lang('admin/databases.username')</th>
+                            <th class="text-center">@lang('admin/databases.databases')</th>
+                            <th class="text-center">@lang('admin/databases.node')</th>
                         </tr>
                         @foreach ($hosts as $host)
                             <tr>
