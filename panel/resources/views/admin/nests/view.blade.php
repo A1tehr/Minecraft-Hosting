@@ -73,15 +73,15 @@
     <div class="col-xs-12">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Nest Eggs</h3>
+                <h3 class="box-title">@lang('admin/nests.nest_eggs')</h3>
             </div>
             <div class="box-body table-responsive no-padding">
                 <table class="table table-hover">
                     <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th class="text-center">Servers</th>
+                        <th>@lang('admin/nests.egg_id')</th>
+                        <th>@lang('admin/nests.egg_name')</th>
+                        <th>@lang('admin/nests.egg_description')</th>
+                        <th class="text-center">@lang('admin/nests.servers')</th>
                         <th class="text-center"></th>
                     </tr>
                     @foreach($nest->eggs as $egg)
@@ -98,7 +98,7 @@
                 </table>
             </div>
             <div class="box-footer">
-                <a href="{{ route('admin.nests.egg.new') }}"><button class="btn btn-success btn-sm pull-right">New Egg</button></a>
+                <a href="{{ route('admin.nests.egg.new') }}"><button class="btn btn-success btn-sm pull-right">@lang('admin/nests.new_egg')</button></a>
             </div>
         </div>
     </div>
