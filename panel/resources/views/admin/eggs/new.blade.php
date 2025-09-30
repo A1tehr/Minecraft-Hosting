@@ -48,29 +48,23 @@
                             <div class="form-group">
                                 <div class="checkbox checkbox-primary no-margin-bottom">
                                     <input id="pForceOutgoingIp" name="force_outgoing_ip" type="checkbox" value="1" {{ \Pterodactyl\Helpers\Utilities::checked('force_outgoing_ip', 0) }} />
-                                    <label for="pForceOutgoingIp" class="strong">Force Outgoing IP</label>
+                                    <label for="pForceOutgoingIp" class="strong">@lang('admin/eggs.force_outgoing_ip')</label>
                                     <p class="text-muted small">
-                                        Forces all outgoing network traffic to have its Source IP NATed to the IP of the server's primary allocation IP.
-                                        Required for certain games to work properly when the Node has multiple public IP addresses.
-                                        <br>
-                                        <strong>
-                                            Enabling this option will disable internal networking for any servers using this egg,
-                                            causing them to be unable to internally access other servers on the same node.
-                                        </strong>
+                                        {!! __('admin/eggs.force_outgoing_ip_help') !!}
                                     </p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="pDockerImage" class="control-label">Docker Images</label>
+                                <label for="pDockerImage" class="control-label">@lang('admin/eggs.docker_images')</label>
                                 <textarea id="pDockerImages" name="docker_images" rows="4" placeholder="quay.io/pterodactyl/service" class="form-control">{{ old('docker_images') }}</textarea>
-                                <p class="text-muted small">The docker images available to servers using this egg. Enter one per line. Users will be able to select from this list of images if more than one value is provided.</p>
+                                <p class="text-muted small">@lang('admin/eggs.docker_image_help_new')</p>
                             </div>
                             <div class="form-group">
-                                <label for="pStartup" class="control-label">Startup Command</label>
+                                <label for="pStartup" class="control-label">@lang('admin/eggs.startup_command')</label>
                                 <textarea id="pStartup" name="startup" class="form-control" rows="10">{{ old('startup') }}</textarea>
-                                <p class="text-muted small">The default startup command that should be used for new servers created with this Egg. You can change this per-server as needed.</p>
+                                <p class="text-muted small">@lang('admin/eggs.startup_help_new')</p>
                             </div>
                         </div>
                     </div>
