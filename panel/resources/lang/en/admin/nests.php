@@ -7,8 +7,21 @@ return [
     'nest_configuration' => 'Nest Configuration',
     
     // Headers and Descriptions
+    'nests_list' => 'All nests currently available on this system.',
+    'configured_nests' => 'Configured Nests',
     'nest_description' => 'Configure a new nest to deploy to all nodes.',
     'nest_details' => 'Configure nest details.',
+    'eggs_warning' => 'Eggs are a powerful feature of Pterodactyl Panel that allow for extreme flexibility and configuration. Please note that while powerful, modifying an egg wrongly can very easily brick your servers and cause more problems. Please avoid editing our default eggs — those provided by <code>support@pterodactyl.io</code> — unless you are absolutely sure of what you are doing.',
+    
+    // Import Egg
+    'import_egg' => 'Import Egg',
+    'import_egg_modal_title' => 'Import an Egg',
+    'egg_file' => 'Egg File',
+    'egg_file_help' => 'Select the <code>.json</code> file for the new egg that you wish to import.',
+    'associated_nest' => 'Associated Nest',
+    'associated_nest_help_import' => 'Select the nest that this egg will be associated with from the dropdown. If you wish to associate it with a new nest you will need to create that nest before continuing.',
+    'import' => 'Import',
+    'cancel' => 'Cancel',
     
     // Navigation
     'breadcrumb_admin' => 'Admin',
