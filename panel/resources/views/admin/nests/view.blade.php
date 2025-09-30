@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
 @section('title')
-    Nests &rarr; {{ $nest->name }}
+    @lang('admin/nests.view_nest', ['name' => $nest->name])
 @endsection
 
 @section('content-header')
     <h1>{{ $nest->name }}<small>{{ str_limit($nest->description, 50) }}</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li><a href="{{ route('admin.nests') }}">Nests</a></li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/nests.breadcrumb_admin')</a></li>
+        <li><a href="{{ route('admin.nests') }}">@lang('admin/nests.breadcrumb_nests')</a></li>
         <li class="active">{{ $nest->name }}</li>
     </ol>
 @endsection
