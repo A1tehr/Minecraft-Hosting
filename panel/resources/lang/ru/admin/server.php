@@ -202,4 +202,22 @@ return [
     'database_host' => 'Хост',
     'max_connections' => 'Максимум подключений',
     'unlimited' => 'Неограниченно',
+
+    // Server Information
+    'information' => 'Информация',
+    'internal_identifier' => 'Внутренний идентификатор',
+    'external_identifier' => 'Внешний идентификатор',
+    'not_set' => 'Не установлен',
+    'uuid_docker_container' => 'UUID / ID Docker контейнера',
+    'current_egg' => 'Текущий Egg',
+    'server_owner_full' => 'Владелец сервера',
+    'node_info' => 'Узел',
+    'server_status' => 'Статус сервера',
+    'server_resources' => 'Ресурсы сервера',
+    'cpu_usage' => 'Использование CPU',
+    'memory_usage' => 'Использование памяти (МиБ)', 
+    'disk_usage' => 'Использование диска (МиБ)',
+    'network_usage' => 'Сетевой I/O (МиБ)',
+    'uptime' => 'Время работы',
+    'unavailable' => 'Недоступно',
 ];
