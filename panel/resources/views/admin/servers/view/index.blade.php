@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
 @section('title')
-    Server — {{ $server->name }}
+    @lang('admin/server.server_management') — {{ $server->name }}
 @endsection
 
 @section('content-header')
     <h1>{{ $server->name }}<small>{{ str_limit($server->description) }}</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li><a href="{{ route('admin.servers') }}">Servers</a></li>
+        <li><a href="{{ route('admin.index') }}">@lang('admin/server.breadcrumb_admin')</a></li>
+        <li><a href="{{ route('admin.servers') }}">@lang('admin/server.breadcrumb_servers')</a></li>
         <li class="active">{{ $server->name }}</li>
     </ol>
 @endsection
