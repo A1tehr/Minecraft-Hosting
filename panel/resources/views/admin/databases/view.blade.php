@@ -56,25 +56,25 @@
         <div class="col-sm-6">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">User Details</h3>
+                    <h3 class="box-title">@lang('admin/databases.user_details')</h3>
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="pUsername" class="form-label">Username</label>
+                        <label for="pUsername" class="form-label">@lang('admin/databases.username')</label>
                         <input type="text" name="username" id="pUsername" class="form-control" value="{{ old('username', $host->username) }}" />
-                        <p class="text-muted small">The username of an account that has enough permissions to create new users and databases on the system.</p>
+                        <p class="text-muted small">@lang('admin/databases.username_help')</p>
                     </div>
                     <div class="form-group">
-                        <label for="pPassword" class="form-label">Password</label>
+                        <label for="pPassword" class="form-label">@lang('admin/databases.password')</label>
                         <input type="password" name="password" id="pPassword" class="form-control" />
-                        <p class="text-muted small">The password to the account defined. Leave blank to continue using the assigned password.</p>
+                        <p class="text-muted small">@lang('admin/databases.password_leave_blank')</p>
                     </div>
                     <hr />
-                    <p class="text-danger small text-left">The account defined for this database host <strong>must</strong> have the <code>WITH GRANT OPTION</code> permission. If the defined account does not have this permission requests to create databases <em>will</em> fail. <strong>Do not use the same account details for MySQL that you have defined for this panel.</strong></p>
+                    <p class="text-danger small text-left">{!! __('admin/databases.grant_option_warning') !!}</p>
                 </div>
                 <div class="box-footer">
                     {!! csrf_field() !!}
-                    <button name="_method" value="PATCH" class="btn btn-sm btn-primary pull-right">Save</button>
+                    <button name="_method" value="PATCH" class="btn btn-sm btn-primary pull-right">@lang('admin/databases.save')</button>
                     <button name="_method" value="DELETE" class="btn btn-sm btn-danger pull-left muted muted-hover"><i class="fa fa-trash-o"></i></button>
                 </div>
             </div>
