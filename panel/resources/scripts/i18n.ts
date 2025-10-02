@@ -24,7 +24,14 @@ i18n.use(I18NextMultiloadBackendAdapter)
         lng: getUserLanguage(),
         fallbackLng: 'en',
         keySeparator: '.',
-        ns: ['navigation', 'dashboard/account', 'dashboard/api', 'dashboard/ssh', 'dashboard/activity', 'dashboard/index'],
+        ns: [
+            'navigation',
+            'dashboard/account',
+            'dashboard/api',
+            'dashboard/ssh',
+            'dashboard/activity',
+            'dashboard/index',
+        ],
         defaultNS: 'navigation',
         backend: {
             backend: I18NextHttpBackend,
