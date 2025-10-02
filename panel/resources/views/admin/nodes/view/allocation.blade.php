@@ -32,7 +32,7 @@
     <div class="col-sm-8">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Existing Allocations</h3>
+                <h3 class="box-title">@lang('admin/node.existing_allocations')</h3>
             </div>
             <div class="box-body table-responsive no-padding" style="overflow-x: visible">
                 <table class="table table-hover" style="margin-bottom:0;">
@@ -40,17 +40,17 @@
                         <th>
                             <input type="checkbox" class="select-all-files hidden-xs" data-action="selectAll">
                         </th>
-                        <th>IP Address <i class="fa fa-fw fa-minus-square" style="font-weight:normal;color:#d9534f;cursor:pointer;" data-toggle="modal" data-target="#allocationModal"></i></th>
-                        <th>IP Alias</th>
-                        <th>Port</th>
-                        <th>Assigned To</th>
+                        <th>@lang('admin/node.ip_address') <i class="fa fa-fw fa-minus-square" style="font-weight:normal;color:#d9534f;cursor:pointer;" data-toggle="modal" data-target="#allocationModal"></i></th>
+                        <th>@lang('admin/node.ip_alias')</th>
+                        <th>@lang('admin/node.port')</th>
+                        <th>@lang('admin/node.assigned_to')</th>
                         <th>
                             <div class="btn-group hidden-xs">
                                 <button type="button" id="mass_actions" class="btn btn-sm btn-default dropdown-toggle disabled"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mass Actions <span class="caret"></span>
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@lang('admin/node.mass_actions') <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-massactions">
-                                    <li><a href="#" id="selective-deletion" data-action="selective-deletion">Delete <i class="fa fa-fw fa-trash-o"></i></a></li>
+                                    <li><a href="#" id="selective-deletion" data-action="selective-deletion">@lang('admin/node.delete') <i class="fa fa-fw fa-trash-o"></i></a></li>
                                 </ul>
                             </div>
                         </th>
