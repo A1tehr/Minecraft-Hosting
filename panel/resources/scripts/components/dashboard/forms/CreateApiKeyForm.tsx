@@ -13,6 +13,7 @@ import Button from '@/components/elements/Button';
 import Input, { Textarea } from '@/components/elements/Input';
 import styled from 'styled-components/macro';
 import ApiKeyModal from '@/components/dashboard/ApiKeyModal';
+import { useTranslation } from 'react-i18next';
 
 interface Values {
     description: string;
