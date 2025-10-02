@@ -9,6 +9,7 @@ import Input, { Textarea } from '@/components/elements/Input';
 import styled from 'styled-components/macro';
 import { useFlashKey } from '@/plugins/useFlash';
 import { createSSHKey, useSSHKeys } from '@/api/account/ssh-keys';
+import { useTranslation } from 'react-i18next';
 
 interface Values {
     name: string;
