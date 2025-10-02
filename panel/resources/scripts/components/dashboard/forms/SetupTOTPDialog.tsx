@@ -126,12 +126,12 @@ const ConfigureTwoFactorForm = ({ onTokens }: Props) => {
 
 const SetupTOTPDialogWithTranslation = (props: Props) => {
     const { t } = useTranslation('dashboard/account');
-    
+
     const DialogComponent = asDialog({
-        title: t('two_factor.setup.title'),
-        description: t('two_factor.setup.description'),
+        title: t('two_factor.setup.title') as string,
+        description: t('two_factor.setup.description') as string,
     })(ConfigureTwoFactorForm);
-    
+
     return <DialogComponent {...props} />;
 };
 
