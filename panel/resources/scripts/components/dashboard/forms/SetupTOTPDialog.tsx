@@ -91,7 +91,7 @@ const ConfigureTwoFactorForm = ({ onTokens }: Props) => {
                 pattern={'\\d{6}'}
             />
             <label htmlFor={'totp-password'} className={'block mt-3'}>
-                Account Password
+                {t('two_factor.setup.account_password')}
             </label>
             <Input.Text
                 variant={Input.Text.Variants.Loose}
@@ -101,14 +101,10 @@ const ConfigureTwoFactorForm = ({ onTokens }: Props) => {
                 onChange={(e) => setPassword(e.currentTarget.value)}
             />
             <Dialog.Footer>
-                <Button.Text onClick={close}>Cancel</Button.Text>
+                <Button.Text onClick={close}>{t('two_factor.setup.cancel')}</Button.Text>
                 <Tooltip
                     disabled={password.length > 0 && value.length === 6}
-                    content={
-                        !token
-                            ? 'Waiting for QR code to load...'
-                            : 'You must enter the 6-digit code and your password to continue.'
-                    }
+                    content={!token ? t('two_factor.setup.waiting_qr') : t('two_factor.setup.must_enter_code')}
                     delay={100}
                 >
                     <Button
@@ -116,7 +112,7 @@ const ConfigureTwoFactorForm = ({ onTokens }: Props) => {
                         type={'submit'}
                         form={'enable-totp-form'}
                     >
-                        Enable
+                        {t('two_factor.setup.enable')}
                     </Button>
                 </Tooltip>
             </Dialog.Footer>
