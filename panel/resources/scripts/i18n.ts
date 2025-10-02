@@ -22,10 +22,10 @@ const getUserLanguage = () => {
     const langCode = browserLang.split('-')[0];
     // Support only 'en' and 'ru' for now
     const detectedLang = ['en', 'ru'].includes(langCode) ? langCode : 'en';
-    
+
     // Save detected language to localStorage
     localStorage.setItem('i18nextLng', detectedLang);
-    
+
     return detectedLang;
 };
 
