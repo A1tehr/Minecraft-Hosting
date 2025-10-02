@@ -66,7 +66,7 @@
                             </td>
                             <td class="col-sm-3 middle" data-identifier="ip">{{ $allocation->ip }}</td>
                             <td class="col-sm-3 middle">
-                                <input class="form-control input-sm" type="text" value="{{ $allocation->ip_alias }}" data-action="set-alias" data-id="{{ $allocation->id }}" placeholder="none" />
+                                <input class="form-control input-sm" type="text" value="{{ $allocation->ip_alias }}" data-action="set-alias" data-id="{{ $allocation->id }}" placeholder="@lang('admin/node.none')" />
                                 <span class="input-loader"><i class="fa fa-refresh fa-spin fa-fw"></i></span>
                             </td>
                             <td class="col-sm-2 middle" data-identifier="port">{{ $allocation->port }}</td>
