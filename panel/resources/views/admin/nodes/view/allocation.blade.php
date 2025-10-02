@@ -95,38 +95,38 @@
         <form action="{{ route('admin.nodes.view.allocation', $node->id) }}" method="POST">
             <div class="box box-success">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Assign New Allocations</h3>
+                    <h3 class="box-title">@lang('admin/node.assign_new_allocations')</h3>
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="pAllocationIP" class="control-label">IP Address</label>
+                        <label for="pAllocationIP" class="control-label">@lang('admin/node.ip_address')</label>
                         <div>
                             <select class="form-control" name="allocation_ip" id="pAllocationIP" multiple>
                                 @foreach($allocations as $allocation)
                                     <option value="{{ $allocation->ip }}">{{ $allocation->ip }}</option>
                                 @endforeach
                             </select>
-                            <p class="text-muted small">Enter an IP address to assign ports to here.</p>
+                            <p class="text-muted small">@lang('admin/node.allocation_ip_help')</p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="pAllocationIP" class="control-label">IP Alias</label>
+                        <label for="pAllocationIP" class="control-label">@lang('admin/node.ip_alias')</label>
                         <div>
-                            <input type="text" id="pAllocationAlias" class="form-control" name="allocation_alias" placeholder="alias" />
-                            <p class="text-muted small">If you would like to assign a default alias to these allocations enter it here.</p>
+                            <input type="text" id="pAllocationAlias" class="form-control" name="allocation_alias" placeholder="@lang('admin/node.alias')" />
+                            <p class="text-muted small">@lang('admin/node.allocation_alias_help')</p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="pAllocationPorts" class="control-label">Ports</label>
+                        <label for="pAllocationPorts" class="control-label">@lang('admin/node.ports')</label>
                         <div>
                             <select class="form-control" name="allocation_ports[]" id="pAllocationPorts" multiple></select>
-                            <p class="text-muted small">Enter individual ports or port ranges here separated by commas or spaces.</p>
+                            <p class="text-muted small">@lang('admin/node.allocation_ports_help')</p>
                         </div>
                     </div>
                 </div>
                 <div class="box-footer">
                     {!! csrf_field() !!}
-                    <button type="submit" class="btn btn-success btn-sm pull-right">Submit</button>
+                    <button type="submit" class="btn btn-success btn-sm pull-right">@lang('admin/node.submit')</button>
                 </div>
             </div>
         </form>
