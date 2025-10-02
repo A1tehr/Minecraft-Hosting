@@ -3,12 +3,14 @@ import { Dialog, DialogProps } from '@/components/elements/dialog';
 import { Button } from '@/components/elements/button/index';
 import CopyOnClick from '@/components/elements/CopyOnClick';
 import { Alert } from '@/components/elements/alert';
+import { useTranslation } from 'react-i18next';
 
 interface RecoveryTokenDialogProps extends DialogProps {
     tokens: string[];
 }
 
 export default ({ tokens, open, onClose }: RecoveryTokenDialogProps) => {
+    const { t } = useTranslation('dashboard/account');
     const grouped = [] as [string, string][];
     tokens.forEach((token, index) => {
         if (index % 2 === 0) {
