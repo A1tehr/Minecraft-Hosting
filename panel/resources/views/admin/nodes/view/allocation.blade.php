@@ -305,7 +305,7 @@
             swal({
                 type: 'warning',
                 title: '',
-                text: 'Are you sure you want to delete the following allocations: ' + formattedItems + '?',
+                text: '@lang('admin/node.are_you_sure_delete_allocations')' + formattedItems + '?',
                 html: true,
                 showCancelButton: true,
                 showConfirmButton: true,
@@ -332,15 +332,15 @@
 
                     swal({
                         type: 'success',
-                        title: 'Allocations Deleted'
+                        title: '@lang('admin/node.allocations_deleted')'
                     });
                 }).fail(function (jqXHR) {
                     console.error(jqXHR);
                     swal({
                         type: 'error',
-                        title: 'Whoops!',
+                        title: '@lang('admin/node.whoops')',
                         html: true,
-                        text: 'An error occurred while attempting to delete these allocations. Please try again.',
+                        text: '@lang('admin/node.error_deleting_allocations')',
                     });
                 });
             });
@@ -348,7 +348,7 @@
             swal({
                 type: 'warning',
                 title: '',
-                text: 'Please select allocation(s) to delete.',
+                text: '@lang('admin/node.please_select_allocations')',
             });
         }
     }
