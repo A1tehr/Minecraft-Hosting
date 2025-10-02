@@ -17,21 +17,22 @@ interface Values {
     confirmPassword: string;
 }
 
-const schema = Yup.object().shape({
-    current: Yup.string().min(1).required('You must provide your current password.'),
-    password: Yup.string().min(8).required(),
-    confirmPassword: Yup.string().test(
-        'password',
-        'Password confirmation does not match the password you entered.',
-        function (value) {
-            return value === this.parent.password;
-        }
-    ),
-});
-
 export default () => {
+    const { t } = useTranslation('dashboard/account');
     const user = useStoreState((state: State<ApplicationStore>) => state.user.data);
     const { clearFlashes, addFlash } = useStoreActions((actions: Actions<ApplicationStore>) => actions.flashes);
+
+    const schema = Yup.object().shape({
+        current: Yup.string().min(1).required(t('password.validation.current_required')),
+        password: Yup.string().min(8).required(),
+        confirmPassword: Yup.string().test(
+            'password',
+            t('password.validation.confirm_mismatch'),
+            function (value) {
+                return value === this.parent.password;
+            }
+        ),
+    });
 
     if (!user) {
         return null;
