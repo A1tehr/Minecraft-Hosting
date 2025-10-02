@@ -14,6 +14,7 @@ import FlashMessageRender from '@/components/FlashMessageRender';
 import { Actions, useStoreActions } from 'easy-peasy';
 import { ApplicationStore } from '@/state';
 import asDialog from '@/hoc/asDialog';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
     onTokens: (tokens: string[]) => void;
