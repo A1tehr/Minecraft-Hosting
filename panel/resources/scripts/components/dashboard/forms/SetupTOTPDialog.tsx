@@ -72,12 +72,11 @@ const ConfigureTwoFactorForm = ({ onTokens }: Props) => {
             </div>
             <CopyOnClick text={token?.secret}>
                 <p className={'font-mono text-sm text-gray-100 text-center mt-2'}>
-                    {token?.secret.match(/.{1,4}/g)!.join(' ') || 'Loading...'}
+                    {token?.secret.match(/.{1,4}/g)!.join(' ') || t('two_factor.setup.loading')}
                 </p>
             </CopyOnClick>
             <p id={'totp-code-description'} className={'mt-6'}>
-                Scan the QR code above using the two-step authentication app of your choice. Then, enter the 6-digit
-                code generated into the field below.
+                {t('two_factor.setup.scan_qr')}
             </p>
             <Input.Text
                 aria-labelledby={'totp-code-description'}
