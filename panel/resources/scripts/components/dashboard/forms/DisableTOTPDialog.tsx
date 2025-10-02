@@ -57,7 +57,7 @@ const DisableTOTPDialog = () => {
                 <Tooltip
                     delay={100}
                     disabled={password.length > 0}
-                    content={t('two_factor.disable.must_enter_password')}
+                    content={t('two_factor.disable.must_enter_password') as string}
                 >
                     <Button.Danger type={'submit'} form={'disable-totp-form'} disabled={submitting || !password.length}>
                         {t('two_factor.disable.disable')}
