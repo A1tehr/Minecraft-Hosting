@@ -106,7 +106,9 @@ const ConfigureTwoFactorForm = ({ onTokens }: Props) => {
                 <Button.Text onClick={close}>{t('two_factor.setup.cancel')}</Button.Text>
                 <Tooltip
                     disabled={password.length > 0 && value.length === 6}
-                    content={!token ? t('two_factor.setup.waiting_qr') : t('two_factor.setup.must_enter_code')}
+                    content={
+                        (!token ? t('two_factor.setup.waiting_qr') : t('two_factor.setup.must_enter_code')) as string
+                    }
                     delay={100}
                 >
                     <Button
