@@ -200,12 +200,12 @@
         var allocation = $(this).data('id');
         swal({
             title: '',
-            text: 'Are you sure you want to delete this allocation?',
+            text: '@lang('admin/node.are_you_sure_delete_allocation')',
             type: 'warning',
             showCancelButton: true,
             allowOutsideClick: true,
             closeOnConfirm: false,
-            confirmButtonText: 'Delete',
+            confirmButtonText: '@lang('admin/node.delete')',
             confirmButtonColor: '#d9534f',
             showLoaderOnConfirm: true
         }, function () {
@@ -215,11 +215,11 @@
                 headers: { 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content') },
             }).done(function (data) {
                 element.parent().parent().addClass('warning').delay(100).fadeOut();
-                swal({ type: 'success', title: 'Port Deleted!' });
+                swal({ type: 'success', title: '@lang('admin/node.port_deleted')' });
             }).fail(function (jqXHR) {
                 console.error(jqXHR);
                 swal({
-                    title: 'Whoops!',
+                    title: '@lang('admin/node.whoops')',
                     text: jqXHR.responseJSON.error,
                     type: 'error'
                 });
