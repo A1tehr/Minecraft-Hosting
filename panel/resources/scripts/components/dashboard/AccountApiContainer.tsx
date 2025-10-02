@@ -58,12 +58,12 @@ export default () => {
                         onClose={() => setDeleteIdentifier('')}
                         onConfirmed={() => doDeletion(deleteIdentifier)}
                     >
-                        {t('delete.description', { identifier: deleteIdentifier }).replace(':identifier', deleteIdentifier)}
+                        {t('delete.description', {
+                            identifier: deleteIdentifier,
+                        }).replace(':identifier', deleteIdentifier)}
                     </Dialog.Confirm>
                     {keys.length === 0 ? (
-                        <p css={tw`text-center text-sm`}>
-                            {loading ? t('keys_list.loading') : t('keys_list.no_keys')}
-                        </p>
+                        <p css={tw`text-center text-sm`}>{loading ? t('keys_list.loading') : t('keys_list.no_keys')}</p>
                     ) : (
                         keys.map((key, index) => (
                             <GreyRowBox
