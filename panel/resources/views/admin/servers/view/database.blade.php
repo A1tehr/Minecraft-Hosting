@@ -59,41 +59,41 @@
     <div class="col-sm-5">
         <div class="box box-success">
             <div class="box-header with-border">
-                <h3 class="box-title">Create New Database</h3>
+                <h3 class="box-title">@lang('admin/server.create_new_database')</h3>
             </div>
             <form action="{{ route('admin.servers.view.database', $server->id) }}" method="POST">
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="pDatabaseHostId" class="control-label">Database Host</label>
+                        <label for="pDatabaseHostId" class="control-label">@lang('admin/server.database_host_label')</label>
                         <select id="pDatabaseHostId" name="database_host_id" class="form-control">
                             @foreach($hosts as $host)
                                 <option value="{{ $host->id }}">{{ $host->name }}</option>
                             @endforeach
                         </select>
-                        <p class="text-muted small">Select the host database server that this database should be created on.</p>
+                        <p class="text-muted small">@lang('admin/server.database_host_select_help')</p>
                     </div>
                     <div class="form-group">
-                        <label for="pDatabaseName" class="control-label">Database</label>
+                        <label for="pDatabaseName" class="control-label">@lang('admin/server.database_label')</label>
                         <div class="input-group">
                             <span class="input-group-addon">s{{ $server->id }}_</span>
                             <input id="pDatabaseName" type="text" name="database" class="form-control" placeholder="database" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="pRemote" class="control-label">Connections</label>
+                        <label for="pRemote" class="control-label">@lang('admin/server.connections_label')</label>
                         <input id="pRemote" type="text" name="remote" class="form-control" value="%" />
-                        <p class="text-muted small">This should reflect the IP address that connections are allowed from. Uses standard MySQL notation. If unsure leave as <code>%</code>.</p>
+                        <p class="text-muted small">@lang('admin/server.connections_help')</p>
                     </div>
                     <div class="form-group">
-                        <label for="pmax_connections" class="control-label">Concurrent Connections</label>
+                        <label for="pmax_connections" class="control-label">@lang('admin/server.concurrent_connections_label')</label>
                         <input id="pmax_connections" type="text" name="max_connections" class="form-control"/>
-                        <p class="text-muted small">This should reflect the max number of concurrent connections from this user to the database. Leave empty for unlimited.</p>
+                        <p class="text-muted small">@lang('admin/server.concurrent_connections_help')</p>
                     </div>
                 </div>
                 <div class="box-footer">
                     {!! csrf_field() !!}
-                    <p class="text-muted small no-margin">A username and password for this database will be randomly generated after form submission.</p>
-                    <input type="submit" class="btn btn-sm btn-success pull-right" value="Create Database" />
+                    <p class="text-muted small no-margin">@lang('admin/server.database_password_note')</p>
+                    <input type="submit" class="btn btn-sm btn-success pull-right" value="@lang('admin/server.create_database_button')" />
                 </div>
             </form>
         </div>
@@ -111,9 +111,9 @@
         swal({
             title: '',
             type: 'warning',
-            text: 'Are you sure that you want to delete this database? There is no going back, all data will immediately be removed.',
+            text: '@lang('admin/server.delete_database_confirm')',
             showCancelButton: true,
-            confirmButtonText: 'Delete',
+            confirmButtonText: '@lang('admin/server.delete_database_button')',
             confirmButtonColor: '#d9534f',
             closeOnConfirm: false,
             showLoaderOnConfirm: true,
@@ -129,8 +129,8 @@
                 console.error(jqXHR);
                 swal({
                     type: 'error',
-                    title: 'Whoops!',
-                    text: (typeof jqXHR.responseJSON.error !== 'undefined') ? jqXHR.responseJSON.error : 'An error occurred while processing this request.'
+                    title: '@lang('admin/node.whoops')',
+                    text: (typeof jqXHR.responseJSON.error !== 'undefined') ? jqXHR.responseJSON.error : '@lang('admin/server.password_reset_error')'
                 });
             });
         });
@@ -148,17 +148,17 @@
             swal({
                 type: 'success',
                 title: '',
-                text: 'The password for this database has been reset.',
+                text: '@lang('admin/server.password_reset_success')',
             });
         }).fail(function(jqXHR, textStatus, errorThrown) {
             console.error(jqXHR);
-            var error = 'An error occurred while trying to process this request.';
+            var error = '@lang('admin/server.password_reset_error')';
             if (typeof jqXHR.responseJSON !== 'undefined' && typeof jqXHR.responseJSON.error !== 'undefined') {
                 error = jqXHR.responseJSON.error;
             }
             swal({
                 type: 'error',
-                title: 'Whoops!',
+                title: '@lang('admin/node.whoops')',
                 text: error
             });
         }).always(function () {
