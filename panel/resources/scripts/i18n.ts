@@ -20,13 +20,15 @@ const getUserLanguage = () => {
 i18n.use(I18NextMultiloadBackendAdapter)
     .use(initReactI18next)
     .init({
-        debug: process.env.DEBUG === 'true',
+        debug: true,
         lng: getUserLanguage(),
         fallbackLng: 'en',
         keySeparator: '.',
+        ns: ['navigation', 'dashboard/account', 'dashboard/api', 'dashboard/ssh', 'dashboard/activity', 'dashboard/index'],
+        defaultNS: 'navigation',
         backend: {
             backend: I18NextHttpBackend,
-            backendOption: {
+            backendOptions: {
                 loadPath: '/locales/locale.json?locale={{lng}}&namespace={{ns}}',
                 queryStringParams: { hash },
                 allowMultiLoading: true,
@@ -36,6 +38,9 @@ i18n.use(I18NextMultiloadBackendAdapter)
             // Per i18n-react documentation: this is not needed since React is already
             // handling escapes for us.
             escapeValue: false,
+        },
+        react: {
+            useSuspense: false,
         },
     });
 
