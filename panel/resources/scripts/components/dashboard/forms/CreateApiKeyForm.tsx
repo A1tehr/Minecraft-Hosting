@@ -25,6 +25,7 @@ const CustomTextarea = styled(Textarea)`
 `;
 
 export default ({ onKeyCreated }: { onKeyCreated: (key: ApiKey) => void }) => {
+    const { t } = useTranslation('dashboard/api');
     const [apiKey, setApiKey] = useState('');
     const { addError, clearFlashes } = useStoreActions((actions: Actions<ApplicationStore>) => actions.flashes);
 
