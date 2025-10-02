@@ -32,7 +32,7 @@ const getUserLanguage = () => {
 i18n.use(I18NextMultiloadBackendAdapter)
     .use(initReactI18next)
     .init({
-        debug: true,
+        debug: process.env.NODE_ENV === 'development',
         lng: getUserLanguage(),
         fallbackLng: 'en',
         keySeparator: '.',
