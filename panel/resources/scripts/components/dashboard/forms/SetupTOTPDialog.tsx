@@ -17,6 +17,8 @@ import asDialog from '@/hoc/asDialog';
 import { useTranslation } from 'react-i18next';
 
 interface Props {
+    open: boolean;
+    onClose: () => void;
     onTokens: (tokens: string[]) => void;
 }
 
