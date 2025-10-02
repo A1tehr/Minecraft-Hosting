@@ -8,8 +8,10 @@ import SubNavigation from '@/components/elements/SubNavigation';
 import { useLocation } from 'react-router';
 import Spinner from '@/components/elements/Spinner';
 import routes from '@/routers/routes';
+import { useTranslation } from 'react-i18next';
 
 export default () => {
+    const { t } = useTranslation('routes');
     const location = useLocation();
 
     return (
@@ -22,7 +24,7 @@ export default () => {
                             .filter((route) => !!route.name)
                             .map(({ path, name, exact = false }) => (
                                 <NavLink key={path} to={`/account/${path}`.replace('//', '/')} exact={exact}>
-                                    {name}
+                                    {t(`account.${name}`)}
                                 </NavLink>
                             ))}
                     </div>
