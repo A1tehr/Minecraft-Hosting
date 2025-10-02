@@ -120,8 +120,15 @@ const ConfigureTwoFactorForm = ({ onTokens }: Props) => {
     );
 };
 
-export default asDialog({
-    title: 'Enable Two-Step Verification',
-    description:
-        "Help protect your account from unauthorized access. You'll be prompted for a verification code each time you sign in.",
-})(ConfigureTwoFactorForm);
+const SetupTOTPDialogWithTranslation = (props: Props) => {
+    const { t } = useTranslation('dashboard/account');
+    
+    const DialogComponent = asDialog({
+        title: t('two_factor.setup.title'),
+        description: t('two_factor.setup.description'),
+    })(ConfigureTwoFactorForm);
+    
+    return <DialogComponent {...props} />;
+};
+
+export default SetupTOTPDialogWithTranslation;
