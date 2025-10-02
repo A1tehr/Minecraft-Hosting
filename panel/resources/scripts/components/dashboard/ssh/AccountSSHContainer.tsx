@@ -36,9 +36,7 @@ export default () => {
                 <ContentBox title={t('keys_list.title')} css={tw`flex-1 overflow-hidden mt-8 md:mt-0 md:ml-8`}>
                     <SpinnerOverlay visible={!data && isValidating} />
                     {!data || !data.length ? (
-                        <p css={tw`text-center text-sm`}>
-                            {!data ? t('keys_list.loading') : t('keys_list.no_keys')}
-                        </p>
+                        <p css={tw`text-center text-sm`}>{!data ? t('keys_list.loading') : t('keys_list.no_keys')}</p>
                     ) : (
                         data.map((key, index) => (
                             <GreyRowBox
