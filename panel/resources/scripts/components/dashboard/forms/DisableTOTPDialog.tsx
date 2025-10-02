@@ -8,8 +8,10 @@ import disableAccountTwoFactor from '@/api/account/disableAccountTwoFactor';
 import { useFlashKey } from '@/plugins/useFlash';
 import { useStoreActions } from '@/state/hooks';
 import FlashMessageRender from '@/components/FlashMessageRender';
+import { useTranslation } from 'react-i18next';
 
 const DisableTOTPDialog = () => {
+    const { t } = useTranslation('dashboard/account');
     const [submitting, setSubmitting] = useState(false);
     const [password, setPassword] = useState('');
     const { clearAndAddHttpError } = useFlashKey('account:two-step');
