@@ -27,7 +27,7 @@ export default () => {
         password: Yup.string().min(8).required(),
         confirmPassword: Yup.string().test(
             'password',
-            t('password.validation.confirm_mismatch'),
+            t('password.validation.confirm_mismatch') as string,
             function (value) {
                 return value === this.parent.password;
             }
