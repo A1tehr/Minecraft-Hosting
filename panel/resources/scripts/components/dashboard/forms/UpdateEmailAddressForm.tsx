@@ -35,7 +35,7 @@ export default () => {
                 addFlash({
                     type: 'success',
                     key: 'account:email',
-                    message: 'Your primary email has been updated.',
+                    message: t('email.updated'),
                 })
             )
             .catch((error) =>
