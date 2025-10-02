@@ -44,26 +44,26 @@ export default () => {
     };
 
     return (
-        <PageContentBlock title={'Account API'}>
+        <PageContentBlock title={t('title')}>
             <FlashMessageRender byKey={'account'} />
             <div css={tw`md:flex flex-nowrap my-10`}>
-                <ContentBox title={'Create API Key'} css={tw`flex-none w-full md:w-1/2`}>
+                <ContentBox title={t('create_key.title')} css={tw`flex-none w-full md:w-1/2`}>
                     <CreateApiKeyForm onKeyCreated={(key) => setKeys((s) => [...s!, key])} />
                 </ContentBox>
-                <ContentBox title={'API Keys'} css={tw`flex-1 overflow-hidden mt-8 md:mt-0 md:ml-8`}>
+                <ContentBox title={t('keys_list.title')} css={tw`flex-1 overflow-hidden mt-8 md:mt-0 md:ml-8`}>
                     <SpinnerOverlay visible={loading} />
                     <Dialog.Confirm
-                        title={'Delete API Key'}
-                        confirm={'Delete Key'}
+                        title={t('delete.title')}
+                        confirm={t('delete.confirm')}
                         open={!!deleteIdentifier}
                         onClose={() => setDeleteIdentifier('')}
                         onConfirmed={() => doDeletion(deleteIdentifier)}
                     >
-                        All requests using the <Code>{deleteIdentifier}</Code> key will be invalidated.
+                        {t('delete.description', { identifier: deleteIdentifier }).replace(':identifier', deleteIdentifier)}
                     </Dialog.Confirm>
                     {keys.length === 0 ? (
                         <p css={tw`text-center text-sm`}>
-                            {loading ? 'Loading...' : 'No API keys exist for this account.'}
+                            {loading ? t('keys_list.loading') : t('keys_list.no_keys')}
                         </p>
                     ) : (
                         keys.map((key, index) => (
@@ -75,8 +75,8 @@ export default () => {
                                 <div css={tw`ml-4 flex-1 overflow-hidden`}>
                                     <p css={tw`text-sm break-words`}>{key.description}</p>
                                     <p css={tw`text-2xs text-neutral-300 uppercase`}>
-                                        Last used:&nbsp;
-                                        {key.lastUsedAt ? format(key.lastUsedAt, 'MMM do, yyyy HH:mm') : 'Never'}
+                                        {t('keys_list.last_used')}:&nbsp;
+                                        {key.lastUsedAt ? format(key.lastUsedAt, 'MMM do, yyyy HH:mm') : t('keys_list.never')}
                                     </p>
                                 </div>
                                 <p css={tw`text-sm ml-4 hidden md:block`}>
