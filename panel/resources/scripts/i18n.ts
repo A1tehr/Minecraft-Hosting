@@ -8,11 +8,20 @@ import I18NextMultiloadBackendAdapter from 'i18next-multiload-backend-adapter';
 // the URL to allow cache busting to occur whenever the front-end is rebuilt.
 const hash = module.hot ? Date.now().toString(16) : process.env.WEBPACK_BUILD_HASH;
 
+// Detect user's language from browser or use 'en' as default
+const getUserLanguage = () => {
+    const browserLang = navigator.language || (navigator as any).userLanguage;
+    // Extract base language code (e.g., 'ru' from 'ru-RU')
+    const langCode = browserLang.split('-')[0];
+    // Support only 'en' and 'ru' for now
+    return ['en', 'ru'].includes(langCode) ? langCode : 'en';
+};
+
 i18n.use(I18NextMultiloadBackendAdapter)
     .use(initReactI18next)
     .init({
         debug: process.env.DEBUG === 'true',
-        lng: 'en',
+        lng: getUserLanguage(),
         fallbackLng: 'en',
         keySeparator: '.',
         backend: {
