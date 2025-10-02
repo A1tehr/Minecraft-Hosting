@@ -63,4 +63,9 @@ i18n.use(I18NextMultiloadBackendAdapter)
         },
     });
 
+// Make i18n available globally for debugging in browser console
+if (typeof window !== 'undefined') {
+    (window as any).i18n = i18n;
+}
+
 export default i18n;
