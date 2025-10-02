@@ -75,7 +75,9 @@ export default () => {
                                     <p css={tw`text-sm break-words`}>{key.description}</p>
                                     <p css={tw`text-2xs text-neutral-300 uppercase`}>
                                         {t('keys_list.last_used')}:&nbsp;
-                                        {key.lastUsedAt ? format(key.lastUsedAt, 'MMM do, yyyy HH:mm') : t('keys_list.never')}
+                                        {key.lastUsedAt
+                                            ? format(key.lastUsedAt, 'MMM do, yyyy HH:mm')
+                                            : t('keys_list.never')}
                                     </p>
                                 </div>
                                 <p css={tw`text-sm ml-4 hidden md:block`}>
