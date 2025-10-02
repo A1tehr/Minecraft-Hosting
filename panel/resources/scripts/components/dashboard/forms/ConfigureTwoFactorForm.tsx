@@ -7,8 +7,10 @@ import SetupTOTPDialog from '@/components/dashboard/forms/SetupTOTPDialog';
 import RecoveryTokensDialog from '@/components/dashboard/forms/RecoveryTokensDialog';
 import DisableTOTPDialog from '@/components/dashboard/forms/DisableTOTPDialog';
 import { useFlashKey } from '@/plugins/useFlash';
+import { useTranslation } from 'react-i18next';
 
 export default () => {
+    const { t } = useTranslation('dashboard/account');
     const [tokens, setTokens] = useState<string[]>([]);
     const [visible, setVisible] = useState<'enable' | 'disable' | null>(null);
     const isEnabled = useStoreState((state: ApplicationStore) => state.user.data!.useTotp);
