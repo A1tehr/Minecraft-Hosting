@@ -84,6 +84,7 @@ const Logo = styled(Link)`
 `;
 
 export default () => {
+    const { t } = useTranslation('navigation');
     const rootAdmin = useStoreState((state: ApplicationStore) => state.user.data!.rootAdmin);
     const [isLoggingOut, setIsLoggingOut] = useState(false);
 
