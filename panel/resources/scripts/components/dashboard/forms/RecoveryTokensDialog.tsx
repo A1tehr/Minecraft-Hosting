@@ -22,10 +22,8 @@ export default ({ tokens, open, onClose }: RecoveryTokenDialogProps) => {
         <Dialog
             open={open}
             onClose={onClose}
-            title={'Two-Step Authentication Enabled'}
-            description={
-                'Store the codes below somewhere safe. If you lose access to your phone you can use these backup codes to sign in.'
-            }
+            title={t('two_factor.tokens.title')}
+            description={t('two_factor.tokens.description')}
             hideCloseIcon
             preventExternalClose
         >
@@ -43,10 +41,10 @@ export default ({ tokens, open, onClose }: RecoveryTokenDialogProps) => {
                 </pre>
             </CopyOnClick>
             <Alert type={'danger'} className={'mt-3'}>
-                These codes will not be shown again.
+                {t('two_factor.tokens.warning')}
             </Alert>
             <Dialog.Footer>
-                <Button.Text onClick={onClose}>Done</Button.Text>
+                <Button.Text onClick={onClose}>{t('two_factor.tokens.done')}</Button.Text>
             </Dialog.Footer>
         </Dialog>
     );
