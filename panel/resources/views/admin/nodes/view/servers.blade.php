@@ -32,15 +32,15 @@
     <div class="col-sm-12">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Process Manager</h3>
+                <h3 class="box-title">@lang('admin/node.process_manager')</h3>
             </div>
             <div class="box-body table-responsive no-padding">
                 <table class="table table-hover">
                     <tr>
-                        <th>ID</th>
-                        <th>Server Name</th>
-                        <th>Owner</th>
-                        <th>Service</th>
+                        <th>@lang('admin/node.id')</th>
+                        <th>@lang('admin/node.server_name')</th>
+                        <th>@lang('admin/node.owner')</th>
+                        <th>@lang('admin/node.service')</th>
                     </tr>
                     @foreach($servers as $server)
                         <tr data-server="{{ $server->uuid }}">
