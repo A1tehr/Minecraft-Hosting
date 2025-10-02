@@ -13,7 +13,6 @@ import tw from 'twin.macro';
 import GreyRowBox from '@/components/elements/GreyRowBox';
 import { Dialog } from '@/components/elements/dialog';
 import { useFlashKey } from '@/plugins/useFlash';
-import Code from '@/components/elements/Code';
 import { useTranslation } from 'react-i18next';
 
 export default () => {
