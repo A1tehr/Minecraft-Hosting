@@ -137,7 +137,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Delete Allocations for IP Block</h4>
+                <h4 class="modal-title">@lang('admin/node.delete_allocations_ip_block')</h4>
             </div>
             <form action="{{ route('admin.nodes.view.allocation.removeBlock', $node->id) }}" method="POST">
                 <div class="modal-body">
@@ -153,8 +153,8 @@
                 </div>
                 <div class="modal-footer">
                     {{{ csrf_field() }}}
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-danger">Delete Allocations</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@lang('admin/node.close')</button>
+                    <button type="submit" class="btn btn-danger">@lang('admin/node.delete_allocations')</button>
                 </div>
             </form>
         </div>
