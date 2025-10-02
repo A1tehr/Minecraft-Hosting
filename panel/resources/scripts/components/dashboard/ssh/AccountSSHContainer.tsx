@@ -12,8 +12,10 @@ import { faKey } from '@fortawesome/free-solid-svg-icons';
 import { format } from 'date-fns';
 import CreateSSHKeyForm from '@/components/dashboard/ssh/CreateSSHKeyForm';
 import DeleteSSHKeyButton from '@/components/dashboard/ssh/DeleteSSHKeyButton';
+import { useTranslation } from 'react-i18next';
 
 export default () => {
+    const { t } = useTranslation('dashboard/ssh');
     const { clearAndAddHttpError } = useFlashKey('account');
     const { data, isValidating, error } = useSSHKeys({
         revalidateOnMount: true,
