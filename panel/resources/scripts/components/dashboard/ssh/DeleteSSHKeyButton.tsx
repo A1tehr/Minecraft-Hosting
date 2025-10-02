@@ -6,8 +6,10 @@ import { useFlashKey } from '@/plugins/useFlash';
 import { deleteSSHKey, useSSHKeys } from '@/api/account/ssh-keys';
 import { Dialog } from '@/components/elements/dialog';
 import Code from '@/components/elements/Code';
+import { useTranslation } from 'react-i18next';
 
 export default ({ name, fingerprint }: { name: string; fingerprint: string }) => {
+    const { t } = useTranslation('dashboard/ssh');
     const { clearAndAddHttpError } = useFlashKey('account');
     const [visible, setVisible] = useState(false);
     const { mutate } = useSSHKeys();
