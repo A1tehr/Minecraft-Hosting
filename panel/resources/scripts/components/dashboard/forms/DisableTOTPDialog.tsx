@@ -68,15 +68,15 @@ const DisableTOTPDialog = () => {
     );
 };
 
-const DisableTOTPDialogWithTranslation = () => {
+const DisableTOTPDialogWithTranslation = (props: { open: boolean; onClose: () => void }) => {
     const { t } = useTranslation('dashboard/account');
-    
+
     const DialogComponent = asDialog({
-        title: t('two_factor.disable.title'),
-        description: t('two_factor.disable.description'),
+        title: t('two_factor.disable.title') as string,
+        description: t('two_factor.disable.description') as string,
     })(DisableTOTPDialog);
-    
-    return <DialogComponent />;
+
+    return <DialogComponent {...props} />;
 };
 
 export default DisableTOTPDialogWithTranslation;
