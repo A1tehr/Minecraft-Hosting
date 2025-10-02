@@ -43,7 +43,7 @@ const DisableTOTPDialog = () => {
         <form id={'disable-totp-form'} className={'mt-6'} onSubmit={submit}>
             <FlashMessageRender byKey={'account:two-step'} className={'-mt-2 mb-6'} />
             <label className={'block pb-1'} htmlFor={'totp-password'}>
-                Password
+                {t('two_factor.disable.password')}
             </label>
             <Input.Text
                 id={'totp-password'}
@@ -53,14 +53,14 @@ const DisableTOTPDialog = () => {
                 onChange={(e) => setPassword(e.currentTarget.value)}
             />
             <Dialog.Footer>
-                <Button.Text onClick={close}>Cancel</Button.Text>
+                <Button.Text onClick={close}>{t('two_factor.disable.cancel')}</Button.Text>
                 <Tooltip
                     delay={100}
                     disabled={password.length > 0}
-                    content={'You must enter your account password to continue.'}
+                    content={t('two_factor.disable.must_enter_password')}
                 >
                     <Button.Danger type={'submit'} form={'disable-totp-form'} disabled={submitting || !password.length}>
-                        Disable
+                        {t('two_factor.disable.disable')}
                     </Button.Danger>
                 </Tooltip>
             </Dialog.Footer>
@@ -68,7 +68,15 @@ const DisableTOTPDialog = () => {
     );
 };
 
-export default asDialog({
-    title: 'Disable Two-Step Verification',
-    description: 'Disabling two-step verification will make your account less secure.',
-})(DisableTOTPDialog);
+const DisableTOTPDialogWithTranslation = () => {
+    const { t } = useTranslation('dashboard/account');
+    
+    const DialogComponent = asDialog({
+        title: t('two_factor.disable.title'),
+        description: t('two_factor.disable.description'),
+    })(DisableTOTPDialog);
+    
+    return <DialogComponent />;
+};
+
+export default DisableTOTPDialogWithTranslation;
