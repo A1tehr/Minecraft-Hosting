@@ -21,6 +21,7 @@ const CustomTextarea = styled(Textarea)`
 `;
 
 export default () => {
+    const { t } = useTranslation('dashboard/ssh');
     const { clearAndAddHttpError } = useFlashKey('account');
     const { mutate } = useSSHKeys();
 
