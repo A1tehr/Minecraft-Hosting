@@ -8,22 +8,24 @@ import { httpErrorToHuman } from '@/api/http';
 import { ApplicationStore } from '@/state';
 import tw from 'twin.macro';
 import { Button } from '@/components/elements/button/index';
+import { useTranslation } from 'react-i18next';
 
 interface Values {
     email: string;
     password: string;
 }
 
-const schema = Yup.object().shape({
-    email: Yup.string().email().required(),
-    password: Yup.string().required('You must provide your current account password.'),
-});
-
 export default () => {
+    const { t } = useTranslation('dashboard/account');
     const user = useStoreState((state: State<ApplicationStore>) => state.user.data);
     const updateEmail = useStoreActions((state: Actions<ApplicationStore>) => state.user.updateUserEmail);
 
     const { clearFlashes, addFlash } = useStoreActions((actions: Actions<ApplicationStore>) => actions.flashes);
+
+    const schema = Yup.object().shape({
+        email: Yup.string().email().required(),
+        password: Yup.string().required(t('password.validation.current_required')),
+    });
 
     const submit = (values: Values, { resetForm, setSubmitting }: FormikHelpers<Values>) => {
         clearFlashes('account:email');
