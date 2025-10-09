@@ -48,17 +48,22 @@ i18n.use(I18NextHttpBackend)
         backend: {
             loadPath: '/locales/locale.json?locale={{lng}}&namespace={{ns}}',
             queryStringParams: { hash },
-            parse: (data: string, languages?: string | string[], namespaces?: string | string[]) => {
+            parse: (data: string) => {
                 const parsed = JSON.parse(data);
                 // Laravel returns: { "ru": { "navigation": { ... } } }
-                // We need to extract: { ... }
-                const lng = Array.isArray(languages) ? languages[0] : languages;
-                const ns = Array.isArray(namespaces) ? namespaces[0] : namespaces;
-                
-                if (lng && ns && parsed[lng] && parsed[lng][ns]) {
-                    return parsed[lng][ns];
+                // We need to extract the inner object based on the structure
+                // The backend will call this with the correct URL params already
+                const keys = Object.keys(parsed);
+                if (keys.length > 0) {
+                    const firstKey = keys[0];
+                    if (parsed[firstKey] && typeof parsed[firstKey] === 'object') {
+                        const nestedKeys = Object.keys(parsed[firstKey]);
+                        if (nestedKeys.length > 0) {
+                            // Return the nested translation object
+                            return parsed[firstKey][nestedKeys[0]];
+                        }
+                    }
                 }
-                
                 return parsed;
             },
         } as BackendOptions,
