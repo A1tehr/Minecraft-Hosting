@@ -48,6 +48,19 @@ i18n.use(I18NextHttpBackend)
         backend: {
             loadPath: '/locales/locale.json?locale={{lng}}&namespace={{ns}}',
             queryStringParams: { hash },
+            parse: (data: string, languages?: string | string[], namespaces?: string | string[]) => {
+                const parsed = JSON.parse(data);
+                // Laravel returns: { "ru": { "navigation": { ... } } }
+                // We need to extract: { ... }
+                const lng = Array.isArray(languages) ? languages[0] : languages;
+                const ns = Array.isArray(namespaces) ? namespaces[0] : namespaces;
+                
+                if (lng && ns && parsed[lng] && parsed[lng][ns]) {
+                    return parsed[lng][ns];
+                }
+                
+                return parsed;
+            },
         } as BackendOptions,
         interpolation: {
             // Per i18n-react documentation: this is not needed since React is already
