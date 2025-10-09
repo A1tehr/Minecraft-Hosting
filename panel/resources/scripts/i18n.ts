@@ -34,6 +34,7 @@ i18n.use(I18NextHttpBackend)
         debug: process.env.NODE_ENV === 'development',
         lng: getUserLanguage(),
         fallbackLng: 'en',
+        load: 'currentOnly',
         keySeparator: '.',
         ns: [
             'navigation',
@@ -47,7 +48,6 @@ i18n.use(I18NextHttpBackend)
         backend: {
             loadPath: '/locales/locale.json?locale={{lng}}&namespace={{ns}}',
             queryStringParams: { hash },
-            allowMultiLoading: false,
         } as BackendOptions,
         interpolation: {
             // Per i18n-react documentation: this is not needed since React is already
