@@ -18,7 +18,7 @@ const melenium = {
     // Blues (primary)
     blue: {
         50: '#e6f7ff',
-        100: '#b3ebff', 
+        100: '#b3ebff',
         200: '#80dfff',
         300: '#4dd2ff',
         400: '#1ac6ff',
@@ -70,7 +70,7 @@ module.exports = {
                 // Melenium theme colors
                 primary: {
                     50: '#e6f7ff',
-                    100: '#b3ebff', 
+                    100: '#b3ebff',
                     200: '#80dfff',
                     300: '#4dd2ff',
                     400: '#1ac6ff',
@@ -118,11 +118,11 @@ module.exports = {
                 },
                 blue: {
                     50: '#e6f7ff',
-                    100: '#b3ebff', 
+                    100: '#b3ebff',
                     200: '#80dfff',
                     300: '#4dd2ff',
                     400: '#1ac6ff',
-                    500: '#00baff', 
+                    500: '#00baff',
                     600: '#0099cc',
                     700: '#007399',
                     800: '#004d66',
@@ -130,7 +130,7 @@ module.exports = {
                 },
                 cyan: {
                     50: '#e6f7ff',
-                    100: '#b3ebff', 
+                    100: '#b3ebff',
                     200: '#80dfff',
                     300: '#4dd2ff',
                     400: '#1ac6ff',
@@ -151,7 +151,6 @@ module.exports = {
                 default: theme('colors.neutral.400', 'currentColor'),
             }),
             backgroundImage: {
-                'gradient-melenium': 'linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #0a0a0a 50%, #1a1a1a 75%, #000000 100%)',
                 'gradient-primary': 'linear-gradient(135deg, #00baff 0%, #0099cc 100%)',
                 'gradient-secondary': 'linear-gradient(135deg, #00ff88 0%, #00cc66 100%)',
             },

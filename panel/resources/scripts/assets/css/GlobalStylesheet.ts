@@ -4,7 +4,6 @@ import { createGlobalStyle } from 'styled-components/macro';
 export default createGlobalStyle`
     body {
         ${tw`font-sans bg-gray-900 text-white`};
-        background: linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #0a0a0a 50%, #1a1a1a 75%, #000000 100%);
         letter-spacing: 0.015em;
         position: relative;
     }
@@ -17,7 +16,7 @@ export default createGlobalStyle`
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: 
+        background-image:
             radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.1), transparent),
             radial-gradient(2px 2px at 40px 70px, rgba(0, 186, 255, 0.2), transparent),
             radial-gradient(1px 1px at 90px 40px, rgba(0, 255, 136, 0.15), transparent),

@@ -53,7 +53,7 @@ const RightNavigation = styled.div`
 `;
 
 const Navigation = styled.div`
-    ${tw`w-full shadow-lg overflow-x-auto`};
+    ${tw`w-full shadow-lg`};
     background: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(0, 186, 255, 0.2);
