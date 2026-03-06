@@ -18,68 +18,39 @@ const RightNavigation = styled.div`
     & > a,
     & > button,
     & > .navigation-link {
-        ${tw`flex items-center h-full no-underline text-gray-300 px-6 cursor-pointer transition-all duration-300`};
-        position: relative;
-        overflow: hidden;
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 186, 255, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        &:hover::before {
-            left: 100%;
-        }
+        ${tw`flex items-center h-full no-underline text-neutral-600 px-4 cursor-pointer transition-all duration-150 rounded-xl`};
+        margin: 0 0.125rem;
+        border: 1px solid transparent;
 
         &:active,
         &:hover {
-            ${tw`text-white`};
-            background: rgba(0, 186, 255, 0.1);
-            transform: translateY(-1px);
+            ${tw`text-primary-700 bg-primary-50 border-primary-100`};
         }
 
         &:active,
         &:hover,
         &.active {
-            box-shadow: inset 0 -3px 0 #00baff, 0 4px 15px rgba(0, 186, 255, 0.2);
+            ${tw`text-primary-700 bg-primary-100 border-primary-200`};
+            box-shadow: 0 8px 16px rgba(79, 140, 255, 0.15);
         }
     }
 `;
 
 const Navigation = styled.div`
-    ${tw`w-full shadow-lg`};
-    background: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 186, 255, 0.2);
-    position: relative;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, #00baff, transparent);
-    }
+    ${tw`w-full`};
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(219, 230, 242, 0.95);
+    box-shadow: 0 10px 30px rgba(31, 42, 58, 0.08);
 `;
 
 const Logo = styled(Link)`
-    ${tw`text-2xl font-header px-4 no-underline text-white hover:text-white transition-all duration-300`};
-    background: linear-gradient(135deg, #00baff, #00ff88);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    ${tw`text-2xl font-header px-2 no-underline transition-all duration-200`};
+    color: #29364a;
     font-weight: 700;
+
     &:hover {
-        transform: scale(1.05);
-        filter: brightness(1.2);
+        color: #3a69e8;
     }
 `;
 
@@ -99,7 +70,7 @@ export default () => {
     return (
         <Navigation>
             <SpinnerOverlay visible={isLoggingOut} />
-            <div className={'mx-auto w-full flex items-center h-[4rem] max-w-[1200px]'}>
+            <div className={'mx-auto w-full flex items-center h-[4.5rem] max-w-[1200px] px-3'}>
                 <div id={'logo'} className={'flex-1'}>
                     <Logo to={'/'}>Melenium</Logo>
                 </div>

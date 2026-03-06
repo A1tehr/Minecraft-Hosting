@@ -30,26 +30,25 @@ const Container = styled.div`
 
 export default forwardRef<HTMLFormElement, Props>(({ title, ...props }, ref) => (
     <Container>
-        {title && <h2 css={tw`text-3xl text-center text-neutral-100 font-medium py-4`}>{title}</h2>}
+        {title && <h2 css={tw`text-3xl text-center text-neutral-800 font-medium py-4`}>{title}</h2>}
         <FlashMessageRender css={tw`mb-2 px-1`} />
         <Form {...props} ref={ref}>
-            <div css={tw`md:flex w-full bg-white shadow-lg rounded-lg p-6 md:pl-0 mx-1`}>
-                <div css={tw`flex-none select-none mb-6 md:mb-0 self-center`}>
-                    <img src={'/assets/svgs/pterodactyl.svg'} css={tw`block w-48 md:w-64 mx-auto`} />
+            <div
+                css={tw`w-full bg-white rounded-2xl p-6 md:p-8 mx-1 border border-neutral-200`}
+                style={{ boxShadow: '0 16px 32px rgba(31, 42, 58, 0.1)' }}
+            >
+                <div css={tw`w-full`}>
+                    <div css={tw`text-center mb-5`}>
+                        <p css={tw`text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500`}>
+                            Melenium Panel
+                        </p>
+                    </div>
+                    <div css={tw`w-full max-w-lg mx-auto`}>{props.children}</div>
                 </div>
-                <div css={tw`flex-1`}>{props.children}</div>
             </div>
         </Form>
         <p css={tw`text-center text-neutral-500 text-xs mt-4`}>
-            &copy; 2015 - {new Date().getFullYear()}&nbsp;
-            <a
-                rel={'noopener nofollow noreferrer'}
-                href={'https://pterodactyl.io'}
-                target={'_blank'}
-                css={tw`no-underline text-neutral-500 hover:text-neutral-300`}
-            >
-                Pterodactyl Software
-            </a>
+            &copy; 2015 - {new Date().getFullYear()} Melenium Panel
         </p>
     </Container>
 ));

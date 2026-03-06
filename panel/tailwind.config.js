@@ -1,144 +1,84 @@
-const colors = require('tailwindcss/colors');
-
-// Melenium Color Scheme: Black, Blue, Green
-const gray = {
-    50: 'hsl(0, 0%, 97%)',
-    100: 'hsl(0, 0%, 91%)',
-    200: 'hsl(0, 0%, 82%)',
-    300: 'hsl(0, 0%, 65%)',
-    400: 'hsl(0, 0%, 53%)',
-    500: 'hsl(0, 0%, 43%)',
-    600: 'hsl(0, 0%, 37%)',
-    700: 'hsl(0, 0%, 15%)',
-    800: 'hsl(0, 0%, 10%)',
-    900: 'hsl(0, 0%, 5%)',
-};
-
-const melenium = {
-    // Blues (primary)
-    blue: {
-        50: '#e6f7ff',
-        100: '#b3ebff',
-        200: '#80dfff',
-        300: '#4dd2ff',
-        400: '#1ac6ff',
-        500: '#00baff', // Main blue
-        600: '#0099cc',
-        700: '#007399',
-        800: '#004d66',
-        900: '#002633',
-    },
-    // Greens (accent)
-    green: {
-        50: '#e6fff2',
-        100: '#b3ffdb',
-        200: '#80ffc4',
-        300: '#4dffad',
-        400: '#1aff96',
-        500: '#00ff88', // Main green
-        600: '#00cc66',
-        700: '#009944',
-        800: '#006622',
-        900: '#003311',
-    },
-    // Dark theme colors
-    dark: {
-        50: '#f8f9fa',
-        100: '#e9ecef',
-        200: '#dee2e6',
-        300: '#ced4da',
-        400: '#6c757d',
-        500: '#495057',
-        600: '#343a40',
-        700: '#212529',
-        800: '#1a1a1a',
-        900: '#000000',
-    }
-};
-
 module.exports = {
-    content: [
-        './resources/scripts/**/*.{js,ts,tsx}',
-    ],
+    content: ['./resources/scripts/**/*.{js,ts,tsx}'],
     theme: {
         extend: {
             fontFamily: {
-                header: ['"Inter"', '"IBM Plex Sans"', '"Roboto"', 'system-ui', 'sans-serif'],
+                header: ['"Manrope"', '"Inter"', '"Segoe UI"', 'sans-serif'],
+                sans: ['"Manrope"', '"Inter"', '"Segoe UI"', 'sans-serif'],
             },
             colors: {
-                black: '#000000',
-                // Melenium theme colors
+                black: '#111827',
                 primary: {
-                    50: '#e6f7ff',
-                    100: '#b3ebff',
-                    200: '#80dfff',
-                    300: '#4dd2ff',
-                    400: '#1ac6ff',
-                    500: '#00baff', // Main blue
-                    600: '#0099cc',
-                    700: '#007399',
-                    800: '#004d66',
-                    900: '#002633',
+                    50: '#eef5ff',
+                    100: '#dbe9ff',
+                    200: '#bdd7ff',
+                    300: '#93bbff',
+                    400: '#6398ff',
+                    500: '#4f8cff',
+                    600: '#3a69e8',
+                    700: '#2d52c8',
+                    800: '#2947a2',
+                    900: '#273f80',
                 },
                 secondary: {
-                    50: '#e6fff2',
-                    100: '#b3ffdb',
-                    200: '#80ffc4',
-                    300: '#4dffad',
-                    400: '#1aff96',
-                    500: '#00ff88', // Main green
-                    600: '#00cc66',
-                    700: '#009944',
-                    800: '#006622',
-                    900: '#003311',
+                    50: '#f0fdfb',
+                    100: '#ccfbf1',
+                    200: '#99f6e4',
+                    300: '#5eead4',
+                    400: '#2dd4bf',
+                    500: '#18c1ad',
+                    600: '#0f9c8e',
+                    700: '#107d74',
+                    800: '#135f59',
+                    900: '#164f4b',
                 },
                 gray: {
-                    50: '#f8f9fa',
-                    100: '#e9ecef',
-                    200: '#dee2e6',
-                    300: '#ced4da',
-                    400: '#6c757d',
-                    500: '#495057',
-                    600: '#343a40',
-                    700: '#212529',
-                    800: '#1a1a1a',
-                    900: '#000000',
+                    50: '#f9fbff',
+                    100: '#f2f6fb',
+                    200: '#e7edf5',
+                    300: '#d6e0ec',
+                    400: '#a7b4c7',
+                    500: '#79879d',
+                    600: '#5e6d84',
+                    700: '#46546a',
+                    800: '#2d3748',
+                    900: '#1f2937',
                 },
                 neutral: {
-                    50: '#f8f9fa',
-                    100: '#e9ecef',
-                    200: '#dee2e6',
-                    300: '#ced4da',
-                    400: '#6c757d',
-                    500: '#495057',
-                    600: '#343a40',
-                    700: '#212529',
-                    800: '#1a1a1a',
-                    900: '#000000',
+                    50: '#f9fbff',
+                    100: '#f2f6fb',
+                    200: '#e7edf5',
+                    300: '#d6e0ec',
+                    400: '#a7b4c7',
+                    500: '#79879d',
+                    600: '#5e6d84',
+                    700: '#46546a',
+                    800: '#2d3748',
+                    900: '#1f2937',
                 },
                 blue: {
-                    50: '#e6f7ff',
-                    100: '#b3ebff',
-                    200: '#80dfff',
-                    300: '#4dd2ff',
-                    400: '#1ac6ff',
-                    500: '#00baff',
-                    600: '#0099cc',
-                    700: '#007399',
-                    800: '#004d66',
-                    900: '#002633',
+                    50: '#eef5ff',
+                    100: '#dbe9ff',
+                    200: '#bdd7ff',
+                    300: '#93bbff',
+                    400: '#6398ff',
+                    500: '#4f8cff',
+                    600: '#3a69e8',
+                    700: '#2d52c8',
+                    800: '#2947a2',
+                    900: '#273f80',
                 },
                 cyan: {
-                    50: '#e6f7ff',
-                    100: '#b3ebff',
-                    200: '#80dfff',
-                    300: '#4dd2ff',
-                    400: '#1ac6ff',
-                    500: '#00baff',
-                    600: '#0099cc',
-                    700: '#007399',
-                    800: '#004d66',
-                    900: '#002633',
+                    50: '#f0fdfb',
+                    100: '#ccfbf1',
+                    200: '#99f6e4',
+                    300: '#5eead4',
+                    400: '#2dd4bf',
+                    500: '#18c1ad',
+                    600: '#0f9c8e',
+                    700: '#107d74',
+                    800: '#135f59',
+                    900: '#164f4b',
                 },
             },
             fontSize: {
@@ -147,17 +87,21 @@ module.exports = {
             transitionDuration: {
                 250: '250ms',
             },
-            borderColor: theme => ({
-                default: theme('colors.neutral.400', 'currentColor'),
+            borderColor: (theme) => ({
+                default: theme('colors.neutral.300', 'currentColor'),
             }),
             backgroundImage: {
-                'gradient-primary': 'linear-gradient(135deg, #00baff 0%, #0099cc 100%)',
-                'gradient-secondary': 'linear-gradient(135deg, #00ff88 0%, #00cc66 100%)',
+                'gradient-primary': 'linear-gradient(135deg, #4f8cff 0%, #7ea9ff 100%)',
+                'gradient-secondary': 'linear-gradient(135deg, #67e8f9 0%, #99f6e4 100%)',
+            },
+            boxShadow: {
+                soft: '0 12px 32px rgba(15, 23, 42, 0.08)',
+                card: '0 8px 24px rgba(15, 23, 42, 0.06)',
+                inset: 'inset 0 1px 0 rgba(255, 255, 255, 0.75)',
             },
             animation: {
-                'pulse-glow': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                'fade-in': 'fadeIn 0.5s ease-in-out',
-                'slide-in': 'slideIn 0.3s ease-out',
+                'fade-in': 'fadeIn 0.35s ease-in-out',
+                'slide-in': 'slideIn 0.25s ease-out',
             },
             keyframes: {
                 fadeIn: {
@@ -165,7 +109,7 @@ module.exports = {
                     '100%': { opacity: '1' },
                 },
                 slideIn: {
-                    '0%': { transform: 'translateY(-10px)', opacity: '0' },
+                    '0%': { transform: 'translateY(-8px)', opacity: '0' },
                     '100%': { transform: 'translateY(0)', opacity: '1' },
                 },
             },
@@ -176,5 +120,5 @@ module.exports = {
         require('@tailwindcss/forms')({
             strategy: 'class',
         }),
-    ]
+    ],
 };

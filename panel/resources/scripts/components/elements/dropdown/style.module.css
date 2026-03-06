@@ -2,15 +2,16 @@
   @apply relative inline-block text-left;
 
   & .button {
-    @apply inline-flex justify-center items-center w-full py-2 text-neutral-100 rounded-md;
+    @apply inline-flex justify-center items-center w-full py-2 px-3 text-neutral-700 rounded-xl border border-neutral-300 bg-white;
     @apply transition-all duration-100;
+    box-shadow: 0 8px 18px rgba(31, 42, 58, 0.1);
 
     &:hover, &[aria-expanded="true"] {
-      @apply bg-neutral-600 text-white;
+      @apply bg-primary-50 text-primary-700 border-primary-200;
     }
 
     &:focus, &:focus-within, &:active {
-      @apply ring-2 ring-opacity-50 ring-neutral-300 text-white;
+      @apply ring-2 ring-opacity-60 ring-primary-300 text-primary-700;
     }
 
     & svg {
@@ -23,36 +24,37 @@
   }
 
   & .items_container {
-    @apply absolute right-0 mt-2 origin-top-right bg-neutral-900 rounded z-10;
+    @apply absolute right-0 mt-2 origin-top-right bg-white rounded-xl border border-neutral-200 z-10;
+    box-shadow: 0 14px 28px rgba(31, 42, 58, 0.12);
   }
 }
 
 .menu_item {
-  @apply flex items-center rounded w-full px-2 py-2;
+  @apply flex items-center rounded-lg w-full px-2 py-2 text-neutral-700;
 
   & svg {
-    @apply w-4 h-4 mr-4 text-neutral-300;
+    @apply w-4 h-4 mr-4 text-neutral-400;
   }
 
   &:hover, &:focus {
-    @apply bg-blue-500 text-blue-50;
+    @apply bg-primary-500 text-white;
 
     & svg {
-      @apply text-blue-50;
+      @apply text-white;
     }
   }
 
   &.danger {
     &:hover, &:focus {
-      @apply bg-red-500 text-red-50;
+      @apply bg-red-500 text-white;
 
       & svg {
-        @apply text-red-50;
+        @apply text-white;
       }
     }
   }
 
   &.disabled {
-    @apply cursor-not-allowed hover:bg-neutral-800 opacity-30 focus:bg-transparent focus:hover:bg-neutral-800;
+    @apply cursor-not-allowed hover:bg-neutral-100 opacity-40 focus:bg-transparent focus:hover:bg-neutral-100;
   }
 }

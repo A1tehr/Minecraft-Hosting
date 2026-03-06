@@ -1,7 +1,8 @@
 .button {
     @apply px-4 py-2 inline-flex items-center justify-center;
-    @apply rounded text-base font-semibold transition-all duration-100;
-    @apply focus:ring-[3px] focus:ring-offset-2 focus:ring-offset-gray-700 focus:ring-opacity-50;
+    @apply rounded-xl text-base font-semibold transition-all duration-100 border border-neutral-300;
+    @apply focus:ring-[3px] focus:ring-primary-300 focus:ring-opacity-70;
+    box-shadow: 0 8px 16px rgba(31, 42, 58, 0.1);
 
     /* Sizing Controls */
     &.small {
@@ -13,10 +14,10 @@
     }
 
     &.secondary {
-        @apply text-gray-50 bg-transparent;
+        @apply text-neutral-700 bg-white;
 
         &:disabled {
-            background: transparent !important;
+            @apply bg-white;
         }
     }
 
@@ -34,40 +35,40 @@
 }
 
 .primary {
-    @apply bg-blue-600 text-blue-50;
-    @apply hover:bg-blue-500 active:bg-blue-500 focus:ring-blue-400 focus:ring-opacity-75;
+    @apply bg-primary-500 text-white border-primary-400;
+    @apply hover:bg-primary-600 active:bg-primary-600 focus:ring-primary-300 focus:ring-opacity-75;
 
     &.secondary {
         @apply hover:bg-blue-600 active:bg-blue-600;
     }
 
     &:disabled {
-        @apply bg-blue-500/75 text-blue-200/75;
+        @apply bg-primary-400/70 text-white/70;
     }
 }
 
 .text {
-    @apply bg-gray-500 text-gray-50;
-    @apply hover:bg-gray-400 active:bg-gray-400 focus:ring-gray-300 focus:ring-opacity-50;
+    @apply bg-white text-neutral-700 border-neutral-300;
+    @apply hover:bg-neutral-100 active:bg-neutral-100 focus:ring-neutral-300 focus:ring-opacity-50;
 
     &.secondary {
         @apply hover:bg-gray-500 active:bg-gray-500;
     }
 
     &:disabled {
-        @apply bg-gray-500/75 text-gray-200/75;
+        @apply bg-neutral-100 text-neutral-400;
     }
 }
 
 .danger {
-    @apply bg-red-600 text-gray-50;
-    @apply hover:bg-red-500 active:bg-red-500 focus:ring-red-400 focus:ring-opacity-75;
+    @apply bg-red-500 text-white border-red-400;
+    @apply hover:bg-red-600 active:bg-red-600 focus:ring-red-300 focus:ring-opacity-75;
 
     &.secondary {
         @apply hover:bg-red-600 active:bg-red-600;
     }
 
     &:disabled {
-        @apply bg-red-600/75 text-red-50/75;
+        @apply bg-red-400/70 text-white/70;
     }
 }
